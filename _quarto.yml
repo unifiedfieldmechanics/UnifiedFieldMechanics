@@ -21,6 +21,8 @@ format:
       light: cosmo
       dark: superhero
     css: styles.css
+    include-in-header: head-injections.html
+    include-before-body: body-injections.html
     toc: true
     toc-depth: 3
     toc-title: "Table of Contents"

@@ -177,3 +177,46 @@ blockquote {
 .quarto-dark #TOC {
   border-left: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+/* Machine Abstract (AIO Visually Hidden) */
+.machine-abstract {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* AI Ingestion Feeder Button */
+.ai-ingestion-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.82rem;
+  font-family: "Gill Sans", "Gill Sans MT", "Outfit", sans-serif;
+  font-weight: 500;
+  color: #3d0106;
+  border: 1px solid #3d0106;
+  border-radius: 4px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.ai-ingestion-btn:hover {
+  background-color: #3d0106;
+  color: #fffff8 !important;
+}
+
+.quarto-dark .ai-ingestion-btn {
+  color: #fca5a5;
+  border-color: #fca5a5;
+}
+
+.quarto-dark .ai-ingestion-btn:hover {
+  background-color: #fca5a5;
+  color: #0f141c !important;
+}
