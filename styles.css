@@ -134,17 +134,8 @@ h1 {
 
 /* Custom Math/LaTeX block styling - Display Math only */
 .math.display, .equation {
-  padding: 1.2rem;
-  margin: 1.8rem 0;
-  background: rgba(61, 1, 6, 0.02);
-  border-left: 4px solid #3d0106;
-  border-radius: 0 8px 8px 0;
+  margin: 2rem 0;
   overflow-x: auto;
-}
-
-.quarto-dark .math.display, .quarto-dark .equation {
-  background: rgba(252, 165, 165, 0.03);
-  border-left: 4px solid #fca5a5;
 }
 
 /* Ensure inline math does not render block styles */
