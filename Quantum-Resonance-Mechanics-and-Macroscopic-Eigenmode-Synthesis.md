@@ -9,7 +9,7 @@ format:
     math: true
 ---
 
-[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.qmd){.ai-ingestion-btn}
+[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md){.ai-ingestion-btn}
 
 **Subject:** Ontological Translation of Wave-Form Physics, Systems Theory, and Programmable Matter  
 **Format:** QFT / Thermodynamic Syntax Translation
@@ -78,7 +78,7 @@ A living system is a massive, localized emitter of geometric data. To capture it
 * **The Mechanism:** Deployment of ultra-sensitive quantum metrology arrays to simultaneously capture the complete emission spectrum: localized phonons (acoustic micro-vibrations), electromagnetic flux tensors, and biophotonic emissions.
 * **The Output:** A comprehensive, real-time wave recording representing the complete harmonic matrix of the localized node in homeostasis.
 
-#### Phase 2: Phase-Space Holographic Interferometry
+#### Phase-Space Holographic Interferometry
 Amplitude and frequency capture must be augmented with topological phase data.
 
 * **The Mechanism:** A highly coherent reference wave (laser/maser) is projected against the system's natural bio-field to generate an interference pattern.

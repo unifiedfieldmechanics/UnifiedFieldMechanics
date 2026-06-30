@@ -10,11 +10,11 @@ website:
     background: primary
     search: true
     left:
-      - href: index.qmd
+      - href: index.md
         text: Home
-      - href: UnifiedFieldMechanics_Post1.qmd
+      - href: UnifiedFieldMechanics_Post1.md
         text: Planck-Scale Dynamics
-      - href: Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.qmd
+      - href: Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md
         text: Resonant Synthesis
 
 format:

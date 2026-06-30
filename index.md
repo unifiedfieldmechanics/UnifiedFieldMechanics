@@ -4,7 +4,7 @@ subtitle: "A modern paradigm bridging continuous wave harmonics and discretized 
 toc: false
 ---
 
-[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/index.qmd){.ai-ingestion-btn}
+[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/index.md){.ai-ingestion-btn}
 
 ::: {.hero-section}
 # Unified Field Mechanics
