@@ -1,39 +1,47 @@
 /* Import custom premium typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
-/* Apply modern base styles */
+/* Apply classic Tufte-inspired base styles */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--bs-body-color);
-  background-color: var(--bs-body-bg);
+  font-family: Georgia, Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: #111111;
+  background-color: #fffff8; /* Classic Tufte cream background */
 }
 
-/* Headings with Outfit font */
+/* Maintain dark mode readability */
+.quarto-dark body {
+  color: #e2e8f0;
+  background-color: #0f141c;
+}
+
+/* Headings with Gill Sans / Outfit font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--bs-heading-color);
-  margin-top: 1.8rem;
-  margin-bottom: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", "Outfit", -apple-system, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #111111;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.quarto-dark h1, .quarto-dark h2, .quarto-dark h3, .quarto-dark h4, .quarto-dark h5, .quarto-dark h6 {
+  color: #e2e8f0;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 50%, #667eea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.3rem;
+  font-style: italic;
+  font-family: Georgia, Palatino, serif;
+  font-weight: normal;
+  color: #3d0106; /* Deep Tufte maroon */
   margin-bottom: 1.5rem;
 }
 
-/* Dark mode header overrides */
 .quarto-dark h1 {
-  background: linear-gradient(135deg, #63b3ed 0%, #a3bffa 50%, #fbb6ce 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fca5a5;
+  font-style: italic;
 }
 
 /* Navbar adjustments */
@@ -51,94 +59,101 @@ h1 {
 
 /* Hero Section style for homepage */
 .hero-section {
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
   margin-bottom: 3rem;
-  background: radial-gradient(circle at 10% 20%, rgba(216, 241, 250, 0.3) 0%, rgba(248, 250, 251, 0.3) 90%);
-  border-radius: 24px;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  background: rgba(61, 1, 6, 0.02);
+  border-radius: 12px;
+  border: 1px dashed rgba(61, 1, 6, 0.2);
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
 .quarto-dark .hero-section {
-  background: radial-gradient(circle at 10% 20%, rgba(26, 32, 44, 0.6) 0%, rgba(17, 19, 23, 0.8) 90%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  background: rgba(252, 165, 165, 0.03);
+  border: 1px dashed rgba(252, 165, 165, 0.2);
 }
 
 /* Premium Card style for publications */
 .article-card {
-  padding: 2.2rem;
+  padding: 2rem;
   margin-bottom: 2rem;
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fffff8;
+  border-radius: 8px;
+  border: 1px solid rgba(61, 1, 6, 0.15);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease;
   text-decoration: none !important;
   display: block;
 }
 
 .quarto-dark .article-card {
-  background: #1a202c;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  background: #111622;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .article-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(66, 153, 225, 0.1), 0 10px 10px -5px rgba(66, 153, 225, 0.04);
+  transform: translateY(-2px);
+  border-color: #3d0106;
 }
 
 .quarto-dark .article-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(66, 153, 225, 0.15);
+  border-color: #fca5a5;
 }
 
 .article-card-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-family: Georgia, Palatino, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0.8rem;
-  color: #2b6cb0;
+  color: #3d0106;
 }
 
 .quarto-dark .article-card-title {
-  color: #63b3ed;
+  color: #fca5a5;
 }
 
 .article-card-desc {
   font-size: 0.95rem;
-  color: #4a5568;
+  color: #222222;
   margin-bottom: 1.2rem;
   line-height: 1.6;
 }
 
 .quarto-dark .article-card-desc {
-  color: #a0aec0;
+  color: #cbd5e0;
 }
 
 .article-card-meta {
-  font-size: 0.8rem;
-  color: #a0aec0;
+  font-size: 0.78rem;
+  color: #777777;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-/* Custom Math/LaTeX block styling */
-.math, .equation {
+/* Custom Math/LaTeX block styling - Display Math only */
+.math.display, .equation {
   padding: 1.2rem;
   margin: 1.8rem 0;
-  background: rgba(66, 153, 225, 0.03);
-  border-left: 4px solid #4299e1;
+  background: rgba(61, 1, 6, 0.02);
+  border-left: 4px solid #3d0106;
   border-radius: 0 8px 8px 0;
   overflow-x: auto;
 }
 
-.quarto-dark .math, .quarto-dark .equation {
-  background: rgba(99, 179, 237, 0.04);
-  border-left: 4px solid #63b3ed;
+.quarto-dark .math.display, .quarto-dark .equation {
+  background: rgba(252, 165, 165, 0.03);
+  border-left: 4px solid #fca5a5;
+}
+
+/* Ensure inline math does not render block styles */
+.math.inline {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+  border: none !important;
+  display: inline !important;
 }
 
 /* Callouts & Blockquotes styling */
