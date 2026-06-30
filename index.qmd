@@ -26,4 +26,13 @@ Here we investigate how macroscopic structures phase-lock to fundamental carrier
   <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
 </a>
 
+<a href="Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.html" class="article-card">
+  <div class="article-card-meta">Theoretical Paper • June 2026</div>
+  <div class="article-card-title">Quantum Resonance Mechanics & Macroscopic Eigenmode Synthesis</div>
+  <div class="article-card-desc">
+    Extrapolating continuous-wave mechanics to macroscopic biological networks and materials science. This framework maps the non-perturbative quantum field metrology required to characterize organic eigen-tensors and outlines the thermodynamic prerequisites for zero-impedance resonant molecular synthesis (Replicator tech).
+  </div>
+  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
+</a>
+
 :::

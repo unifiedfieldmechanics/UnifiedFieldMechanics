@@ -14,6 +14,8 @@ website:
         text: Home
       - href: UnifiedFieldMechanics_Post1.qmd
         text: Planck-Scale Dynamics
+      - href: Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.qmd
+        text: Resonant Synthesis
 
 format:
   html:
