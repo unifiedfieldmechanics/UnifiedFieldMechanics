@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Unified Field Mechanics"
+  description: "Exploring the boundary of continuous wave mechanics, stroboscopic discretization, and quantum energy states."
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: UnifiedFieldMechanics_Post1.qmd
+        text: Planck-Scale Dynamics
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: superhero
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-title: "Table of Contents"
+    code-fold: true
+    code-summary: "Show Code"
+    code-copy: true
+    mathjax: true
+    html-math-method: mathjax
+    anchor-sections: true

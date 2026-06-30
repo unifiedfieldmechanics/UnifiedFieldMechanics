@@ -1,0 +1,27 @@
+---
+title: "Unified Field Mechanics"
+subtitle: "A modern paradigm bridging continuous wave harmonics and discretized Planck-scale spacetime"
+toc: false
+---
+
+::: {.hero-section}
+# Unified Field Mechanics
+Welcome to the research portal for **Unified Field Mechanics**. This platform is dedicated to exploring physical manifestation through the lens of localized continuous-wave mechanics and stroboscopic temporal discretization. 
+
+Here we investigate how macroscopic structures phase-lock to fundamental carrier frequencies, and how periodic collapses into the zero-point vacuum resolve key thermodynamic, kinematic, and entropic paradoxes.
+:::
+
+## Featured Research
+
+::: {.list-container}
+
+<a href="UnifiedFieldMechanics_Post1.html" class="article-card">
+  <div class="article-card-meta">Theoretical Paper • June 2026</div>
+  <div class="article-card-title">Planck-Scale Stroboscopic Dynamics & Localized Carrier Wave Eigenmodes</div>
+  <div class="article-card-desc">
+    This framework proposes a unified model of physical manifestation. By modeling macroscopic matter as spectrally dense harmonic standing waves and positing a stroboscopic oscillation between localized state vectors and the zero-point vacuum at the Planck scale, we resolve fundamental questions regarding thermodynamic efficiency, entropy accumulation, and kinematic resistance.
+  </div>
+  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
+</a>
+
+:::

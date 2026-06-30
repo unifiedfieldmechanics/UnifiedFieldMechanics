@@ -1,0 +1,173 @@
+/* Import custom premium typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+/* Apply modern base styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+}
+
+/* Headings with Outfit font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--bs-heading-color);
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* Dark mode header overrides */
+.quarto-dark h1 {
+  background: linear-gradient(135deg, #63b3ed 0%, #a3bffa 50%, #fbb6ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navbar adjustments */
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.quarto-dark .navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section style for homepage */
+.hero-section {
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  background: radial-gradient(circle at 10% 20%, rgba(216, 241, 250, 0.3) 0%, rgba(248, 250, 251, 0.3) 90%);
+  border-radius: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.quarto-dark .hero-section {
+  background: radial-gradient(circle at 10% 20%, rgba(26, 32, 44, 0.6) 0%, rgba(17, 19, 23, 0.8) 90%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Premium Card style for publications */
+.article-card {
+  padding: 2.2rem;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none !important;
+  display: block;
+}
+
+.quarto-dark .article-card {
+  background: #1a202c;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(66, 153, 225, 0.1), 0 10px 10px -5px rgba(66, 153, 225, 0.04);
+}
+
+.quarto-dark .article-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(66, 153, 225, 0.15);
+}
+
+.article-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #2b6cb0;
+}
+
+.quarto-dark .article-card-title {
+  color: #63b3ed;
+}
+
+.article-card-desc {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.quarto-dark .article-card-desc {
+  color: #a0aec0;
+}
+
+.article-card-meta {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Custom Math/LaTeX block styling */
+.math, .equation {
+  padding: 1.2rem;
+  margin: 1.8rem 0;
+  background: rgba(66, 153, 225, 0.03);
+  border-left: 4px solid #4299e1;
+  border-radius: 0 8px 8px 0;
+  overflow-x: auto;
+}
+
+.quarto-dark .math, .quarto-dark .equation {
+  background: rgba(99, 179, 237, 0.04);
+  border-left: 4px solid #63b3ed;
+}
+
+/* Callouts & Blockquotes styling */
+blockquote {
+  border-left: 4px solid #667eea;
+  background: rgba(102, 126, 234, 0.03);
+  padding: 1rem 1.5rem;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+.quarto-dark blockquote {
+  border-left: 4px solid #a3bffa;
+  background: rgba(163, 191, 250, 0.04);
+}
+
+/* Code block adjustments */
+.sourceCode {
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* TOC style updates */
+#TOC {
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+  padding-left: 1rem;
+}
+
+.quarto-dark #TOC {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
