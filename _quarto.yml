@@ -25,6 +25,10 @@ format:
     code-fold: true
     code-summary: "Show Code"
     code-copy: true
+    grid:
+      margin-width: 350px
+    reference-location: margin
+    citation-location: margin
     mathjax: true
     html-math-method: mathjax
     anchor-sections: true
