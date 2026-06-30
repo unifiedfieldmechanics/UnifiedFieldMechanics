@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - google71dccb70fbb27a37.html
 
 website:
   title: "Unified Field Mechanics"
