@@ -19,11 +19,13 @@ website:
         text: Resonant Synthesis
       - href: Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.md
         text: Zero-Impedance
+      - href: AI-Ingestion-and-Crawl-Directory.md
+        text: AI Directory
   page-footer:
     background: light
     border: true
     left: "Published with Quarto"
-    right: "[View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md)"
+    right: "[View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md) | [AI Directory](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI-Ingestion-and-Crawl-Directory.html)"
 
 format:
   html:
