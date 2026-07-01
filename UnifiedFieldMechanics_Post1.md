@@ -9,7 +9,7 @@ format:
     math: true
 ---
 
-[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/UnifiedFieldMechanics_Post1.md){.ai-ingestion-btn} [View Repository README](README.md){.ai-ingestion-btn}
+[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/UnifiedFieldMechanics_Post1.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 **Abstract:** This paper outlines a unified systemic model of physical manifestation, integrating localized continuous-wave mechanics with Planck-scale time discretization. By modeling macroscopic matter as spectrally dense harmonic interference patterns (standing waves) and positing a stroboscopic oscillation between localized state vectors and the zero-point vacuum, we resolve fundamental questions regarding thermodynamic efficiency, entropy accumulation, and kinematic resistance.
 

@@ -23,7 +23,7 @@ website:
     background: light
     border: true
     left: "Published with Quarto"
-    right: "[View Repository README](README.md)"
+    right: "[View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md)"
 
 format:
   html:

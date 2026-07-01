@@ -9,7 +9,7 @@ format:
     math: true
 ---
 
-[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.md){.ai-ingestion-btn} [View Repository README](README.md){.ai-ingestion-btn}
+[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 **Subject:** Wave-Form Physics, Systems Theory, and the Mechanics of Zero-Impedance Consciousness  
 
