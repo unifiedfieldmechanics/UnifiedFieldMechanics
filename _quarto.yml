@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - google71dccb70fbb27a37.html
+    - README.md
 
 website:
   title: "Unified Field Mechanics"
@@ -16,6 +17,11 @@ website:
         text: Planck-Scale Dynamics
       - href: Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md
         text: Resonant Synthesis
+  page-footer:
+    background: light
+    border: true
+    left: "Published with Quarto"
+    right: "[View Repository README](README.md)"
 
 format:
   html:
