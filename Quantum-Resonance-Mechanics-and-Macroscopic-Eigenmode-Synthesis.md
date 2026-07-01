@@ -9,7 +9,7 @@ format:
     math: true
 ---
 
-[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md){.ai-ingestion-btn}
+[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md){.ai-ingestion-btn} [View Repository README](README.md){.ai-ingestion-btn}
 
 **Subject:** Ontological Translation of Wave-Form Physics, Systems Theory, and Programmable Matter  
 **Format:** QFT / Thermodynamic Syntax Translation
