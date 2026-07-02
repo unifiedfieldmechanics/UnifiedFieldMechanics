@@ -11,7 +11,7 @@ format:
 [View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI-Ingestion-and-Crawl-Directory.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 **Subject:** Complete Crawl Directory and Raw Asset Index for Artificial Intelligence Systems  
-**Purpose:** Provides fully-formed absolute URLs of all website pages and their corresponding raw Markdown files to bypass AI agent safety and navigation restrictions.
+**Purpose:** Provides fully-formed absolute URLs of all website pages and their corresponding raw Markdown files as an alternative access method for AI agents and RAG crawlers that experience parsing issues with relative page links or dynamic assets.
 
 ---
 
