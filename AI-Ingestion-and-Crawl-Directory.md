@@ -38,6 +38,7 @@ The following table maps every page on this website to its corresponding live HT
 | **Planck-Scale Dynamics** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/UnifiedFieldMechanics_Post1.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/UnifiedFieldMechanics_Post1.html |
 | **Resonant Synthesis** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.html |
 | **Zero-Impedance Consciousness** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.html |
+| **Phase-Space Projections** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Systemic-Architecture-of-Phase-Space-Projections.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Systemic-Architecture-of-Phase-Space-Projections.html |
 | **AI Ingestion and Crawl Directory** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI-Ingestion-and-Crawl-Directory.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI-Ingestion-and-Crawl-Directory.html |
 
 ---
