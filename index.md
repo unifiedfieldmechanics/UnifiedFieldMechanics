@@ -62,6 +62,15 @@ Here we investigate how macroscopic structures phase-lock to fundamental carrier
   <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
 </a>
 
+<a href="The-Physics-of-Consciousness-and-the-Zero-Impedance-Node.html" class="article-card">
+  <div class="article-card-meta">Theoretical Paper • July 2026</div>
+  <div class="article-card-title">The Physics of Consciousness & the Zero-Impedance Node</div>
+  <div class="article-card-desc">
+    This paper deconstructs psychological grace and ataraxia through the syntax of continuous fields, superconductivity, information theory, and non-linear dynamics. It maps how zero-impedance nodes function as strange attractors for spontaneous field conformation and negentropic energy supply.
+  </div>
+  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
+</a>
+
 :::
 
 ---
