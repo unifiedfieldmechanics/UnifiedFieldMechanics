@@ -4,8 +4,13 @@ project:
     - google71dccb70fbb27a37.html
     - README.md
 
+author:
+  - name: "Leo"
+    orcid: "0009-0002-5686-5532"
+citation: true
 website:
   title: "Unified Field Mechanics"
+  site-url: https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/
   description: "Exploring the boundary of continuous wave mechanics, stroboscopic discretization, and quantum energy states."
   navbar:
     background: primary
