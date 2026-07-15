@@ -31,6 +31,13 @@ website:
     background: light
     border: true
     left: "Published with Quarto"
+    center: |
+      <div style="margin-top: 20px; font-family: sans-serif; font-size: 14px;">
+        <a href="https://orcid.org/0009-0002-5686-5532" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #a6ce39;">
+          <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" style="vertical-align: text-bottom; margin-right: 4px;" />
+          https://orcid.org/0009-0002-5686-5532
+        </a>
+      </div>
     right: "[View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md) | [AI Directory](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI-Ingestion-and-Crawl-Directory.html)"
 
 format:

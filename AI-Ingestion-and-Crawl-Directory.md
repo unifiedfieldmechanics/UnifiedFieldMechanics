@@ -15,7 +15,14 @@ format:
 
 ---
 
-## 1. Core Repository & Documentation Assets
+## 1. Author Identification (ORCID)
+
+* **Author ORCID iD**: [0009-0002-5686-5532](https://orcid.org/0009-0002-5686-5532)
+* **ORCID Record**: https://orcid.org/0009-0002-5686-5532
+
+---
+
+## 2. Core Repository & Documentation Assets
 
 * **GitHub Repository Main Page**:  
   https://github.com/unifiedfieldmechanics/UnifiedFieldMechanics
@@ -28,7 +35,7 @@ format:
 
 ---
 
-## 2. Resource Index (Site Directory)
+## 3. Resource Index (Site Directory)
 
 The following table maps every page on this website to its corresponding live HTML view and raw Markdown source file.
 
@@ -45,7 +52,7 @@ The following table maps every page on this website to its corresponding live HT
 
 ---
 
-## 3. Workflow for Future Publishes
+## 4. Workflow for Future Publishes
 
 To ensure this index remains consistent and accessible as new pages are created:
 1. **Filename/URL Policy**: All new content files must be published using the standard `.md` extension to guarantee RAG parser compatibility.
