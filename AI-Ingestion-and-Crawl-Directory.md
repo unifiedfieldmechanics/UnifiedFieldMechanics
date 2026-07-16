@@ -49,6 +49,7 @@ The following table maps every page on this website to its corresponding live HT
 | **Plasma to Matter** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Resonant-Synthesis-of-Unconditioned-Energy-Plasma-to-Matter.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Resonant-Synthesis-of-Unconditioned-Energy-Plasma-to-Matter.html |
 | **Zero-Impedance Node** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The-Physics-of-Consciousness-and-the-Zero-Impedance-Node.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The-Physics-of-Consciousness-and-the-Zero-Impedance-Node.html |
 | **Release Notes (v1.0.0)** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Unified-Field-Mechanics-Release-Notes-v1.0.0.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Unified-Field-Mechanics-Release-Notes-v1.0.0.html |
+| **Mechanics of the Harmonic Aperture** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Phase-Space-Translation-The-Mechanics-of-the-Harmonic-Aperture.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Phase-Space-Translation-The-Mechanics-of-the-Harmonic-Aperture.html |
 | **AI Ingestion and Crawl Directory** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI-Ingestion-and-Crawl-Directory.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI-Ingestion-and-Crawl-Directory.html |
 
 ---
