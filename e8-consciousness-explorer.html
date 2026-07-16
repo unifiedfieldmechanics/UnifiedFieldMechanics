@@ -1,0 +1,411 @@
+<div id="e8-visualizer-container">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "E8 Consciousness Explorer",
+    "applicationCategory": "EducationalApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Leo",
+      "identifier": "https://orcid.org/0009-0002-5686-5532"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    },
+    "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+  <canvas id="e8-edge-canvas"></canvas>
+  <svg id="e8-node-svg"></svg>
+
+  <div id="e8-ui-bar">
+    <div id="e8-props" class="e8-props-strip">
+      <span class="e8-proj-desc" id="e8-proj-desc"></span>
+      <span class="e8-stats">
+        <span><b>240</b> Roots</span><i>&middot;</i>
+        <span><b>8</b> Dimension</span><i>&middot;</i>
+        <span><b>6,720</b> Edges</span>
+      </span>
+    </div>
+
+    <div class="e8-bar-inner">
+      <div class="e8-brand">
+        <div class="e8-title">E8 Consciousness Architecture</div>
+        <div class="e8-subtitle">240 Nodes / Infinite Potentials</div>
+      </div>
+
+      <div class="e8-ctrl">
+        <label>Projection Mode</label>
+        <select id="e8-proj-select">
+          <option value="h4">H4 Projection</option>
+          <option value="cox" selected>Coxeter Plane</option>
+          <option value="altA">Alt Projection A</option>
+          <option value="altB">Alt Projection B</option>
+        </select>
+      </div>
+
+      <div class="e8-ctrl">
+        <label>Highlight Patterns</label>
+        <select id="e8-hl-select">
+          <option value="none" selected>None</option>
+          <option value="type">Root Type</option>
+          <option value="ring">Concentric Shells</option>
+        </select>
+      </div>
+
+      <div class="e8-ctrl e8-toggle-ctrl">
+        <label>Key Properties</label>
+        <span id="e8-props-toggle" class="e8-switch on"><span class="e8-knob"></span></span>
+      </div>
+
+      <div class="e8-spacer"></div>
+
+      <button id="e8-pulse-btn" class="e8-primary">Pulse Coherence</button>
+      <button id="e8-reset-btn" title="Reset View">&#8635;</button>
+    </div>
+  </div>
+
+  <style>
+    #e8-visualizer-container {
+      position: relative;
+      width: 100%;
+      height: 700px;
+      background: radial-gradient(ellipse at 50% 42%, #12121a 0%, #0a0a0c 66%, #050506 100%);
+      overflow: hidden;
+      border-radius: 8px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #eaf6ff;
+    }
+    #e8-edge-canvas, #e8-node-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    #e8-edge-canvas { z-index: 1; pointer-events: none; }
+    #e8-node-svg   { z-index: 2; cursor: grab; }
+    #e8-node-svg:active { cursor: grabbing; }
+    #e8-node-svg .e8-node { transition: fill-opacity 0.25s ease; }
+
+    /* ---------------- bottom bar ---------------- */
+    #e8-ui-bar {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 10;
+      background: linear-gradient(180deg, rgba(10,12,18,0.0) 0%, rgba(10,12,18,0.72) 22%, rgba(8,10,16,0.9) 100%);
+      backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px);
+      border-top: 1px solid rgba(120, 200, 255, 0.14);
+      padding: 12px 20px 14px;
+    }
+    .e8-props-strip {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      max-width: 1180px; margin: 0 auto 11px;
+      overflow: hidden; transition: opacity .3s ease, max-height .35s ease, margin .3s ease;
+      max-height: 40px; opacity: 1;
+    }
+    .e8-props-strip.hidden { max-height: 0; opacity: 0; margin-bottom: 0; }
+    .e8-proj-desc { font-size: 11.5px; line-height: 1.4; color: rgba(200,220,240,0.66); flex: 1 1 auto; min-width: 0; }
+    .e8-stats { display: flex; align-items: center; gap: 9px; flex: 0 0 auto; white-space: nowrap; color: rgba(200,220,240,0.6); font-size: 11px; letter-spacing: 0.4px; }
+    .e8-stats b { color: #eaf6ff; font-size: 14px; font-weight: 600; margin-right: 3px; }
+    .e8-stats i { color: rgba(120,200,255,0.4); font-style: normal; }
+
+    .e8-bar-inner {
+      display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap;
+      max-width: 1180px; margin: 0 auto;
+    }
+    .e8-brand { flex: 0 0 auto; margin-right: 4px; }
+    .e8-brand .e8-title { font-size: 14.5px; font-weight: 600; letter-spacing: 0.2px; line-height: 1.15; }
+    .e8-brand .e8-subtitle { color: #7fd8ff; font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; margin-top: 2px; opacity: 0.85; }
+
+    .e8-ctrl { display: flex; flex-direction: column; gap: 5px; flex: 0 0 auto; }
+    .e8-ctrl label { font-size: 10px; letter-spacing: 0.4px; color: rgba(210,228,245,0.75); }
+    #e8-ui-bar select {
+      appearance: none; -webkit-appearance: none; min-width: 148px;
+      background: rgba(20,30,48,0.9) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%237fd8ff'/></svg>") no-repeat right 11px center;
+      border: 1px solid rgba(140,210,255,0.28); border-radius: 7px;
+      color: #dff2ff; font-size: 12.5px; font-family: inherit;
+      padding: 8px 26px 8px 11px; cursor: pointer;
+    }
+    #e8-ui-bar select:hover { border-color: rgba(180,235,255,0.6); }
+
+    .e8-toggle-ctrl { align-items: flex-start; }
+    .e8-switch { width: 40px; height: 22px; border-radius: 12px; cursor: pointer; background: rgba(70,80,100,0.6); position: relative; transition: background .25s ease; margin-top: 2px; }
+    .e8-switch .e8-knob { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #dfeaf5; transition: left .25s ease; }
+    .e8-switch.on { background: rgba(80,190,255,0.75); }
+    .e8-switch.on .e8-knob { left: 20px; background: #fff; }
+
+    .e8-spacer { flex: 1 1 auto; }
+
+    #e8-ui-bar .e8-primary {
+      flex: 0 0 auto; border: 1px solid rgba(150,215,255,0.4);
+      background: linear-gradient(180deg, rgba(55,105,155,0.75), rgba(28,48,78,0.75));
+      color: #eaf7ff; font-size: 12.5px; font-family: inherit; letter-spacing: 0.4px;
+      padding: 9px 18px; border-radius: 8px; cursor: pointer; transition: all .2s ease;
+    }
+    #e8-ui-bar .e8-primary:hover { border-color: rgba(190,240,255,0.8); box-shadow: 0 0 18px rgba(120,210,255,0.4); background: linear-gradient(180deg, rgba(70,130,185,0.9), rgba(38,62,98,0.9)); }
+    #e8-ui-bar .e8-primary:active { transform: translateY(1px); }
+
+    #e8-reset-btn {
+      flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid rgba(140,210,255,0.3); background: rgba(40,60,90,0.5);
+      color: #dff2ff; font-size: 17px; line-height: 1; cursor: pointer; transition: all .2s ease;
+    }
+    #e8-reset-btn:hover { background: rgba(60,110,160,0.75); box-shadow: 0 0 14px rgba(120,210,255,.4); }
+
+    @media (max-width: 620px) {
+      .e8-brand { flex-basis: 100%; }
+      .e8-stats { display: none; }
+    }
+  </style>
+
+  <script>
+  (function () {
+    var container = document.getElementById("e8-visualizer-container");
+    function boot(){ if (typeof d3 === "undefined"){ setTimeout(boot,60); return; } build(); }
+
+    /* =============================== MATH =============================== */
+    function dot(a,b){ var s=0; for(var i=0;i<8;i++) s+=a[i]*b[i]; return s; }
+
+    function genRoots(){
+      var R=[];
+      for(var i=0;i<8;i++) for(var j=i+1;j<8;j++)
+        for(var si=-1;si<=1;si+=2) for(var sj=-1;sj<=1;sj+=2){
+          var v=[0,0,0,0,0,0,0,0]; v[i]=si; v[j]=sj; R.push(v);
+        }
+      for(var m=0;m<256;m++){
+        var v=[],neg=0;
+        for(var b=0;b<8;b++){ var s=(m>>b)&1; if(s){neg++;v.push(-0.5);} else v.push(0.5); }
+        if(neg%2===0) R.push(v);
+      }
+      return R;
+    }
+    function ident(){ var M=[]; for(var i=0;i<8;i++){ M.push([0,0,0,0,0,0,0,0]); M[i][i]=1; } return M; }
+    function matmul(A,B){ var C=[]; for(var i=0;i<8;i++){ C.push([0,0,0,0,0,0,0,0]);
+      for(var k=0;k<8;k++){ var a=A[i][k]; if(a) for(var j=0;j<8;j++) C[i][j]+=a*B[k][j]; } } return C; }
+    function reflect(a){ var M=ident(); for(var i=0;i<8;i++) for(var j=0;j<8;j++) M[i][j]-=a[i]*a[j]; return M; }
+    var SIMPLE=[
+      [0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,0.5],
+      [1,1,0,0,0,0,0,0],[-1,1,0,0,0,0,0,0],[0,-1,1,0,0,0,0,0],
+      [0,0,-1,1,0,0,0,0],[0,0,0,-1,1,0,0,0],[0,0,0,0,-1,1,0,0],[0,0,0,0,0,-1,1,0]
+    ];
+    function coxeter(){ var C=ident(); for(var s=0;s<8;s++) C=matmul(C,reflect(SIMPLE[s])); return C; }
+    function nullspace(M){
+      var n=8, A=M.map(function(r){return r.slice();}), where=new Array(n).fill(-1), row=0;
+      for(var col=0; col<n && row<n; col++){
+        var sel=row, best=Math.abs(A[row][col]);
+        for(var r=row;r<n;r++) if(Math.abs(A[r][col])>best){ best=Math.abs(A[r][col]); sel=r; }
+        if(best<1e-7) continue;
+        var t=A[sel]; A[sel]=A[row]; A[row]=t;
+        var pv=A[row][col];
+        for(var j=0;j<n;j++) A[row][j]/=pv;
+        for(var r2=0;r2<n;r2++) if(r2!==row){ var f=A[r2][col]; if(f) for(var j2=0;j2<n;j2++) A[r2][j2]-=f*A[row][j2]; }
+        where[col]=row; row++;
+      }
+      var basis=[];
+      for(var c=0;c<n;c++) if(where[c]===-1){
+        var v=new Array(n).fill(0); v[c]=1;
+        for(var cc=0;cc<n;cc++) if(where[cc]!==-1) v[cc]=-A[where[cc]][c];
+        basis.push(v);
+      }
+      return basis;
+    }
+    function normalize(v){ var n=Math.sqrt(dot(v,v)); return v.map(function(x){return x/n;}); }
+    function orthonormal(b){
+      var u=normalize(b[0].slice());
+      var v=b[1].slice(), d=dot(u,v);
+      v=v.map(function(x,i){return x-d*u[i];});
+      return [u, normalize(v)];
+    }
+    function exponentPlane(C, m){
+      var th=2*Math.PI*m/30, c2=2*Math.cos(th), CC=matmul(C,C), M=[];
+      for(var i=0;i<8;i++){ M.push([]); for(var j=0;j<8;j++) M[i].push(CC[i][j]-c2*C[i][j]+(i===j?1:0)); }
+      return orthonormal(nullspace(M));
+    }
+
+    /* ============================= BUILD ============================= */
+    function build(){
+      var C = coxeter();
+      var PHI = (1+Math.sqrt(5))/2;
+      var h4 = orthonormal([
+        normalize([1, 0, PHI, 0, 1, 0, -PHI, 0]),
+        normalize([0, 1, 0, PHI, 0, 1, 0, -PHI])
+      ]);
+      var PROJ = {
+        cox:  { uv: exponentPlane(C, 1),  desc:"Coxeter Plane: the classic Petrie projection. 240 roots settle onto 8 concentric shells of 30, revealing the 30-fold symmetry of the E8 Coxeter element." },
+        h4:   { uv: h4,                    desc:"H4 Projection: a golden-ratio folding of the eight axes into two blocks, echoing the nested 600-cell structure that lives inside E8." },
+        altA: { uv: exponentPlane(C, 7),   desc:"Alt Projection A: the exponent-7 eigenplane. The same 240 roots wind around 7 times per shell, braiding into a denser rosette." },
+        altB: { uv: exponentPlane(C, 13),  desc:"Alt Projection B: the exponent-13 eigenplane. A near-maximal winding that scatters the roots into an intricate interference lattice." }
+      };
+
+      var roots = genRoots(), N = roots.length;
+      var edges = [];
+      for(var i=0;i<N;i++) for(var j=i+1;j<N;j++)
+        if(Math.abs(dot(roots[i],roots[j])-1) < 1e-9) edges.push([i,j]);
+      var adj = roots.map(function(){ return []; });
+      edges.forEach(function(e,ei){ adj[e[0]].push(ei); adj[e[1]].push(ei); });
+      var isSpinor = roots.map(function(r){ return Math.abs(Math.abs(r[0])-0.5)<1e-9; });
+
+      var WORLD = 300, modeData = {};
+      Object.keys(PROJ).forEach(function(key){
+        var uv = PROJ[key].uv, pts=[], maxR=0;
+        for(var k=0;k<N;k++){
+          var x=dot(roots[k],uv[0]), y=dot(roots[k],uv[1]);
+          var rr=Math.sqrt(x*x+y*y); if(rr>maxR) maxR=rr; pts.push([x,y,rr]);
+        }
+        var scale = WORLD/(maxR||1), uniq=[];
+        pts.forEach(function(p){ var r=p[2]*scale; var f=uniq.find(function(u){return Math.abs(u-r)<2.5;}); if(f===undefined) uniq.push(r); });
+        uniq.sort(function(a,b){return a-b;});
+        var coords = pts.map(function(p){
+          var rr=p[2]*scale, ring=0, bd=1e9;
+          for(var u=0;u<uniq.length;u++){ var d=Math.abs(uniq[u]-rr); if(d<bd){bd=d;ring=u;} }
+          return { x:p[0]*scale, y:p[1]*scale, r:rr, ring:ring };
+        });
+        modeData[key] = { coords:coords, rings:uniq.length };
+      });
+
+      /* ---------------- render setup ---------------- */
+      var canvas = document.getElementById("e8-edge-canvas");
+      var ctx = canvas.getContext("2d");
+      var svg = d3.select("#e8-node-svg");
+      var bar = document.getElementById("e8-ui-bar");
+
+      var defs = svg.append("defs");
+      var f = defs.append("filter").attr("id","e8-glow3").attr("x","-150%").attr("y","-150%").attr("width","400%").attr("height","400%");
+      f.append("feGaussianBlur").attr("stdDeviation","2.2").attr("result","b");
+      var mg=f.append("feMerge"); mg.append("feMergeNode").attr("in","b"); mg.append("feMergeNode").attr("in","SourceGraphic");
+      var nodeG = svg.append("g").attr("filter","url(#e8-glow3)");
+
+      var cur = modeData.cox.coords.map(function(c){ return { wx:c.x, wy:c.y, ring:c.ring, baseR:0, pulse:0 }; });
+      function refreshRings(md){ cur.forEach(function(n,i){ n.ring=md.coords[i].ring; }); }
+      var nodeSel = nodeG.selectAll("circle").data(cur).enter().append("circle").attr("class","e8-node").attr("fill-opacity",0.92);
+
+      var W=0, H=0, fit=1, cX=0, cY=0, dpr=Math.max(1, window.devicePixelRatio||1);
+      var T = d3.zoomIdentity, hoverId=-1, currentMode="cox";
+
+      function baseColor(n, i){
+        var hl = document.getElementById("e8-hl-select").value;
+        if(hl==="type") return isSpinor[i] ? "hsl(275,85%,72%)" : "hsl(48,92%,64%)";
+        if(hl==="ring"){ var frac=n.ring/Math.max(1,(modeData[currentMode].rings-1)); return "hsl("+(200-frac*160).toFixed(0)+",90%,65%)"; }
+        var frac2 = Math.min(1, Math.sqrt(n.wx*n.wx+n.wy*n.wy)/300);
+        return "hsl("+(45+frac2*145).toFixed(0)+",90%,66%)";
+      }
+      function screen(wx, wy){ return [ T.k*(cX + wx*fit) + T.x, T.k*(cY + wy*fit) + T.y ]; }
+
+      function resize(){
+        W = container.clientWidth; H = container.clientHeight;
+        var barH = bar.offsetHeight || 0;
+        var avail = Math.max(120, H - barH);
+        cX = W/2; cY = avail/2 + 6;
+        fit = Math.min(W, avail) / (2*330);
+        canvas.width = Math.round(W*dpr); canvas.height = Math.round(H*dpr);
+        canvas.style.width=W+"px"; canvas.style.height=H+"px";
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+        draw();
+      }
+
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+        var focus = hoverId>=0, nb=null;
+        if(focus){ nb={}; adj[hoverId].forEach(function(ei){ var e=edges[ei]; nb[e[0]]=1; nb[e[1]]=1; }); }
+        ctx.lineWidth = Math.min(2.2, 0.5*Math.sqrt(T.k));
+        ctx.strokeStyle = focus ? "rgba(90,150,190,0.04)" : "rgba(90,175,220,0.11)";
+        ctx.beginPath();
+        for(var e2=0;e2<edges.length;e2++){
+          var a2=edges[e2][0], b2=edges[e2][1];
+          if(focus && (a2===hoverId||b2===hoverId)) continue;
+          var pa=screen(cur[a2].wx,cur[a2].wy), pb=screen(cur[b2].wx,cur[b2].wy);
+          ctx.moveTo(pa[0],pa[1]); ctx.lineTo(pb[0],pb[1]);
+        }
+        ctx.stroke();
+        if(focus){
+          ctx.strokeStyle = "rgba(190,240,255,0.85)";
+          ctx.lineWidth = Math.min(2.6, 0.9*Math.sqrt(T.k));
+          ctx.beginPath();
+          adj[hoverId].forEach(function(ei){
+            var a3=edges[ei][0], b3=edges[ei][1];
+            var pa=screen(cur[a3].wx,cur[a3].wy), pb=screen(cur[b3].wx,cur[b3].wy);
+            ctx.moveTo(pa[0],pa[1]); ctx.lineTo(pb[0],pb[1]);
+          });
+          ctx.stroke();
+        }
+        var rk = 2.3*Math.sqrt(T.k);
+        nodeSel
+          .attr("cx", function(d){ return screen(d.wx,d.wy)[0]; })
+          .attr("cy", function(d){ return screen(d.wx,d.wy)[1]; })
+          .attr("r", function(d,i){ var base=(d.baseR||rk); return i===hoverId ? base*2.4 : base; })
+          .attr("fill", function(d,i){ return baseColor(d,i); })
+          .attr("fill-opacity", function(d,i){ if(hoverId<0) return 0.92; if(i===hoverId) return 1; return (nb && nb[i]) ? 1 : 0.16; });
+        nodeSel.each(function(d){ d.baseR = rk; });
+      }
+
+      /* ---------------- interaction ---------------- */
+      var zoom = d3.zoom().scaleExtent([0.4,14])
+        .extent(function(){ return [[0,0],[W,H]]; })
+        .on("zoom", function(ev){ T=ev.transform; draw(); });
+      svg.call(zoom).on("dblclick.zoom", null);
+
+      svg.on("mousemove", function(ev){
+        var pt=d3.pointer(ev), best=-1, bd=16*16*Math.max(1,T.k);
+        for(var i=0;i<N;i++){ var s=screen(cur[i].wx,cur[i].wy); var dx=s[0]-pt[0], dy=s[1]-pt[1], d2=dx*dx+dy*dy; if(d2<bd){ bd=d2; best=i; } }
+        if(best!==hoverId){ hoverId=best; draw(); }
+      }).on("mouseleave", function(){ if(hoverId>=0){ hoverId=-1; draw(); } });
+
+      /* ---------------- projection morph ---------------- */
+      function morphTo(mode){
+        currentMode = mode;
+        var target = modeData[mode].coords, start = cur.map(function(n){ return [n.wx, n.wy]; });
+        document.getElementById("e8-proj-desc").textContent = PROJ[mode].desc;
+        d3.transition().duration(1100).ease(d3.easeCubicInOut).tween("morph", function(){
+          return function(t){
+            for(var i=0;i<N;i++){ cur[i].wx = start[i][0]+(target[i].x-start[i][0])*t; cur[i].wy = start[i][1]+(target[i].y-start[i][1])*t; }
+            draw();
+          };
+        }).on("end", function(){ refreshRings(modeData[mode]); draw(); });
+      }
+
+      /* ---------------- pulse ---------------- */
+      var pulsing=false;
+      function pulse(){
+        if(pulsing) return; pulsing=true;
+        var dur=1500, t0=performance.now();
+        function frame(now){
+          var p=(now-t0)/dur;
+          if(p>=1){ pulsing=false; cur.forEach(function(n){n.pulse=0;}); draw(); return; }
+          var wave=p*1.15;
+          for(var i=0;i<N;i++){ var r=Math.sqrt(cur[i].wx*cur[i].wx+cur[i].wy*cur[i].wy)/300; cur[i].pulse=Math.max(0,1-Math.abs(r-wave)*7); }
+          drawPulse(); requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+      function drawPulse(){
+        draw();
+        var rk=2.3*Math.sqrt(T.k);
+        nodeSel
+          .attr("r", function(d,i){ var e=d.pulse||0; return (i===hoverId?rk*2.4:rk)*(1+e*2.2); })
+          .attr("fill", function(d,i){ var e=d.pulse||0; return e>0.05 ? "hsl("+(190-e*140).toFixed(0)+",100%,"+(70+e*25).toFixed(0)+"%)" : baseColor(d,i); })
+          .attr("fill-opacity", function(d,i){ var e=d.pulse||0; return Math.max(hoverId<0?0.92:(i===hoverId?1:0.4), e); });
+      }
+
+      /* ---------------- UI wiring ---------------- */
+      document.getElementById("e8-proj-select").addEventListener("change", function(){ morphTo(this.value); });
+      document.getElementById("e8-hl-select").addEventListener("change", draw);
+      document.getElementById("e8-pulse-btn").addEventListener("click", pulse);
+      document.getElementById("e8-reset-btn").addEventListener("click", function(){
+        svg.transition().duration(800).ease(d3.easeCubicInOut).call(zoom.transform, d3.zoomIdentity);
+      });
+      var toggle=document.getElementById("e8-props-toggle");
+      toggle.addEventListener("click", function(){
+        this.classList.toggle("on");
+        document.getElementById("e8-props").classList.toggle("hidden", !this.classList.contains("on"));
+        setTimeout(resize, 380); // recenter geometry after bar height animates
+      });
+
+      document.getElementById("e8-proj-desc").textContent = PROJ.cox.desc;
+      if(window.ResizeObserver){ new ResizeObserver(resize).observe(container); }
+      window.addEventListener("resize", resize);
+      resize();
+    }
+
+    boot();
+  })();
+  </script>
+</div>

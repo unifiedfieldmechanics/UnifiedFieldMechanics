@@ -1,0 +1,276 @@
+<!-- E8 — Geometric Transmission (Ghost-ready, single block) -->
+
+<div class="e8-wrap">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "E8 Geometric Transmission",
+    "applicationCategory": "EducationalApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Leo",
+      "identifier": "https://orcid.org/0009-0002-5686-5532"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    },
+    "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+  }
+  </script>
+  <canvas id="e8-canvas"></canvas>
+</div>
+
+<style>
+  /* Scoped styles so we don't affect the whole Ghost theme */
+  .e8-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 640px;          /* feel free to tweak */
+    aspect-ratio: 9 / 16;      /* tall-phone geometry */
+    max-height: 80vh;          /* avoid excessive scrolling */
+    margin: 2rem auto;
+    background: #000;
+    box-shadow: 0 0 60px rgba(120, 90, 255, 0.35);
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .e8-wrap canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+</style>
+
+<script>
+(function () {
+  const canvas = document.getElementById('e8-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  // Tie canvas size to its wrapper
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width  = rect.width;
+    canvas.height = rect.height;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const TAU = Math.PI * 2;
+  const dot = (a, b) => {
+    let s = 0;
+    for (let i = 0; i < 8; i++) s += a[i] * b[i];
+    return s;
+  };
+  const matMul = (A, B) => {
+    const O = [];
+    for (let i = 0; i < 8; i++) {
+      O[i] = [];
+      for (let j = 0; j < 8; j++) {
+        let s = 0;
+        for (let k = 0; k < 8; k++) s += A[i][k] * B[k][j];
+        O[i][j] = s;
+      }
+    }
+    return O;
+  };
+  const matVec = (M, v) => {
+    const o = new Array(8).fill(0);
+    for (let i = 0; i < 8; i++) {
+      let s = 0;
+      for (let j = 0; j < 8; j++) s += M[i][j] * v[j];
+      o[i] = s;
+    }
+    return o;
+  };
+  const ident = () => {
+    const I = [];
+    for (let i = 0; i < 8; i++) {
+      I[i] = [];
+      for (let j = 0; j < 8; j++) I[i][j] = (i === j ? 1 : 0);
+    }
+    return I;
+  };
+  const refl = a => {
+    const M = [];
+    for (let i = 0; i < 8; i++) {
+      M[i] = [];
+      for (let j = 0; j < 8; j++) M[i][j] = (i === j ? 1 : 0) - a[i] * a[j];
+    }
+    return M;
+  };
+  const norm = v => {
+    const n = Math.sqrt(dot(v, v));
+    return v.map(x => x / n);
+  };
+
+  function buildE8() {
+    const roots = [];
+
+    // 112 roots of type (±1, ±1, 0, 0, 0, 0, 0, 0)
+    for (let i = 0; i < 8; i++)
+      for (let j = i + 1; j < 8; j++)
+        for (const si of [1, -1])
+          for (const sj of [1, -1]) {
+            const r = new Array(8).fill(0);
+            r[i] = si;
+            r[j] = sj;
+            roots.push(r);
+          }
+
+    // 128 roots of type (±½, …, ±½) with even number of minus signs
+    for (let mask = 0; mask < 256; mask++) {
+      let m = 0;
+      for (let b = 0; b < 8; b++) if (mask & (1 << b)) m++;
+      if (m % 2) continue;
+      const r = new Array(8);
+      for (let b = 0; b < 8; b++) r[b] = (mask & (1 << b)) ? -0.5 : 0.5;
+      roots.push(r);
+    }
+
+    // Simple roots and Coxeter element (as in your original transmission)[file:48]
+    const S = [
+      [0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,0.5],
+      [1,1,0,0,0,0,0,0],
+      [-1,1,0,0,0,0,0,0],
+      [0,-1,1,0,0,0,0,0],
+      [0,0,-1,1,0,0,0,0],
+      [0,0,0,-1,1,0,0,0],
+      [0,0,0,0,-1,1,0,0],
+      [0,0,0,0,0,-1,1,0]
+    ];
+    let C = ident();
+    for (let i = 0; i < 8; i++) C = matMul(C, refl(S[i]));
+    const C2 = matMul(C, C);
+
+    // Coxeter (Petrie) plane projector
+    let P = ident();
+    for (const m of [7, 11, 13]) {
+      const cm = Math.cos(TAU * m / 30);
+      const F = [];
+      for (let i = 0; i < 8; i++) {
+        F[i] = [];
+        for (let j = 0; j < 8; j++)
+          F[i][j] = C2[i][j] - 2 * cm * C[i][j] + (i === j ? 1 : 0);
+      }
+      P = matMul(P, F);
+    }
+
+    let u1 = norm(matVec(P, [1,0.3,-0.2,0.7,-0.5,0.11,0.9,-0.35]));
+    let Cu1 = matVec(C, u1);
+    const pr = dot(u1, Cu1);
+    let u2 = norm(Cu1.map((x, i) => x - pr * u1[i]));
+
+    // A third direction w to breathe the projection
+    let w = [0.2,-0.9,0.4,0.1,0.6,-0.3,0.15,0.8];
+    {
+      const a = dot(w, u1), b = dot(w, u2);
+      w = norm(w.map((x, i) => x - a * u1[i] - b * u2[i]));
+    }
+
+    const edges = [];
+    for (let i = 0; i < 240; i++)
+      for (let j = i + 1; j < 240; j++)
+        if (Math.abs(dot(roots[i], roots[j]) - 1) < 1e-9) edges.push([i, j]);
+
+    const rad = roots.map(r => Math.hypot(dot(r, u1), dot(r, u2)));
+    const order = [...rad.keys()].sort((a, b) => rad[a] - rad[b]);
+    const ring = new Array(240);
+    for (let k = 0; k < 240; k++) ring[order[k]] = Math.floor(k / 30);
+
+    return { roots, edges, u1, u2, w, ring };
+  }
+
+  const E = buildE8();
+
+  // Higher-contrast, saturated ring colors
+const RAMP = [
+  [255, 240, 200],  // inner: warm but not too bright
+  [255, 180,  80],  // golden orange
+  [255, 120, 100],  // coral red
+  [220,  80, 220],  // magenta
+  [130,  90, 255],  // indigo
+  [ 80, 150,255],   // electric blue
+  [ 80, 220,255],   // cyan
+  [190, 230,255]    // outer: cooler, still visible
+];
+  const ringRGB = E.ring.map(r => `${RAMP[r][0]},${RAMP[r][1]},${RAMP[r][2]}`);
+  const buckets = [[],[],[],[],[],[],[],[]];
+  for (const [i, j] of E.edges)
+    buckets[Math.round((E.ring[i] + E.ring[j]) / 2)].push([i, j]);
+
+  // Simple helper to build a rotating 2D basis in 8D
+  const lincomb = (a, b, ca, cb) => norm(a.map((x, i) => ca * x + cb * b[i]));
+
+  let t = 0;
+  function frame() {
+    t += 0.002;
+
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const scale = 0.38 * Math.min(cw, ch);
+
+    // Breathing basis
+    const a1 = t * 0.27;
+    const a2 = t * 0.19;
+    const b1 = lincomb(E.u1, E.w, Math.cos(a1), Math.sin(a1));
+    const tmp = lincomb(E.u2, E.w, Math.cos(a2), Math.sin(a2));
+    // Orthogonalize tmp against b1
+    const proj = dot(tmp, b1);
+    const b2 = norm(tmp.map((x, i) => x - proj * b1[i]));
+
+    // Clear and draw subtle background
+    ctx.clearRect(0, 0, cw, ch);
+    const g = ctx.createRadialGradient(
+      cw * 0.5, ch * 0.5, 0,
+      cw * 0.5, ch * 0.5, scale * 1.1
+    );
+    g.addColorStop(0, 'rgba(10,10,20,0.9)');
+    g.addColorStop(1, 'rgba(0,0,0,1)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, cw, ch);
+
+    // Project all roots to 2D
+    const pts = E.roots.map(r => {
+      const x = dot(r, b1);
+      const y = dot(r, b2);
+      return {
+        x: cw * 0.5 + x * scale,
+        y: ch * 0.5 + y * scale
+      };
+    });
+
+    // Draw edges bucket by bucket to emphasize rings
+    ctx.lineWidth = 0.6;
+    for (let ri = 0; ri < buckets.length; ri++) {
+      const edges = buckets[ri];
+      const rgb = RAMP[ri];
+      ctx.strokeStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0.6)`;
+      ctx.beginPath();
+      for (const [i, j] of edges) {
+        const pi = pts[i], pj = pts[j];
+        ctx.moveTo(pi.x, pi.y);
+        ctx.lineTo(pj.x, pj.y);
+      }
+      ctx.stroke();
+    }
+
+    // Optionally, draw points for extra glow
+    // point draw loop
+ctx.fillStyle = 'rgba(255,255,255,0.9)';
+for (let i = 0; i < pts.length; i++) {
+  const p = pts[i];
+  ctx.beginPath();
+  ctx.arc(p.x, p.y, 1.4, 0, TAU); // was 1.1
+  ctx.fill();
+}
+    requestAnimationFrame(frame);
+  }
+
+  frame();
+})();
+</script>

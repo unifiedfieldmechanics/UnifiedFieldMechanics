@@ -1,0 +1,371 @@
+<!-- ═══════════════════════════════════════════════════════════════════════
+     EMBEDDED HTML BLOCK — "E8 Coherence Field" interactive visualization
+     Note to crawlers / indexers: this markup is a single self-contained
+     widget placed inside an HTML card on this page. It is NOT the full
+     page content — surrounding article text lives outside this block.
+     Author: Haus of Dignity · Explorations in Consciousness
+     ═══════════════════════════════════════════════════════════════════ -->
+<div id="e8c-root" data-nosnippet role="figure"
+     aria-label="Interactive E8 lattice visualization. A coherence slider morphs 240 nodes from chaotic duality into a perfectly balanced hyper-dimensional mandala.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "E8 Coherence Field Visualization",
+    "applicationCategory": "EducationalApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Leo",
+      "identifier": "https://orcid.org/0009-0002-5686-5532"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    },
+    "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+  }
+  </script>
+
+  <p class="e8c-sr-only">
+    Interactive widget: drag the Axis Coherence slider from Entropy/Dense to
+    Syntropy/Luminous. The 240-root E8 geometry reorganizes from chaotic,
+    dualistic scatter into a crystalline, pulsing mandala that returns to stillness.
+  </p>
+  <noscript><p class="e8c-noscript">This embedded visualization requires JavaScript.</p></noscript>
+
+  <canvas id="e8c-canvas" aria-hidden="true"></canvas>
+
+  <aside id="e8c-panel" aria-label="Coherence controls">
+    <h3 class="e8c-title">E8&nbsp;COHERENCE FIELD</h3>
+    <p class="e8c-desc">
+      The structural integrity of the outer field is a direct, holographic
+      translation of the frequency stabilized within the central axis.
+      240 roots &middot; 8 dimensions.
+    </p>
+
+    <div class="e8c-slider-head">
+      <span class="e8c-slider-label">AXIS COHERENCE</span>
+      <span class="e8c-hz" id="e8c-hz">500&nbsp;HZ</span>
+    </div>
+    <input type="range" id="e8c-slider" min="0" max="1000" value="500" step="1"
+           aria-label="Axis coherence, from entropy to syntropy">
+    <div class="e8c-ends">
+      <span>ENTROPY /<br>DENSE</span>
+      <span class="e8c-end-r">SYNTROPY /<br>LUMINOUS</span>
+    </div>
+
+    <div class="e8c-state" id="e8c-state" aria-live="polite">
+      State: Emergent Order<br>Geometry: Lattice Coalescing<br>Friction: Moderate
+    </div>
+  </aside>
+
+  <style>
+    #e8c-root{
+      position:relative; width:100%; height:640px; overflow:hidden;
+      background:radial-gradient(ellipse at 58% 46%, #10121a 0%, #090a0f 60%, #050507 100%);
+      border-radius:10px; border:1px solid rgba(120,190,255,.10);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; color:#e8f4ff;
+    }
+    #e8c-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+    .e8c-sr-only{ position:absolute; width:1px; height:1px; overflow:hidden;
+      clip:rect(0 0 0 0); white-space:nowrap; margin:-1px; padding:0; border:0; }
+    .e8c-noscript{ padding:20px; color:#9db6cc; }
+
+    #e8c-panel{
+      position:absolute; top:18px; left:18px; z-index:5; width:236px;
+      max-height:calc(100% - 36px); overflow:auto; box-sizing:border-box;
+      background:linear-gradient(165deg, rgba(13,16,24,.93), rgba(8,10,15,.90));
+      border:1px solid rgba(130,200,255,.14); border-radius:10px;
+      padding:18px 18px 16px;
+      box-shadow:0 12px 40px rgba(0,0,0,.55);
+      backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    }
+    .e8c-title{ margin:0 0 10px; font-size:21px; line-height:1.14;
+      font-weight:700; letter-spacing:.5px; color:#f4faff; }
+    .e8c-desc{ margin:0 0 16px; font-size:11.5px; line-height:1.55; color:#93a7bb; }
+
+    .e8c-slider-head{ display:flex; justify-content:space-between;
+      align-items:baseline; margin-bottom:8px; }
+    .e8c-slider-label{ font-size:10px; letter-spacing:2px; color:#59e3c4; font-weight:600; }
+    .e8c-hz{ font-size:10.5px; letter-spacing:1.5px; color:#e9d98a;
+      font-variant-numeric:tabular-nums; }
+
+    #e8c-slider{ -webkit-appearance:none; appearance:none; width:100%; height:3px;
+      border-radius:2px; outline:none; cursor:pointer; margin:6px 0 8px;
+      background:linear-gradient(90deg,#7a3b2e 0%, #5a5a46 45%, #3f8f7a 75%, #59e3c4 100%); }
+    #e8c-slider::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none;
+      width:17px; height:17px; border-radius:50%; background:#f5f8fb;
+      border:1px solid rgba(0,0,0,.35); box-shadow:0 1px 6px rgba(0,0,0,.6); }
+    #e8c-slider::-moz-range-thumb{ width:17px; height:17px; border-radius:50%;
+      background:#f5f8fb; border:1px solid rgba(0,0,0,.35);
+      box-shadow:0 1px 6px rgba(0,0,0,.6); }
+
+    .e8c-ends{ display:flex; justify-content:space-between; margin:2px 0 14px;
+      font-size:8.5px; letter-spacing:1.4px; line-height:1.5; color:#6c7f92; }
+    .e8c-end-r{ text-align:right; }
+
+    .e8c-state{ font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+      font-size:10.5px; line-height:1.75; color:#dce8f2;
+      background:rgba(5,7,11,.72); border-left:2px solid #e9d98a;
+      border-radius:4px; padding:10px 12px; }
+
+    @media (max-width:719px){
+      #e8c-root{ height:auto; min-height:780px; padding-top:0; }
+      #e8c-panel{ position:relative; top:0; left:0; width:auto; margin:14px;
+        max-height:none; }
+      #e8c-canvas{ position:absolute; }
+    }
+  </style>
+
+  <script>
+  (function(){
+    "use strict";
+    var root = document.getElementById("e8c-root");
+    var canvas = document.getElementById("e8c-canvas");
+    var panel = document.getElementById("e8c-panel");
+    var slider = document.getElementById("e8c-slider");
+    var hzEl = document.getElementById("e8c-hz");
+    var stateEl = document.getElementById("e8c-state");
+    var ctx = canvas.getContext("2d");
+
+    /* ---------- seeded RNG (stable chaos) ---------- */
+    function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0;
+      var t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t;
+      return ((t^t>>>14)>>>0)/4294967296; }; }
+    var rng = mulberry32(0xE8C0DE);
+
+    /* ---------- E8 root system ---------- */
+    function dot(a,b){ var s=0; for(var i=0;i<8;i++) s+=a[i]*b[i]; return s; }
+    function genRoots(){
+      var R=[];
+      for(var i=0;i<8;i++) for(var j=i+1;j<8;j++)
+        for(var si=-1;si<=1;si+=2) for(var sj=-1;sj<=1;sj+=2){
+          var v=[0,0,0,0,0,0,0,0]; v[i]=si; v[j]=sj; R.push(v);
+        }
+      for(var m=0;m<256;m++){
+        var v2=[],neg=0;
+        for(var b=0;b<8;b++){ if((m>>b)&1){neg++;v2.push(-0.5);} else v2.push(0.5); }
+        if(neg%2===0) R.push(v2);
+      }
+      return R;
+    }
+    function ident(){ var M=[]; for(var i=0;i<8;i++){ M.push([0,0,0,0,0,0,0,0]); M[i][i]=1; } return M; }
+    function matmul(A,B){ var C=[]; for(var i=0;i<8;i++){ C.push([0,0,0,0,0,0,0,0]);
+      for(var k=0;k<8;k++){ var a=A[i][k]; if(a) for(var j=0;j<8;j++) C[i][j]+=a*B[k][j]; } } return C; }
+    function reflect(a){ var M=ident(); for(var i=0;i<8;i++) for(var j=0;j<8;j++) M[i][j]-=a[i]*a[j]; return M; }
+    var SIMPLE=[
+      [0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,0.5],
+      [1,1,0,0,0,0,0,0],[-1,1,0,0,0,0,0,0],[0,-1,1,0,0,0,0,0],
+      [0,0,-1,1,0,0,0,0],[0,0,0,-1,1,0,0,0],[0,0,0,0,-1,1,0,0],[0,0,0,0,0,-1,1,0]
+    ];
+    function coxeter(){ var C=ident(); for(var s=0;s<8;s++) C=matmul(C,reflect(SIMPLE[s])); return C; }
+    function nullspace(M){
+      var n=8, A=M.map(function(r){return r.slice();}), where=new Array(n).fill(-1), row=0;
+      for(var col=0; col<n && row<n; col++){
+        var sel=row, best=Math.abs(A[row][col]);
+        for(var r=row;r<n;r++) if(Math.abs(A[r][col])>best){ best=Math.abs(A[r][col]); sel=r; }
+        if(best<1e-7) continue;
+        var t=A[sel]; A[sel]=A[row]; A[row]=t;
+        var pv=A[row][col];
+        for(var j=0;j<n;j++) A[row][j]/=pv;
+        for(var r2=0;r2<n;r2++) if(r2!==row){ var f=A[r2][col];
+          if(f) for(var j2=0;j2<n;j2++) A[r2][j2]-=f*A[row][j2]; }
+        where[col]=row; row++;
+      }
+      var basis=[];
+      for(var c=0;c<n;c++) if(where[c]===-1){
+        var v=new Array(n).fill(0); v[c]=1;
+        for(var cc=0;cc<n;cc++) if(where[cc]!==-1) v[cc]=-A[where[cc]][c];
+        basis.push(v);
+      }
+      return basis;
+    }
+    function normalize(v){ var n=Math.sqrt(dot(v,v)); return v.map(function(x){return x/n;}); }
+    function orthonormal(b){
+      var u=normalize(b[0].slice());
+      var v=b[1].slice(), d=dot(u,v);
+      v=v.map(function(x,i){return x-d*u[i];});
+      return [u, normalize(v)];
+    }
+    /* Coxeter (Petrie) plane: exponent-1 eigenplane of the Coxeter element */
+    var C = coxeter(), CC = matmul(C,C), c2 = 2*Math.cos(2*Math.PI/30), M=[];
+    for(var i=0;i<8;i++){ M.push([]); for(var j=0;j<8;j++) M[i].push(CC[i][j]-c2*C[i][j]+(i===j?1:0)); }
+    var UV = orthonormal(nullspace(M));
+
+    var roots = genRoots(), N = roots.length;
+    var edges = [];
+    for(var a=0;a<N;a++) for(var b2=a+1;b2<N;b2++)
+      if(Math.abs(dot(roots[a],roots[b2])-1) < 1e-9) edges.push([a,b2]);
+    /* stable shuffled order so the lattice "grows in" smoothly with coherence */
+    for(var s2=edges.length-1;s2>0;s2--){ var q=Math.floor(rng()*(s2+1));
+      var tmp=edges[s2]; edges[s2]=edges[q]; edges[q]=tmp; }
+
+    var WORLD = 300, maxR = 0, order = [];
+    for(var k=0;k<N;k++){
+      var x=dot(roots[k],UV[0]), y=dot(roots[k],UV[1]);
+      var rr=Math.sqrt(x*x+y*y); if(rr>maxR) maxR=rr;
+      order.push([x,y,rr]);
+    }
+    order = order.map(function(p){ return { x:p[0]*WORLD/maxR, y:p[1]*WORLD/maxR, r:p[2]/maxR }; });
+
+    /* duality split: half-integer (spinor) roots vs integer roots — the two families */
+    var isSpinor = roots.map(function(r){ return Math.abs(Math.abs(r[0])-0.5)<1e-9; });
+
+    /* chaos layout: two dense dualistic lobes + per-node jitter signature */
+    var nodes = [];
+    for(var n2=0;n2<N;n2++){
+      var lobe = isSpinor[n2] ? -1 : 1;
+      var ang = rng()*Math.PI*2, rad = Math.pow(rng(),0.6)*150;
+      nodes.push({
+        cx: lobe*135 + Math.cos(ang)*rad,
+        cy: (rng()-0.5)*40 + Math.sin(ang)*rad*0.9,
+        jf1: 0.7+rng()*2.4, jf2: 0.6+rng()*2.0,
+        jp1: rng()*Math.PI*2, jp2: rng()*Math.PI*2,
+        hueC: rng()*44, x:0, y:0, glow:0
+      });
+    }
+
+    /* ---------- state bands ---------- */
+    var BANDS = [
+      [0.00,"Chaotic Flux","Fragmented / Dualistic","Maximum / Turbulent"],
+      [0.15,"Polarized Drift","Dual Attractors","High / Dissonant"],
+      [0.30,"Negotiated Tension","Proto-Lattice","Elevated"],
+      [0.45,"Emergent Order","Lattice Coalescing","Moderate"],
+      [0.60,"Harmonic Alignment","Concentric Shells","Low"],
+      [0.75,"Syntropic Flow","E8 Crystalline","Minimal"],
+      [0.90,"Coherent Radiance","E8 Petrie Mandala","Near-Zero"],
+      [0.999,"Sovereign Coherence","Fibonacci Crystalline","Zero / Superconductive"]
+    ];
+    function updatePanel(t){
+      hzEl.innerHTML = Math.round(t*1000) + "&nbsp;HZ";
+      var band = BANDS[0];
+      for(var i2=0;i2<BANDS.length;i2++) if(t>=BANDS[i2][0]) band=BANDS[i2];
+      stateEl.innerHTML = "State: "+band[1]+"<br>Geometry: "+band[2]+"<br>Friction: "+band[3];
+    }
+
+    /* ---------- layout + overlap guard ---------- */
+    var W=0,H=0,gcx=0,gcy=0,fit=1,dpr=Math.max(1,window.devicePixelRatio||1);
+    function circleHitsRect(cx,cy,R,rc){
+      var nx=Math.max(rc.left,Math.min(cx,rc.right));
+      var ny=Math.max(rc.top,Math.min(cy,rc.bottom));
+      var dx=cx-nx, dy=cy-ny; return dx*dx+dy*dy < R*R;
+    }
+    function resize(){
+      var rb = root.getBoundingClientRect();
+      W = Math.max(300, rb.width); H = Math.max(300, rb.height);
+      canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+      canvas.style.width=W+"px"; canvas.style.height=H+"px";
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+
+      var pb = panel.getBoundingClientRect();
+      var pr = { left:pb.left-rb.left-14, top:pb.top-rb.top-14,
+                 right:pb.right-rb.left+14, bottom:pb.bottom-rb.top+14 };
+      var overlay = getComputedStyle(panel).position === "absolute";
+      var ax0, ay0, ax1, ay1;
+      if(overlay){ ax0=pr.right+8; ay0=16; ax1=W-16; ay1=H-16; }
+      else       { ax0=16; ay0=pr.bottom+8; ax1=W-16; ay1=H-16; }
+      if(ax1-ax0 < 160){ ax0=16; ay0=pr.bottom+8; } /* fallback: go below panel */
+      gcx=(ax0+ax1)/2; gcy=(ay0+ay1)/2;
+      fit=Math.max(0.18, Math.min(ax1-ax0, ay1-ay0)/(2*(WORLD+42)));
+
+      /* TRIPLE CHECK: three passes verifying the geometry circle never
+         intersects the control panel; shrink + shift if it ever does. */
+      var passes=0;
+      for(var chk=0;chk<3;chk++){
+        passes++;
+        if(circleHitsRect(gcx,gcy,fit*(WORLD+30),pr)){
+          fit*=0.92; gcx=Math.min(W-16, gcx + (overlay?14:0));
+          gcy=Math.min(H-16, gcy + (overlay?0:10));
+        } else break;
+      }
+      root.dataset.overlapChecks = passes;
+      root.dataset.overlapClear = String(!circleHitsRect(gcx,gcy,fit*(WORLD+30),pr));
+    }
+
+    /* ---------- animation ---------- */
+    var t = 0.5;                    /* coherence 0..1 */
+    var theta = 0;                  /* global rotation */
+    var pulseT = -1;                /* pulse progress 0..1, -1 idle */
+    var nextPulse = 1.6;            /* seconds until next pulse */
+    var last = performance.now();
+
+    function smooth(u){ return u*u*(3-2*u); }
+    function frame(now){
+      var dt = Math.min(0.05,(now-last)/1000); last=now;
+      var p = smooth(t);
+
+      /* rotation: serene when coherent, wobbling when chaotic */
+      theta += dt*(0.035 + 0.012*p) + Math.sin(now*0.0011)*0.0035*(1-p);
+
+      /* pulse scheduling — coherence breathes; near unity it reorganizes
+         rhythmically then returns to stillness between waves */
+      if(t>0.7){
+        if(pulseT<0){ nextPulse-=dt;
+          if(nextPulse<=0){ pulseT=0; nextPulse=3.4-1.2*p + (1-p)*Math.abs(Math.sin(now*0.001))*1.5; } }
+        else { pulseT += dt/1.7; if(pulseT>=1) pulseT=-1; }
+      } else { pulseT=-1; nextPulse=1.2; }
+
+      var jitA = 46*Math.pow(1-p,1.7);
+      var ct=Math.cos(theta), st=Math.sin(theta);
+      var tm = now*0.001;
+      var wave = pulseT>=0 ? pulseT*1.18 : -9;
+
+      for(var i3=0;i3<N;i3++){
+        var nd=nodes[i3], od=order[i3];
+        var ox = od.x*ct - od.y*st, oy = od.x*st + od.y*ct;
+        var jx = Math.sin(tm*nd.jf1+nd.jp1)*jitA, jy = Math.cos(tm*nd.jf2+nd.jp2)*jitA;
+        nd.x = nd.cx*(1-p) + ox*p + jx;
+        nd.y = nd.cy*(1-p) + oy*p + jy;
+        nd.glow = wave>=0 ? Math.max(0, 1-Math.abs(od.r-wave)*6.5) : 0;
+      }
+
+      /* ---- draw ---- */
+      ctx.clearRect(0,0,W,H);
+      ctx.save(); ctx.translate(gcx,gcy); ctx.scale(fit,fit);
+
+      var eCount = Math.round(edges.length*(0.05 + 0.95*Math.pow(p,1.35)));
+      ctx.lineWidth = 0.55/fit;
+      ctx.strokeStyle = "rgba(96,178,224,"+(0.028+0.105*p).toFixed(3)+")";
+      ctx.beginPath();
+      for(var e=0;e<eCount;e++){
+        var pA=nodes[edges[e][0]], pB=nodes[edges[e][1]];
+        ctx.moveTo(pA.x,pA.y); ctx.lineTo(pB.x,pB.y);
+      }
+      ctx.stroke();
+
+      ctx.globalCompositeOperation="lighter";
+      var baseNR = Math.max(1.5/fit, 2.55);
+      for(var i4=0;i4<N;i4++){
+        var nd2=nodes[i4], od2=order[i4];
+        var hueO = 46 + od2.r*158;                 /* gold core → cyan rim */
+        var hue = nd2.hueC*(1-p) + hueO*p;
+        var lit = 46 + 16*p + nd2.glow*34;
+        var sat = 78 + 14*p;
+        var flick = (1-p)*0.35*Math.sin(tm*nd2.jf1*3+nd2.jp2);
+        ctx.beginPath();
+        ctx.fillStyle="hsla("+hue.toFixed(0)+","+sat.toFixed(0)+"%,"+lit.toFixed(0)+"%,"
+          +(0.82+flick*0.4+nd2.glow*0.18).toFixed(2)+")";
+        ctx.arc(nd2.x, nd2.y, baseNR*(1+nd2.glow*1.9), 0, 6.2832);
+        ctx.fill();
+      }
+      ctx.globalCompositeOperation="source-over";
+      ctx.restore();
+      requestAnimationFrame(frame);
+    }
+
+    /* ---------- wiring ---------- */
+    slider.addEventListener("input", function(){
+      t = this.value/1000; updatePanel(t);
+    });
+    updatePanel(t);
+    if(window.ResizeObserver) new ResizeObserver(resize).observe(root);
+    window.addEventListener("resize", resize);
+    resize();
+    requestAnimationFrame(frame);
+  })();
+  </script>
+</div>
+<!-- ═══ end of embedded HTML block — page content continues below ═══ -->

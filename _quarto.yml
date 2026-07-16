@@ -20,20 +20,24 @@ website:
     left:
       - href: index.md
         text: Home
-      - href: UnifiedFieldMechanics_Post1.md
-        text: Planck-Scale Dynamics
-      - href: Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md
-        text: Resonant Synthesis
-      - href: Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.md
-        text: Zero-Impedance
-      - href: Systemic-Architecture-of-Phase-Space-Projections.md
-        text: Phase-Space Projections
-      - href: Resonant-Synthesis-of-Unconditioned-Energy-Plasma-to-Matter.md
-        text: Plasma to Matter
-      - href: The-Physics-of-Consciousness-and-the-Zero-Impedance-Node.md
-        text: Zero-Impedance Node
-      - href: Phase-Space-Translation-The-Mechanics-of-the-Harmonic-Aperture.md
-        text: Mechanics of the Harmonic Aperture
+      - text: "Research Directory"
+        menu:
+          - href: UnifiedFieldMechanics_Post1.md
+            text: Planck-Scale Dynamics
+          - href: Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.md
+            text: Resonant Synthesis
+          - href: Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.md
+            text: Zero-Impedance
+          - href: Systemic-Architecture-of-Phase-Space-Projections.md
+            text: Phase-Space Projections
+          - href: Resonant-Synthesis-of-Unconditioned-Energy-Plasma-to-Matter.md
+            text: Plasma to Matter
+          - href: The-Physics-of-Consciousness-and-the-Zero-Impedance-Node.md
+            text: Zero-Impedance Node
+          - href: Phase-Space-Translation-The-Mechanics-of-the-Harmonic-Aperture.md
+            text: Mechanics of the Harmonic Aperture
+      - href: Interactive-Tools.md
+        text: Interactive Tools
       - href: Unified-Field-Mechanics-Release-Notes-v1.0.0.md
         text: Releases
       - href: AI-Ingestion-and-Crawl-Directory.md

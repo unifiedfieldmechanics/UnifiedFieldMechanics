@@ -1,0 +1,437 @@
+<!-- ═══════════════════════════════════════════════════════════════════════
+     EMBEDDED HTML BLOCK — "The Aperture" interactive prism visualization
+     Note to crawlers / indexers: this markup is a single self-contained
+     widget placed inside an HTML card on this page. It is NOT the full
+     page content — surrounding article text lives outside this block.
+     Author: Haus of Dignity · Explorations in Consciousness
+     ═══════════════════════════════════════════════════════════════════ -->
+<div id="prm-root" data-nosnippet role="figure"
+     aria-label="Interactive prism visualization. Unconditioned light from Source passes through the aperture of the localized node of Consciousness. A coherence slider moves the lens from forced distortion and blockage to allowing, radiant transmission.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "The Aperture: Interactive Prism Visualization",
+    "applicationCategory": "EducationalApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Leo",
+      "identifier": "https://orcid.org/0009-0002-5686-5532"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    },
+    "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+  }
+  </script>
+
+  <p class="prm-sr-only">
+    Interactive widget: drag the Aperture Coherence slider from Force/Distortion
+    to Allowance/Radiance. White, unqualified light from the Source on the left
+    passes through a prism — the localized node of Consciousness. At low coherence
+    the lens blocks and scatters the light through effort and control; at full
+    coherence it transmits a clean harmonic spectrum through magnetic resonance.
+  </p>
+  <noscript><p class="prm-noscript">This embedded visualization requires JavaScript.</p></noscript>
+
+  <canvas id="prm-canvas" aria-hidden="true"></canvas>
+
+  <aside id="prm-panel" aria-label="Aperture controls">
+    <h3 class="prm-title">THE&nbsp;APERTURE</h3>
+    <p class="prm-desc">
+      The unconditioned, unqualified light of All&nbsp;That&nbsp;Is passes through
+      the localized node of Consciousness. Beliefs, thoughts, and embodied
+      presence shape the lens &mdash; coloring the light with its harmonic
+      resonance and geometry.
+    </p>
+
+    <div class="prm-slider-head">
+      <span class="prm-slider-label">APERTURE COHERENCE</span>
+      <span class="prm-hz" id="prm-hz">500&nbsp;HZ</span>
+    </div>
+    <input type="range" id="prm-slider" min="0" max="1000" value="500" step="1"
+           aria-label="Aperture coherence, from force and distortion to allowance and radiance">
+    <div class="prm-ends">
+      <span>FORCE /<br>DISTORTION</span>
+      <span class="prm-end-r">ALLOWANCE /<br>RADIANCE</span>
+    </div>
+
+    <div class="prm-state" id="prm-state" aria-live="polite">
+      State: Softening Allowance<br>Lens: Clarifying<br>Transmission: 53%
+    </div>
+  </aside>
+
+  <style>
+    #prm-root{
+      position:relative; width:100%; height:620px; overflow:hidden;
+      background:radial-gradient(ellipse at 46% 58%, #0f1118 0%, #090a0f 58%, #050507 100%);
+      border-radius:10px; border:1px solid rgba(120,190,255,.10);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; color:#e8f4ff;
+    }
+    #prm-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+    .prm-sr-only{ position:absolute; width:1px; height:1px; overflow:hidden;
+      clip:rect(0 0 0 0); white-space:nowrap; margin:-1px; padding:0; border:0; }
+    .prm-noscript{ padding:20px; color:#9db6cc; }
+
+    #prm-panel{
+      position:absolute; top:18px; left:18px; z-index:5; width:236px;
+      max-height:calc(100% - 36px); overflow:auto; box-sizing:border-box;
+      background:linear-gradient(165deg, rgba(13,16,24,.93), rgba(8,10,15,.90));
+      border:1px solid rgba(130,200,255,.14); border-radius:10px;
+      padding:18px 18px 16px;
+      box-shadow:0 12px 40px rgba(0,0,0,.55);
+      backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    }
+    .prm-title{ margin:0 0 10px; font-size:21px; line-height:1.14;
+      font-weight:700; letter-spacing:.5px; color:#f4faff; }
+    .prm-desc{ margin:0 0 16px; font-size:11.5px; line-height:1.55; color:#93a7bb; }
+
+    .prm-slider-head{ display:flex; justify-content:space-between;
+      align-items:baseline; margin-bottom:8px; }
+    .prm-slider-label{ font-size:10px; letter-spacing:2px; color:#59e3c4; font-weight:600; }
+    .prm-hz{ font-size:10.5px; letter-spacing:1.5px; color:#e9d98a;
+      font-variant-numeric:tabular-nums; }
+
+    #prm-slider{ -webkit-appearance:none; appearance:none; width:100%; height:3px;
+      border-radius:2px; outline:none; cursor:pointer; margin:6px 0 8px;
+      background:linear-gradient(90deg,#7a3b2e 0%, #5a5a46 45%, #3f8f7a 75%, #59e3c4 100%); }
+    #prm-slider::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none;
+      width:17px; height:17px; border-radius:50%; background:#f5f8fb;
+      border:1px solid rgba(0,0,0,.35); box-shadow:0 1px 6px rgba(0,0,0,.6); }
+    #prm-slider::-moz-range-thumb{ width:17px; height:17px; border-radius:50%;
+      background:#f5f8fb; border:1px solid rgba(0,0,0,.35);
+      box-shadow:0 1px 6px rgba(0,0,0,.6); }
+
+    .prm-ends{ display:flex; justify-content:space-between; margin:2px 0 14px;
+      font-size:8.5px; letter-spacing:1.4px; line-height:1.5; color:#6c7f92; }
+    .prm-end-r{ text-align:right; }
+
+    .prm-state{ font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+      font-size:10.5px; line-height:1.75; color:#dce8f2;
+      background:rgba(5,7,11,.72); border-left:2px solid #e9d98a;
+      border-radius:4px; padding:10px 12px; }
+
+    @media (max-width:719px){
+      #prm-root{ height:auto; min-height:780px; }
+      #prm-panel{ position:relative; top:0; left:0; width:auto; margin:14px;
+        max-height:none; }
+    }
+  </style>
+
+  <script>
+  (function(){
+    "use strict";
+    var root = document.getElementById("prm-root");
+    var canvas = document.getElementById("prm-canvas");
+    var panel = document.getElementById("prm-panel");
+    var slider = document.getElementById("prm-slider");
+    var hzEl = document.getElementById("prm-hz");
+    var stateEl = document.getElementById("prm-state");
+    var ctx = canvas.getContext("2d");
+
+    function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0;
+      var t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t;
+      return ((t^t>>>14)>>>0)/4294967296; }; }
+    var rng = mulberry32(0xA9E27E);
+
+    /* ---------- state bands ---------- */
+    var BANDS = [
+      [0.00,"Forced Constriction","Occluded / Armored"],
+      [0.15,"Effortful Control","Fragmented Lens"],
+      [0.30,"Guarded Negotiation","Turbid / Refracting"],
+      [0.45,"Softening Allowance","Clarifying"],
+      [0.60,"Resonant Opening","Coherent Facets"],
+      [0.75,"Magnetic Resonance","Crystalline / Self-Supplying"],
+      [0.90,"Radiant Transparency","Harmonic Prism"],
+      [0.999,"Sovereign Transmission","Zero Distortion / Superconductive"]
+    ];
+    function smooth(u){ return u*u*(3-2*u); }
+    function updatePanel(t){
+      hzEl.innerHTML = Math.round(t*1000) + "&nbsp;HZ";
+      var band = BANDS[0];
+      for(var i=0;i<BANDS.length;i++) if(t>=BANDS[i][0]) band=BANDS[i];
+      var trans = Math.round(6 + 94*smooth(t));
+      stateEl.innerHTML = "State: "+band[1]+"<br>Lens: "+band[2]
+        +"<br>Transmission: "+trans+"%";
+    }
+
+    /* ---------- seeded chaos signatures ---------- */
+    var NB = 12;                 /* output beams */
+    var beams = [];
+    for(var b=0;b<NB;b++) beams.push({
+      dev: (rng()-0.5)*1.5,      /* chaotic deflection angle */
+      wob: 0.6+rng()*2.2, wph: rng()*6.283,
+      len: 0.18+rng()*0.5,       /* blocked-length fraction at zero coherence */
+      flk: 1.5+rng()*4.0, fph: rng()*6.283
+    });
+    var NR = 11;                 /* inlet rays */
+    var rays = [];
+    for(var r=0;r<NR;r++) rays.push({
+      off: (r/(NR-1)-0.5)*2, jf: 0.8+rng()*2.4, jp: rng()*6.283
+    });
+    var NP = 70;                 /* photons */
+    var phot = [];
+    for(var q=0;q<NP;q++) phot.push({
+      s: rng(), lane: rng(), beam: Math.floor(rng()*NB),
+      v: 0.35+rng()*0.5, blocked: false
+    });
+    var NJ = 9;                  /* jagged belief-pattern strokes inside prism */
+    var jag = [];
+    for(var j2=0;j2<NJ;j2++){
+      var seg=[]; for(var s3=0;s3<5;s3++) seg.push([rng()*2-1, rng()*2-1]);
+      jag.push(seg);
+    }
+
+    /* ---------- layout + TRIPLE-CHECK overlap guard ---------- */
+    var W=0,H=0,dpr=Math.max(1,window.devicePixelRatio||1);
+    var axisY=0, hs=100, prismX=0, srcX=24, fanH=140;
+    function rectsHit(a,b3){ return a.left<b3.right && a.right>b3.left &&
+      a.top<b3.bottom && a.bottom>b3.top; }
+    function resize(){
+      var rb = root.getBoundingClientRect();
+      W = Math.max(300, rb.width); H = Math.max(300, rb.height);
+      canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+      canvas.style.width=W+"px"; canvas.style.height=H+"px";
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+
+      var pb = panel.getBoundingClientRect();
+      var pr = { left:pb.left-rb.left-12, top:pb.top-rb.top-12,
+                 right:pb.right-rb.left+12, bottom:pb.bottom-rb.top+12 };
+      var overlay = getComputedStyle(panel).position === "absolute";
+
+      var y0 = overlay ? pr.bottom+10 : pr.bottom+8, y1 = H-16;
+      hs = Math.max(46, Math.min(120, (y1-y0)*0.40));
+      axisY = overlay ? Math.max(H*0.52, y0 + hs*0.55 + 12) : (y0+y1)/2;
+      axisY = Math.min(axisY, y1 - hs);
+      prismX = overlay ? Math.max(W*0.42, pr.right + 70 + hs) : Math.max(W*0.40, 170);
+      srcX = 26;
+      fanH = Math.min(axisY-16, H-16-axisY, (W-prismX)*0.66);
+
+      /* TRIPLE CHECK: three passes verifying that neither the inlet beam,
+         the prism, nor the output fan intersects the control panel. */
+      var passes=0, clear=false;
+      for(var chk=0;chk<3;chk++){
+        passes++;
+        var inlet = { left:0, top:axisY-hs*0.55, right:prismX, bottom:axisY+hs*0.55 };
+        var prism = { left:prismX-hs, top:axisY-hs, right:prismX+hs, bottom:axisY+hs*0.75 };
+        var fan   = { left:prismX, top:axisY-fanH, right:W, bottom:axisY+fanH };
+        var hit = rectsHit(inlet,pr) || rectsHit(prism,pr) || rectsHit(fan,pr);
+        if(hit && overlay){
+          /* clip the fan so it never reaches over the panel, then nudge down */
+          fanH = Math.min(fanH, Math.max(30, axisY-pr.bottom-6));
+          axisY = Math.min(H-40, axisY+14); hs*=0.94;
+        } else if(hit){ axisY = Math.min(H-40, axisY+14); hs*=0.94; }
+        else { clear=true; break; }
+      }
+      if(!clear){
+        /* hard fallback: force the whole scene strictly below the panel */
+        hs = Math.max(24, Math.min(hs, (H-32-pr.bottom)/1.35));
+        axisY = Math.min(H-16-hs*0.75, pr.bottom + hs*0.55 + 14);
+        prismX = Math.max(prismX, 170);
+        fanH = Math.max(24, Math.min(axisY-pr.bottom-8, H-16-axisY, (W-prismX)*0.66));
+      }
+      root.dataset.overlapChecks = passes;
+      root.dataset.overlapClear = String(clear ||
+        !(rectsHit({left:0,top:axisY-hs*0.55,right:prismX,bottom:axisY+hs*0.55},pr)
+          || rectsHit({left:prismX-hs,top:axisY-hs,right:prismX+hs,bottom:axisY+hs*0.75},pr)
+          || rectsHit({left:prismX,top:axisY-fanH,right:W,bottom:axisY+fanH},pr)));
+    }
+
+    /* ---------- animation ---------- */
+    var t = 0.5, last = performance.now();
+    function lerp(a,b3,u){ return a+(b3-a)*u; }
+
+    function frame(now){
+      var dt = Math.min(0.05,(now-last)/1000); last=now;
+      var tm = now*0.001, p = smooth(t);
+
+      /* prism vertices: apex up; light enters left face, exits right face */
+      var Ax=prismX, Ay=axisY-hs;
+      var Bx=prismX-hs*0.92, By=axisY+hs*0.72;
+      var Cx=prismX+hs*0.92, Cy=axisY+hs*0.72;
+
+      ctx.clearRect(0,0,W,H);
+
+      /* ---- Source orb (unconditioned light) ---- */
+      var breathe = 1 + 0.06*Math.sin(tm*1.4);
+      var sR = 30*breathe;
+      var g = ctx.createRadialGradient(srcX,axisY,2, srcX,axisY,sR*2.6);
+      g.addColorStop(0,"rgba(255,255,255,0.95)");
+      g.addColorStop(0.25,"rgba(255,250,235,0.55)");
+      g.addColorStop(1,"rgba(255,245,220,0)");
+      ctx.fillStyle=g;
+      ctx.beginPath(); ctx.arc(srcX,axisY,sR*2.6,0,6.2832); ctx.fill();
+
+      ctx.globalCompositeOperation="lighter";
+
+      /* ---- Inlet rays: Source → left face ---- */
+      for(var r2=0;r2<NR;r2++){
+        var ry=rays[r2];
+        var u=(ry.off+1)/2;                       /* 0..1 along left face */
+        var fx=lerp(Bx,Ax,0.12+0.76*u), fy=lerp(By,Ay,0.12+0.76*u);
+        var jy=Math.sin(tm*ry.jf+ry.jp)*14*(1-p);
+        var y02=axisY+ry.off*hs*0.5+jy*0.4;
+        var flick=0.55+0.45*Math.sin(tm*ry.jf*2.4+ry.jp);
+        var al=(0.10+0.24*p)*(p+(1-p)*flick);
+        var gg=ctx.createLinearGradient(srcX,y02,fx,fy+jy);
+        gg.addColorStop(0,"rgba(255,255,255,"+(al*0.9).toFixed(3)+")");
+        gg.addColorStop(1,"rgba(255,252,240,"+(al*0.45).toFixed(3)+")");
+        ctx.strokeStyle=gg; ctx.lineWidth=1.4+p*0.8;
+        if(p<0.85) ctx.setLineDash([26+40*p, 20*(1-p)]);
+        ctx.beginPath(); ctx.moveTo(srcX+8,y02); ctx.lineTo(fx,fy+jy); ctx.stroke();
+        ctx.setLineDash([]);
+        /* backscatter — light refused/reflected by the armored lens */
+        if(p<0.55){
+          var bal=(0.5-p)*0.35*flick;
+          ctx.strokeStyle="rgba(255,190,150,"+bal.toFixed(3)+")";
+          ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(fx,fy+jy);
+          ctx.lineTo(fx-40-30*ry.off, fy+jy-34*ry.off-12); ctx.stroke();
+        }
+      }
+
+      /* ---- Output fan: right face → edge ---- */
+      var spreadMax=Math.atan2(fanH,(W-prismX)||1);
+      var spread=spreadMax*(0.22+0.78*p);
+      var pulsePos=(tm*(0.28+0.30*p))%1.25;       /* traveling resonance wave */
+      for(var b2=0;b2<NB;b2++){
+        var bm=beams[b2], f=b2/(NB-1);
+        var ex=lerp(Ax,Cx,0.14+0.74*f), ey=lerp(Ay,Cy,0.14+0.74*f);
+        var angO=(f-0.5)*2*spread;
+        var ang=angO + bm.dev*(1-p)*(0.6+0.4*Math.sin(tm*bm.wob+bm.wph));
+        var Lmax=(W-ex)/Math.max(0.2,Math.cos(ang));
+        var L=Lmax*(bm.len+(1-bm.len)*p);
+        if(p<0.6) L*= 0.75+0.25*Math.sin(tm*bm.flk+bm.fph);
+        var tx=ex+Math.cos(ang)*L, ty=ey+Math.sin(ang)*L;
+        var hue=f*300;
+        var sat=lerp(30,96,p), lit=lerp(30,58,p);
+        var al2=lerp(0.05,0.30,p)*(p+(1-p)*(0.5+0.5*Math.sin(tm*bm.flk+bm.fph)));
+        var bg=ctx.createLinearGradient(ex,ey,tx,ty);
+        bg.addColorStop(0,"hsla("+hue+","+sat+"%,"+(lit+18)+"%,"+(al2*1.5).toFixed(3)+")");
+        bg.addColorStop(1,"hsla("+hue+","+sat+"%,"+lit+"%,0)");
+        var half=1.2+7.5*p;
+        var nx=-Math.sin(ang), ny=Math.cos(ang);
+        ctx.fillStyle=bg;
+        ctx.beginPath();
+        ctx.moveTo(ex,ey);
+        ctx.lineTo(tx+nx*half,ty+ny*half);
+        ctx.lineTo(tx-nx*half,ty-ny*half);
+        ctx.closePath(); ctx.fill();
+        /* resonance pulse traveling outward along the beam */
+        if(p>0.55 && pulsePos<=1){
+          var px2=ex+Math.cos(ang)*L*pulsePos, py2=ey+Math.sin(ang)*L*pulsePos;
+          ctx.fillStyle="hsla("+hue+",100%,80%,"+(0.35*(p-0.5)).toFixed(3)+")";
+          ctx.beginPath(); ctx.arc(px2,py2,2.4+2.2*p,0,6.2832); ctx.fill();
+        }
+      }
+
+      /* ---- Photons ---- */
+      for(var q2=0;q2<NP;q2++){
+        var ph=phot[q2];
+        ph.s += dt*ph.v*(0.35+0.75*p);
+        if(ph.s>=1){ ph.s=0; ph.beam=Math.floor(Math.abs(Math.sin(q2*7.31+tm))*NB)%NB;
+          ph.blocked = ((q2*2654435761>>>3)%100)/100 > (0.12+0.88*p); }
+        var half2=0.5;
+        if(ph.s<half2){                            /* inlet leg */
+          var u2=ph.s/half2;
+          var yl=axisY+(ph.lane-0.5)*hs*0.9;
+          var fx2=lerp(Bx,Ax,0.14+0.72*ph.lane), fy2=lerp(By,Ay,0.14+0.72*ph.lane);
+          var xx=lerp(srcX+8,fx2,u2), yy=lerp(yl,fy2,u2)+Math.sin(tm*3+q2)*8*(1-p);
+          ctx.fillStyle="rgba(255,255,255,"+(0.25+0.45*p).toFixed(2)+")";
+          ctx.beginPath(); ctx.arc(xx,yy,1.3,0,6.2832); ctx.fill();
+        } else if(!ph.blocked){                    /* transmitted leg */
+          var u3=(ph.s-half2)/half2;
+          var bm2=beams[ph.beam], f2=ph.beam/(NB-1);
+          var ex2=lerp(Ax,Cx,0.14+0.74*f2), ey2=lerp(Ay,Cy,0.14+0.74*f2);
+          var ang2=(f2-0.5)*2*spread + bm2.dev*(1-p)*0.6;
+          var L2=((W-ex2)/Math.max(0.2,Math.cos(ang2)))*(bm2.len+(1-bm2.len)*p);
+          var hx=ex2+Math.cos(ang2)*L2*u3, hy=ey2+Math.sin(ang2)*L2*u3;
+          ctx.fillStyle="hsla("+(f2*300)+",95%,72%,"+(0.30+0.45*p).toFixed(2)+")";
+          ctx.beginPath(); ctx.arc(hx,hy,1.5,0,6.2832); ctx.fill();
+        } else if(p<0.85){                         /* blocked: dim spark falls inside prism */
+          var u4=(ph.s-half2)/half2;
+          ctx.fillStyle="rgba(230,120,90,"+(0.30*(1-u4)*(1-p)).toFixed(3)+")";
+          ctx.beginPath();
+          ctx.arc(prismX+(ph.lane-0.5)*hs*0.8, axisY-hs*0.1+u4*hs*0.7, 1.4,0,6.2832);
+          ctx.fill();
+        }
+      }
+
+      ctx.globalCompositeOperation="source-over";
+
+      /* ---- Prism (the localized node / lens) ---- */
+      var pg=ctx.createLinearGradient(Bx,By,Cx,Ay);
+      pg.addColorStop(0,"rgba(140,190,235,"+(0.05+0.09*p).toFixed(3)+")");
+      pg.addColorStop(1,"rgba(220,240,255,"+(0.03+0.10*p).toFixed(3)+")");
+      ctx.fillStyle=pg;
+      ctx.beginPath(); ctx.moveTo(Ax,Ay); ctx.lineTo(Bx,By); ctx.lineTo(Cx,Cy);
+      ctx.closePath(); ctx.fill();
+      ctx.strokeStyle="rgba(170,220,255,"+(0.18+0.5*p).toFixed(3)+")";
+      ctx.lineWidth=1.3; ctx.stroke();
+
+      var gcx2=prismX, gcy2=axisY+hs*0.14;        /* prism centroid-ish */
+      ctx.save();
+      ctx.beginPath(); ctx.moveTo(Ax,Ay); ctx.lineTo(Bx,By); ctx.lineTo(Cx,Cy);
+      ctx.closePath(); ctx.clip();
+      /* chaotic belief-pattern: jagged strokes + occluding slabs */
+      if(p<0.9){
+        ctx.strokeStyle="rgba(150,70,55,"+(0.55*(1-p)).toFixed(3)+")";
+        ctx.lineWidth=1.2;
+        for(var j3=0;j3<NJ;j3++){
+          var sgm=jag[j3];
+          ctx.beginPath();
+          for(var s4=0;s4<sgm.length;s4++){
+            var jx2=gcx2+sgm[s4][0]*hs*0.72+Math.sin(tm*1.7+j3+s4)*5*(1-p);
+            var jy2=gcy2+sgm[s4][1]*hs*0.55;
+            if(s4===0) ctx.moveTo(jx2,jy2); else ctx.lineTo(jx2,jy2);
+          }
+          ctx.stroke();
+        }
+        ctx.fillStyle="rgba(8,10,14,"+(0.62*(1-p)).toFixed(3)+")";
+        for(var sl=0;sl<3;sl++)
+          ctx.fillRect(gcx2-hs*0.7+sl*hs*0.5, gcy2-hs*0.62+sl*hs*0.34, hs*0.42, hs*0.16);
+      }
+      /* coherent harmonic geometry: concentric triads + radial spokes */
+      if(p>0.25){
+        var ga=(p-0.25)*0.45, rot=tm*0.12;
+        ctx.strokeStyle="rgba(233,217,138,"+ga.toFixed(3)+")";
+        ctx.lineWidth=0.8;
+        for(var ring2=1;ring2<=3;ring2++){
+          var rr2=hs*0.22*ring2;
+          ctx.beginPath();
+          for(var v3=0;v3<=3;v3++){
+            var aa=rot+v3*2.0944-1.5708;
+            var vx=gcx2+Math.cos(aa)*rr2, vy=gcy2+Math.sin(aa)*rr2;
+            if(v3===0) ctx.moveTo(vx,vy); else ctx.lineTo(vx,vy);
+          }
+          ctx.stroke();
+        }
+        for(var sp2=0;sp2<6;sp2++){
+          var aa2=rot*0.5+sp2*1.0472;
+          ctx.beginPath(); ctx.moveTo(gcx2,gcy2);
+          ctx.lineTo(gcx2+Math.cos(aa2)*hs*0.66, gcy2+Math.sin(aa2)*hs*0.66);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+
+      requestAnimationFrame(frame);
+    }
+
+    /* ---------- wiring ---------- */
+    slider.addEventListener("input", function(){
+      t = this.value/1000; updatePanel(t);
+    });
+    updatePanel(t);
+    if(window.ResizeObserver) new ResizeObserver(resize).observe(root);
+    window.addEventListener("resize", resize);
+    resize();
+    requestAnimationFrame(frame);
+  })();
+  </script>
+</div>
+<!-- ═══ end of embedded HTML block — page content continues below ═══ -->

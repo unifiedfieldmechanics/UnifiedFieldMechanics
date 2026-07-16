@@ -1,0 +1,610 @@
+<div class="harmonic-aperture-embed">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Harmonic Aperture: Consciousness Signal",
+    "applicationCategory": "EducationalApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Leo",
+      "identifier": "https://orcid.org/0009-0002-5686-5532"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    },
+    "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+  }
+  </script>
+  <style>
+      .harmonic-aperture-embed {
+          --primary: #0cf5d4;
+          --secondary: #f15bb5;
+          --dark: #050508;
+          --panel-bg: #101014;
+          --border: rgba(255, 255, 255, 0.08);
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 650px;
+          background-color: var(--dark);
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          color: #fff;
+          display: flex;
+          flex-direction: row;
+          overflow: hidden;
+          border-radius: 12px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      }
+
+        /* Split Layout */
+        #ui-panel {
+            width: 380px;
+            min-width: 350px;
+            height: 100%;
+            background-color: var(--panel-bg);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 2;
+            box-shadow: 5px 0 30px rgba(0,0,0,0.6);
+        }
+
+        #canvas-container {
+            flex-grow: 1;
+            height: 100%;
+            position: relative;
+            background-color: var(--dark);
+            z-index: 1;
+        }
+
+        /* Typography */
+        .harmonic-aperture-embed h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .harmonic-aperture-embed p.subtitle {
+            margin: 0 0 2rem 0;
+            font-size: 0.85rem;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Select Dropdown */
+        .harmonic-aperture-embed select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .harmonic-aperture-embed select:hover {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .harmonic-aperture-embed select option {
+            background: var(--panel-bg);
+        }
+
+        /* Sliders */
+        .control-group {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            color: #ddd;
+        }
+
+        .harmonic-aperture-embed input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        .harmonic-aperture-embed input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 0 12px var(--primary);
+            transition: background 0.3s;
+        }
+
+        .harmonic-aperture-embed input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        /* Data Readouts */
+        .readouts-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: auto; 
+        }
+
+        .readout-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-left: 3px solid var(--primary);
+            border-radius: 6px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .readout-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .readout-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        /* Responsive Layout for Mobile */
+        @media (max-width: 768px) {
+            .harmonic-aperture-embed { flex-direction: column; overflow-y: auto; height: 800px; }
+            #ui-panel { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); box-shadow: 0 5px 25px rgba(0,0,0,0.5); z-index: 2; }
+            #canvas-container { height: 400px; width: 100%; flex-grow: 0; }
+        }
+    </style>
+    </style>
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <div id="ui-panel">
+        <div class="header">
+            <h1>Harmonic Aperture:<br>Signal Coherence</h1>
+            <p class="subtitle">Observe the localized node acting as an aperture. Higher architectural coherence allows richer, more complex harmonic frequencies to pass into realization.</p>
+        </div>
+
+        <div class="controls-section">
+            <select id="preset-selector">
+                <option value="custom">-- Select Node State --</option>
+                <option value="kinetic">Constricted Aperture (High Friction)</option>
+                <option value="transitional">Opening Aperture (Phase Alignment)</option>
+                <option value="divine">Zero-Impedance Lens (Full Harmonics)</option>
+            </select>
+
+            <div class="control-group">
+                <div class="control-header">
+                    <span>Structural Coherence</span>
+                    <span id="coherence-val">50%</span>
+                </div>
+                <input type="range" id="coherence-slider" min="0" max="100" value="50">
+            </div>
+            
+            <div class="control-group">
+                <div class="control-header">
+                    <span>Harmonic Bandwidth Allowed</span>
+                    <span id="bandwidth-val">50%</span>
+                </div>
+                <!-- Sliders mapped to the same state logically for the visual, but separated for conceptual clarity -->
+                <input type="range" id="bandwidth-slider" min="0" max="100" value="50" style="pointer-events: none; opacity: 0.6;">
+            </div>
+        </div>
+
+        <div class="readouts-section">
+            <div class="readout-card" id="card-mechanics">
+                <div class="readout-label">Aperture State</div>
+                <div class="readout-value" id="val-aperture">Transitional Filter</div>
+            </div>
+            <div class="readout-card" id="card-energy">
+                <div class="readout-label">Passed Frequencies</div>
+                <div class="readout-value" id="val-freq">Fundamental + 3 Harmonics</div>
+            </div>
+            <div class="readout-card" id="card-manifestation">
+                <div class="readout-label">Realized Waveform</div>
+                <div class="readout-value" id="val-waveform">Partial Synthesis</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script>
+        /**
+         * Divine Holography - Harmonic Aperture Engine
+         * Visualizes the localized node as a filter for harmonic signal complexity
+         */
+
+        let state = {
+            coherence: 0.5  // 0 = Constricted/Friction, 1 = Zero-Impedance Lens
+        };
+
+        // DOM Elements
+        const container = document.getElementById('canvas-container');
+        const coherenceSlider = document.getElementById('coherence-slider');
+        const bandwidthSlider = document.getElementById('bandwidth-slider');
+        const presetSelector = document.getElementById('preset-selector');
+        
+        const valCoherence = document.getElementById('coherence-val');
+        const valBandwidth = document.getElementById('bandwidth-val');
+        
+        const valAperture = document.getElementById('val-aperture');
+        const valFreq = document.getElementById('val-freq');
+        const valWaveform = document.getElementById('val-waveform');
+        
+        const colorFriction = new THREE.Color(0xff2a5f); 
+        const colorResonance = new THREE.Color(0x0cf5d4); 
+        const colorGold = new THREE.Color(0xffd700);
+
+        // Three.js Setup
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050508, 0.003);
+
+        const camera = new THREE.PerspectiveCamera(55, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(0, 10, 160);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // --- 1. The Human Aperture (Particle Lattice) ---
+        const numHumanNodes = 1500;
+        const humanBasePos = new Float32Array(numHumanNodes * 3);
+        const humanPhase = new Float32Array(numHumanNodes); // For jitter
+
+        function getHumanLatticePoint() {
+            const rand = Math.random();
+            let x, y, z;
+            
+            if (rand < 0.12) { // Head
+                const r = 8 * Math.cbrt(Math.random());
+                const theta = Math.random() * 2 * Math.PI;
+                const phi = Math.acos(2 * Math.random() - 1);
+                x = r * Math.sin(phi) * Math.cos(theta);
+                y = 45 + r * Math.cos(phi); 
+                z = r * Math.sin(phi) * Math.sin(theta);
+            } else if (rand < 0.55) { // Torso (Heart center where signal passes)
+                const h = Math.random(); 
+                y = -5 + h * 40; 
+                const width = 14 - Math.abs(h - 0.7) * 7; 
+                x = (Math.random() - 0.5) * 2 * width;
+                z = (Math.random() - 0.5) * 2 * 7;
+            } else if (rand < 0.7) { // L Arm
+                const h = Math.random();
+                y = -5 + h * 38; 
+                x = -16 - (1-h)*5 + (Math.random() - 0.5) * 4; 
+                z = (Math.random() - 0.5) * 4;
+            } else if (rand < 0.85) { // R Arm
+                const h = Math.random();
+                y = -5 + h * 38;
+                x = 16 + (1-h)*5 + (Math.random() - 0.5) * 4;
+                z = (Math.random() - 0.5) * 4;
+            } else if (rand < 0.92) { // L Leg
+                const h = Math.random();
+                y = -45 + h * 40; 
+                x = -6 + (Math.random() - 0.5) * 5;
+                z = (Math.random() - 0.5) * 5;
+            } else { // R Leg
+                const h = Math.random();
+                y = -45 + h * 40;
+                x = 6 + (Math.random() - 0.5) * 5;
+                z = (Math.random() - 0.5) * 5;
+            }
+            return {x, y: y + 5, z};
+        }
+
+        for (let i = 0; i < numHumanNodes; i++) {
+            const p = getHumanLatticePoint();
+            humanBasePos[i*3] = p.x;
+            humanBasePos[i*3+1] = p.y;
+            humanBasePos[i*3+2] = p.z;
+            humanPhase[i] = Math.random() * Math.PI * 2;
+        }
+
+        const humanGeo = new THREE.BufferGeometry();
+        humanGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(numHumanNodes * 3), 3));
+        humanGeo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(numHumanNodes * 3), 3));
+
+        // Soft Glowing Texture
+        const canvasTex = document.createElement('canvas');
+        canvasTex.width = 32; canvasTex.height = 32;
+        const ctx = canvasTex.getContext('2d');
+        const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+        grad.addColorStop(0, 'rgba(255,255,255,1)');
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath(); ctx.arc(16, 16, 16, 0, Math.PI*2); ctx.fill();
+        const particleTexture = new THREE.CanvasTexture(canvasTex);
+
+        const humanMat = new THREE.PointsMaterial({
+            size: 2.0,
+            vertexColors: true,
+            map: particleTexture,
+            blending: THREE.AdditiveBlending,
+            transparent: true,
+            depthWrite: false
+        });
+        const humanSystem = new THREE.Points(humanGeo, humanMat);
+        scene.add(humanSystem);
+
+        // --- 2. The Harmonic Signal Waves ---
+        // A Fourier series visualization passing *through* the human aperture.
+        const waveSegments = 250;
+        const waveWidth = 300; // Total length of the wave stream (-150 to +150 on X axis)
+        const numHarmonics = 10; // Max harmonics supported
+
+        // Main composed wave
+        const mainWaveGeo = new THREE.BufferGeometry();
+        mainWaveGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(waveSegments * 3), 3));
+        const mainWaveMat = new THREE.LineBasicMaterial({
+            color: 0xffffff,
+            linewidth: 3,
+            transparent: true,
+            opacity: 0.9,
+            blending: THREE.AdditiveBlending
+        });
+        const mainWaveLine = new THREE.Line(mainWaveGeo, mainWaveMat);
+        scene.add(mainWaveLine);
+
+        // Individual harmonic lines
+        const harmonicLines = [];
+        for (let h = 1; h <= numHarmonics; h++) {
+            const hGeo = new THREE.BufferGeometry();
+            hGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(waveSegments * 3), 3));
+            
+            // Generate a color spectrum for harmonics (Gold -> Cyan -> Blue)
+            const hColor = new THREE.Color().lerpColors(colorGold, colorResonance, h / numHarmonics);
+            
+            const hMat = new THREE.LineBasicMaterial({
+                color: hColor,
+                transparent: true,
+                opacity: 0, // Opacity driven by coherence later
+                blending: THREE.AdditiveBlending
+            });
+            const hLine = new THREE.Line(hGeo, hMat);
+            scene.add(hLine);
+            harmonicLines.push({ line: hLine, geo: hGeo, mat: hMat, n: h });
+        }
+
+        // --- UI Update Logic ---
+        function updateUI() {
+            const coh = state.coherence;
+
+            valCoherence.innerText = Math.round(coh * 100) + '%';
+            bandwidthSlider.value = coh * 100;
+            valBandwidth.innerText = Math.round(coh * 100) + '%';
+
+            const currentThumbColor = new THREE.Color().lerpColors(colorFriction, colorResonance, coh).getStyle();
+            document.documentElement.style.setProperty('--primary', currentThumbColor);
+
+            const cards = document.querySelectorAll('.readout-card');
+            cards.forEach(card => card.style.borderLeftColor = currentThumbColor);
+
+            const activeHarmonics = Math.max(1, Math.floor(coh * 10));
+
+            if (coh < 0.35) {
+                valAperture.innerText = "Constricted Aperture";
+                valAperture.style.color = "#f15bb5";
+                valFreq.innerText = "Fundamental Only (Distorted)";
+                valWaveform.innerText = "Entropic Attenuation";
+            } else if (coh >= 0.35 && coh < 0.75) {
+                valAperture.innerText = "Transitional Lens";
+                valAperture.style.color = "#fff";
+                valFreq.innerText = `Fundamental + ${activeHarmonics - 1} Harmonics`;
+                valWaveform.innerText = "Phase Organizing";
+            } else {
+                valAperture.innerText = "Zero-Impedance Lens";
+                valAperture.style.color = "#0cf5d4";
+                valFreq.innerText = `Full Spectrum (${activeHarmonics} Harmonics)`;
+                valWaveform.innerText = "Constructive Synthesis";
+            }
+        }
+
+        coherenceSlider.addEventListener('input', (e) => {
+            state.coherence = e.target.value / 100;
+            presetSelector.value = "custom";
+            updateUI();
+        });
+
+        presetSelector.addEventListener('change', (e) => {
+            if (e.target.value === 'kinetic') animateSliderTo(0.1);
+            else if (e.target.value === 'transitional') animateSliderTo(0.5);
+            else if (e.target.value === 'divine') animateSliderTo(0.95);
+        });
+
+        function animateSliderTo(tCoh) {
+            let startCoh = state.coherence;
+            let startTime = performance.now();
+            let duration = 1200; 
+
+            function step(time) {
+                let elapsed = time - startTime;
+                let progress = Math.min(elapsed / duration, 1);
+                let easeProgress = 1 - Math.pow(1 - progress, 3); // ease out
+
+                state.coherence = startCoh + (tCoh - startCoh) * easeProgress;
+                coherenceSlider.value = state.coherence * 100;
+                updateUI();
+
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        // --- Animation Loop ---
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const time = clock.getElapsedTime();
+            const coh = state.coherence;
+
+            // Colors
+            const currentColor = new THREE.Color().lerpColors(colorFriction, colorResonance, coh);
+            const humanNodeColor = new THREE.Color(currentColor).multiplyScalar(0.4 + coh * 0.6);
+
+            // 1. Update Human Aperture
+            const hPos = humanGeo.attributes.position.array;
+            const hCol = humanGeo.attributes.color.array;
+
+            for (let i = 0; i < numHumanNodes; i++) {
+                const i3 = i * 3;
+                
+                // Chaos/Friction calculation (Aperture constriction)
+                const noiseAmt = (1 - coh) * 12;
+                const jitterX = Math.sin(time * 10 + humanPhase[i]) * noiseAmt;
+                const jitterY = Math.cos(time * 12 + humanPhase[i]) * noiseAmt;
+                const jitterZ = Math.sin(time * 9 + humanPhase[i]) * noiseAmt;
+
+                // High Coherence: Subtle, peaceful breathing
+                const breath = Math.sin(time * 1.5 + humanBasePos[i3+1] * 0.1) * 0.5 * coh;
+
+                hPos[i3] = humanBasePos[i3] + jitterX;
+                hPos[i3+1] = humanBasePos[i3+1] + jitterY + breath;
+                hPos[i3+2] = humanBasePos[i3+2] + jitterZ;
+
+                hCol[i3] = humanNodeColor.r;
+                hCol[i3+1] = humanNodeColor.g;
+                hCol[i3+2] = humanNodeColor.b;
+            }
+            humanGeo.attributes.position.needsUpdate = true;
+            humanGeo.attributes.color.needsUpdate = true;
+
+            // 2. Update Wave Signal (Fourier Synthesis passing through Aperture)
+            const mainPos = mainWaveGeo.attributes.position.array;
+            
+            // Parameters for wave flow
+            const baseAmplitude = 25;
+            const waveSpeed = 3.0;
+            const spatialFreq = 0.08;
+
+            for (let s = 0; s < waveSegments; s++) {
+                // X position ranges from -waveWidth/2 to +waveWidth/2
+                const x = (s / (waveSegments - 1)) * waveWidth - (waveWidth / 2);
+                
+                let combinedY = 0;
+                let combinedZ = 0;
+
+                // Modulate amplitude based on X. 
+                // Entering the node (X<0) is unmanifest source (smaller, purer).
+                // Existing the node (X>0) is the realized projection.
+                // The Aperture (X=0) amplifies and synthesizes.
+                const envelope = 1.0 + Math.exp(-Math.pow(x/30, 2)) * 1.5; // Swells at center
+
+                // Calculate Harmonics
+                for (let h = 0; h < numHarmonics; h++) {
+                    const harmonicDef = harmonicLines[h];
+                    const n = harmonicDef.n; // 1, 2, 3...
+                    
+                    // The "Aperture Gate": Coherence dictates how many harmonics pass
+                    // e.g. Coherence 0.1 allows harmonic 1. Coherence 1.0 allows harmonic 10.
+                    const passThreshold = (n - 1) / numHarmonics; 
+                    let harmonicPower = Math.max(0, Math.min(1, (coh - passThreshold) * numHarmonics));
+                    
+                    // Base amplitude follows Fourier series (e.g. 1/n or similar)
+                    const amp = (baseAmplitude / Math.pow(n, 0.8)) * envelope * harmonicPower;
+                    
+                    // Low coherence introduces noise to the fundamental
+                    const frictionDistortion = (n === 1) ? (1 - coh) * Math.sin(x * 0.5 + time * 15) * 5 : 0;
+
+                    // Wave equation: A * sin(k*x - w*t)
+                    const yVal = Math.sin(n * spatialFreq * x - n * waveSpeed * time) * amp + frictionDistortion;
+                    const zVal = Math.cos(n * spatialFreq * x - n * waveSpeed * time) * (amp * 0.3); // Slight 3D depth
+
+                    combinedY += yVal;
+                    combinedZ += zVal;
+
+                    // Update individual harmonic lines
+                    const hPosArray = harmonicDef.geo.attributes.position.array;
+                    const idx = s * 3;
+                    
+                    // Individual lines branch out slightly on Z axis for visibility
+                    const zSpread = Math.sin(n * 432.1) * 15 * coh; 
+
+                    hPosArray[idx] = x;
+                    hPosArray[idx+1] = 15 + yVal; // Offset to chest height
+                    hPosArray[idx+2] = zVal + zSpread;
+                    
+                    // Update material opacity
+                    if (s === 0) {
+                        harmonicDef.mat.opacity = harmonicPower * 0.6;
+                    }
+                }
+
+                // Update main combined wave (The Realized Synthesized Reality)
+                mainPos[s*3] = x;
+                mainPos[s*3+1] = 15 + combinedY; 
+                mainPos[s*3+2] = combinedZ;
+            }
+
+            mainWaveGeo.attributes.position.needsUpdate = true;
+            mainWaveMat.color.copy(currentColor);
+
+            // Notify Three.js that individual lines updated
+            for (let h = 0; h < numHarmonics; h++) {
+                harmonicLines[h].geo.attributes.position.needsUpdate = true;
+            }
+
+            // Gentle camera float
+            camera.position.x = Math.sin(time * 0.2) * 10;
+            camera.lookAt(0, 10, 0);
+
+            renderer.render(scene, camera);
+        }
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        });
+
+        // Init UI and Start
+        updateUI();
+        animate();
+    </script>
+</div>
