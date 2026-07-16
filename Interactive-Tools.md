@@ -15,6 +15,11 @@ In systems theory, the localized node functions as an aperture for unconditioned
 <iframe src="aperture-prism-embed.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/aperture-prism-embed.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
 ---
 
 ## 2. Fourier Synthesis and Harmonic Bandwidth
@@ -23,6 +28,11 @@ This visualization models the localized node as a dynamic Fourier synthesis filt
 
 ```{=html}
 <iframe src="harmonic_aperture_explorer.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/harmonic_aperture_explorer.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 ---
@@ -35,6 +45,11 @@ This widget models the phase transition of the 240-root E8 lattice from a state 
 <iframe src="e8-coherence-field-embed.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/e8-coherence-field-embed.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
 ---
 
 ## 4. Topological Mapping of Gauge Symmetry
@@ -45,6 +60,11 @@ An interactive topological explorer of the E8 Lie Group—the fundamental 8-dime
 <iframe src="e8-consciousness-explorer.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/e8-consciousness-explorer.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
 ---
 
 ## 5. Kinematics of Zero-Impedance Exchange
@@ -53,4 +73,9 @@ A continuously rotating 2D projection that offers a 3D perspective of the E8 lat
 
 ```{=html}
 <iframe src="E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
 ```
