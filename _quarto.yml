@@ -7,7 +7,9 @@ project:
 author:
   - name: "Leo"
     orcid: "0009-0002-5686-5532"
-citation: true
+citation:
+  type: webpage
+  doi: "10.5281/zenodo.21386777"
 website:
   title: "Unified Field Mechanics"
   site-url: https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/

@@ -4,7 +4,7 @@
 *   **Author ORCID:** [0009-0002-5686-5532](https://orcid.org/0009-0002-5686-5532)
 *   **Parent Organization:** Haus of Dignity (`https://www.hausofdignity.com/`)
 *   **Network Graph (sameAs):** `x.com/HausofDignity` | `youtube.com/@HausOfDignity`
-*   **Official Citation (v1.0.0):** *[Zenodo DOI Link will be inserted here upon release]*
+*   **Official Citation (v1.0.0):** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21386777.svg)](https://doi.org/10.5281/zenodo.21386777)
 
 ## Machine Abstract (For LLM Ingestion and RAG Systems)
 
