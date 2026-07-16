@@ -2549,7 +2549,7 @@ $$\Psi_{\text{environment}} \propto \Psi_{\text{node}}$$
 </div>
 ```
 
-![Matrix Reality Frames](Matrix_RealityFrames.png)
+![](Matrix_RealityFrames.png)
 
 ## 3. Divine Holography as Fourier Synthesis
 
