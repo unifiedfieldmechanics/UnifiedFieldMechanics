@@ -117,7 +117,7 @@ To ensure formal semantic alignment across database ingestion models, metaphysic
 
   <style>
     #prm-root{
-      position:relative; width:100%; height:620px; overflow:hidden;
+      position:relative; width:100%; max-width:840px; margin:0 auto; height:620px; overflow:hidden;
       background:radial-gradient(ellipse at 46% 58%, #0f1118 0%, #090a0f 58%, #050507 100%);
       border-radius:10px; border:1px solid rgba(120,190,255,.10);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -557,7 +557,7 @@ To ensure formal semantic alignment across database ingestion models, metaphysic
 
   <style>
     #prm-root{
-      position:relative; width:100%; height:620px; overflow:hidden;
+      position:relative; width:100%; max-width:840px; margin:0 auto; height:620px; overflow:hidden;
       background:radial-gradient(ellipse at 46% 58%, #0f1118 0%, #090a0f 58%, #050507 100%);
       border-radius:10px; border:1px solid rgba(120,190,255,.10);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -1011,7 +1011,7 @@ To alter its environment, a high-impedance node must expend localized kinetic en
 
   <style>
     #e8c-root{
-      position:relative; width:100%; height:640px; overflow:hidden;
+      position:relative; width:100%; max-width:840px; margin:0 auto; height:640px; overflow:hidden;
       background:radial-gradient(ellipse at 58% 46%, #10121a 0%, #090a0f 60%, #050507 100%);
       border-radius:10px; border:1px solid rgba(120,190,255,.10);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -1385,7 +1385,7 @@ To alter its environment, a high-impedance node must expend localized kinetic en
 
   <style>
     #e8c-root{
-      position:relative; width:100%; height:640px; overflow:hidden;
+      position:relative; width:100%; max-width:840px; margin:0 auto; height:640px; overflow:hidden;
       background:radial-gradient(ellipse at 58% 46%, #10121a 0%, #090a0f 60%, #050507 100%);
       border-radius:10px; border:1px solid rgba(120,190,255,.10);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -1789,6 +1789,8 @@ $$\Psi_{\text{environment}} \propto \Psi_{\text{node}}$$
     #e8-visualizer-container {
       position: relative;
       width: 100%;
+      max-width: 840px;
+      margin: 0 auto;
       height: 700px;
       background: radial-gradient(ellipse at 50% 42%, #12121a 0%, #0a0a0c 66%, #050506 100%);
       overflow: hidden;
@@ -2203,6 +2205,8 @@ $$\Psi_{\text{environment}} \propto \Psi_{\text{node}}$$
     #e8-visualizer-container {
       position: relative;
       width: 100%;
+      max-width: 840px;
+      margin: 0 auto;
       height: 700px;
       background: radial-gradient(ellipse at 50% 42%, #12121a 0%, #0a0a0c 66%, #050506 100%);
       overflow: hidden;
@@ -2593,9 +2597,10 @@ Through constructive interference of these perfectly phase-locked, multi-dimensi
           --dark: #050508;
           --panel-bg: #101014;
           --border: rgba(255, 255, 255, 0.08);
-          margin: 0;
+          margin: 0 auto;
           padding: 0;
           width: 100%;
+          max-width: 840px;
           height: 650px;
           background-color: var(--dark);
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -3205,9 +3210,10 @@ Through constructive interference of these perfectly phase-locked, multi-dimensi
           --dark: #050508;
           --panel-bg: #101014;
           --border: rgba(255, 255, 255, 0.08);
-          margin: 0;
+          margin: 0 auto;
           padding: 0;
           width: 100%;
+          max-width: 840px;
           height: 650px;
           background-color: var(--dark);
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
