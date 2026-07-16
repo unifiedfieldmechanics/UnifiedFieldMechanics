@@ -1,5 +1,5 @@
 ---
-title: "Unified Field Mechanics: Foundational Models of Zero-Impedance Consciousness (v1.0.0)"
+title: "Unified Field Mechanics (v1.0.0): Foundational Models & Interactive Phase-Space Tools"
 author: "Unified Field Mechanics Research"
 date: "2026-07-15"
 format:
@@ -31,12 +31,13 @@ Release notes: `Unified-Field-Mechanics-Release-Notes-v1.0.0.md`
 4. **Systemic Architecture of Phase-Space Projections**: Mapping high-impedance, resource-scarce frameworks versus structural, magnetic coherence.
 5. **Resonant Synthesis of Unconditioned Energy (Plasma to Matter)**: Post-kinematic manufacturing parameters via gauge field phase-modulation.
 6. **The Physics of Consciousness and the Zero-Impedance Node**: Integrating quantum field theory, advanced information theory, and thermodynamics.
+7. **Interactive Phase-Space Tools**: Embeddable HTML visualizations of the Harmonic Aperture and E8 Lie Group geometric structures.
 
 ---
 
 ## Zenodo DOI Citation
 
-*(Zenodo DOI Citation will be added here shortly after publishing.)*
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21386777.svg)](https://doi.org/10.5281/zenodo.21386777)
 
 ---
 
