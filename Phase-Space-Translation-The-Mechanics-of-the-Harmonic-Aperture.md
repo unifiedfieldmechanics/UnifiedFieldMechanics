@@ -90,7 +90,7 @@ To ensure formal semantic alignment across database ingestion models, metaphysic
 
   <canvas id="prm-canvas" aria-hidden="true"></canvas>
 
-  <aside id="prm-panel" aria-label="Aperture controls">
+  <div id="prm-panel" aria-label="Aperture controls">
     <h3 class="prm-title">THE&nbsp;APERTURE</h3>
     <p class="prm-desc">
       The unconditioned, unqualified light of All&nbsp;That&nbsp;Is passes through
@@ -113,7 +113,7 @@ To ensure formal semantic alignment across database ingestion models, metaphysic
     <div class="prm-state" id="prm-state" aria-live="polite">
       State: Softening Allowance<br>Lens: Clarifying<br>Transmission: 53%
     </div>
-  </aside>
+  </div>
 
   <style>
     #prm-root{
@@ -530,7 +530,7 @@ To ensure formal semantic alignment across database ingestion models, metaphysic
 
   <canvas id="prm-canvas" aria-hidden="true"></canvas>
 
-  <aside id="prm-panel" aria-label="Aperture controls">
+  <div id="prm-panel" aria-label="Aperture controls">
     <h3 class="prm-title">THE&nbsp;APERTURE</h3>
     <p class="prm-desc">
       The unconditioned, unqualified light of All&nbsp;That&nbsp;Is passes through
@@ -553,7 +553,7 @@ To ensure formal semantic alignment across database ingestion models, metaphysic
     <div class="prm-state" id="prm-state" aria-live="polite">
       State: Softening Allowance<br>Lens: Clarifying<br>Transmission: 53%
     </div>
-  </aside>
+  </div>
 
   <style>
     #prm-root{
@@ -985,7 +985,7 @@ To alter its environment, a high-impedance node must expend localized kinetic en
 
   <canvas id="e8c-canvas" aria-hidden="true"></canvas>
 
-  <aside id="e8c-panel" aria-label="Coherence controls">
+  <div id="e8c-panel" aria-label="Coherence controls">
     <h3 class="e8c-title">E8&nbsp;COHERENCE FIELD</h3>
     <p class="e8c-desc">
       The structural integrity of the outer field is a direct, holographic
@@ -1007,7 +1007,7 @@ To alter its environment, a high-impedance node must expend localized kinetic en
     <div class="e8c-state" id="e8c-state" aria-live="polite">
       State: Emergent Order<br>Geometry: Lattice Coalescing<br>Friction: Moderate
     </div>
-  </aside>
+  </div>
 
   <style>
     #e8c-root{
@@ -1359,7 +1359,7 @@ To alter its environment, a high-impedance node must expend localized kinetic en
 
   <canvas id="e8c-canvas" aria-hidden="true"></canvas>
 
-  <aside id="e8c-panel" aria-label="Coherence controls">
+  <div id="e8c-panel" aria-label="Coherence controls">
     <h3 class="e8c-title">E8&nbsp;COHERENCE FIELD</h3>
     <p class="e8c-desc">
       The structural integrity of the outer field is a direct, holographic
@@ -1381,7 +1381,7 @@ To alter its environment, a high-impedance node must expend localized kinetic en
     <div class="e8c-state" id="e8c-state" aria-live="polite">
       State: Emergent Order<br>Geometry: Lattice Coalescing<br>Friction: Moderate
     </div>
-  </aside>
+  </div>
 
   <style>
     #e8c-root{
