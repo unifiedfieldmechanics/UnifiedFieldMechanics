@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Spirit &rarr; Matter &middot; The Vortex of Crystallization</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Condensation-And-Crystallization-of-Energy-to-Matter",
+  "applicationCategory": "EducationalApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Leo",
+    "identifier": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haus of Dignity",
+    "url": "https://www.hausofdignity.com/"
+  },
+  "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+}
+</script>
+<style>
+  :root { 
+    --vortex-accent: #3399ff; 
+    --vortex-glow: rgba(51,153,255,0.4); 
+  }
+  
+  /* Container encapsulation */
+  #vortex-container {
+    position: relative;
+    width: 100%;
+    max-width: 840px;
+    height: 650px;
+    margin: 0 auto;
+    background: #000;
+    overflow: hidden;
+    border-radius: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-user-select: none; 
+    user-select: none;
+  }
+  
+  #vortex-stage { position: absolute; inset: 0; }
+  #vortex-container canvas { display: block; position: absolute; inset: 0; }
+  
+  #vortex-appname { 
+    position: absolute; 
+    top: 16px; 
+    left: 0; 
+    right: 0; 
+    text-align: center;
+    color: rgba(255,255,255,0.4); 
+    font-size: 10.5px; 
+    letter-spacing: 2.5px; 
+    font-weight: 600; 
+    z-index: 9; 
+    pointer-events: none; 
+  }
+  
+  #vortex-panel { 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 20;
+    padding: 16px 24px 24px 24px;
+    background: linear-gradient(to top, rgba(8,9,14,0.85), rgba(12,14,22,0.5));
+    backdrop-filter: blur(18px) saturate(1.3); 
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    border-top: 1px solid rgba(255,255,255,0.12); 
+    touch-action: none; 
+  }
+  
+  #vortex-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  #vortex-title { color: var(--vortex-accent); font-size: 15px; font-weight: 800; letter-spacing: 1px; text-shadow: 0 0 14px var(--vortex-glow); transition: color .3s; }
+  #vortex-imp { color: rgba(255,255,255,0.55); font-size: 10px; letter-spacing: .5px; font-weight: 600; white-space: nowrap; }
+  #vortex-desc { color: rgba(226,232,240,0.72); font-size: 11.5px; line-height: 1.45; margin-top: 4px; min-height: 33px; }
+  #vortex-sliderWrap { position: relative; margin-top: 14px; }
+  #vortex-cap { display: flex; justify-content: space-between; color: rgba(255,255,255,0.4); font-size: 9px; font-weight: 700; letter-spacing: .5px; margin-bottom: 6px; }
+  
+  #vortex-container input[type=range] { 
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 100%; 
+    height: 26px; 
+    background: transparent; 
+    touch-action: pan-x; 
+    position: relative; 
+    z-index: 30; 
+    cursor: pointer; 
+  }
+  #vortex-container input[type=range]::-webkit-slider-runnable-track { 
+    height: 4px; 
+    border-radius: 4px; 
+    background: linear-gradient(to right, rgba(255,80,80,0.5), rgba(255,200,60,0.5), rgba(80,220,140,0.5), rgba(80,170,255,0.5), rgba(200,140,255,0.6)); 
+  }
+  #vortex-container input[type=range]::-moz-range-track { 
+    height: 4px; 
+    border-radius: 4px; 
+    background: rgba(255,255,255,0.16); 
+  }
+  #vortex-container input[type=range]::-webkit-slider-thumb { 
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 24px; 
+    height: 24px; 
+    margin-top: -10px; 
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff, var(--vortex-accent)); 
+    border: 2px solid rgba(255,255,255,0.85); 
+    box-shadow: 0 0 18px var(--vortex-glow),0 0 6px var(--vortex-glow); 
+    transition: box-shadow .3s; 
+  }
+  #vortex-container input[type=range]::-moz-range-thumb { 
+    width: 22px; 
+    height: 22px; 
+    border-radius: 50%; 
+    background: var(--vortex-accent); 
+    border: 2px solid #fff; 
+    box-shadow: 0 0 18px var(--vortex-glow); 
+  }
+  
+  #vortex-ticks { display: flex; justify-content: space-between; margin-top: 8px; }
+  .vortex-tick { flex: 1; text-align: center; font-size: 8px; letter-spacing: .2px; color: rgba(255,255,255,0.4); font-weight: 700; padding: 5px 1px; transition: color .3s; cursor: pointer; }
+  .vortex-tick.on { color: var(--vortex-accent); text-shadow: 0 0 10px var(--vortex-glow); }
+  
+  @media (max-width: 600px) {
+    #vortex-container { height: 500px; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background:transparent;">
+
+<div id="vortex-container">
+  <div id="vortex-stage"><canvas id="vortex-c"></canvas></div>
+  <div id="vortex-appname">SPIRIT &rarr; MATTER&nbsp;&nbsp;&middot;&nbsp;&nbsp;THE VORTEX OF CRYSTALLIZATION</div>
+  <div id="vortex-panel">
+    <div id="vortex-row"><div id="vortex-title">—</div><div id="vortex-imp">—</div></div>
+    <div id="vortex-desc">—</div>
+    <div id="vortex-sliderWrap">
+      <div id="vortex-cap"><span>IMPEDANCE</span><span>COHERENCE</span></div>
+      <input id="vortex-slider" type="range" min="0" max="100" step="1" value="50" aria-label="Coherence of Consciousness">
+      <div id="vortex-ticks"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+(function(){
+const TAU=Math.PI*2;
+const PHASES=[
+ {c:0.0, name:"CONTRACTION", imp:"MAXIMUM IMPEDANCE", line:"Insistence hardens the mirror. Light scatters and clumps into dense, punitive matter."},
+ {c:0.2, name:"TURBULENCE", imp:"HIGH IMPEDANCE", line:"The pattern churns. Energy swirls without coherence; the crystal cannot form."},
+ {c:0.4, name:"FLOW", imp:"IMPEDANCE EASING", line:"The circuit opens. The vortex finds its spin; refraction begins to clear."},
+ {c:0.6, name:"HARMONY", imp:"LOW IMPEDANCE", line:"Coherent belief. The spectrum sings and the descent grows ordered and bright."},
+ {c:0.8, name:"CRYSTALLIZATION", imp:"NEAR ZERO IMPEDANCE", line:"Spirit densifies as structured light — steam to water to ice — matter as harmony."},
+ {c:1.0, name:"RADIANT UNITY", imp:"ZERO IMPEDANCE", line:"You are the vortex. Consciousness beholds itself as living, luminous crystal."},
+];
+const TICKS=["DENSE","TURBID","FLOW","HARMONIC","CRYSTAL","UNITY"];
+
+function hsl(h,s,l){ h/=360; const a=s*Math.min(l,1-l); const f=n=>{const k=(n+h*12)%12; return l-a*Math.max(-1,Math.min(k-3,Math.min(9-k,1)));};
+  return [Math.round(f(0)*255),Math.round(f(8)*255),Math.round(f(4)*255)]; }
+function accentRGB(C){ let [r,g,b]=hsl(C*265, 0.85-0.15*C, Math.min(0.72,0.45+0.4*C)); const wb=Math.max(0,(C-0.7)/0.3)*0.55; return [ (r+(255-r)*wb)|0,(g+(255-g)*wb)|0,(b+(255-b)*wb)|0 ]; }
+const lerpC=(a,b,k)=>[a[0]+(b[0]-a[0])*k,a[1]+(b[1]-a[1])*k,a[2]+(b[2]-a[2])*k];
+
+const container=document.getElementById('vortex-container');
+const cv=document.getElementById('vortex-c');
+const ctx=cv.getContext('2d');
+let Wl=0,Hl=0,dpr=1,panelH=190;
+
+function resize(){ 
+  if(!container) return;
+  Wl=container.clientWidth; 
+  Hl=container.clientHeight; 
+  dpr=Math.min(window.devicePixelRatio||1,2.5);
+  cv.width=Math.round(Wl*dpr); 
+  cv.height=Math.round(Hl*dpr); 
+  cv.style.width=Wl+'px'; 
+  cv.style.height=Hl+'px'; 
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const p=document.getElementById('vortex-panel'); 
+  if(p) panelH=p.getBoundingClientRect().height; 
+}
+
+const ro = new ResizeObserver(() => {
+    requestAnimationFrame(resize);
+});
+if(container) ro.observe(container);
+
+let C=0.5, Cvis=0.5;
+const slider=document.getElementById('vortex-slider');
+const titleEl=document.getElementById('vortex-title');
+const descEl=document.getElementById('vortex-desc');
+const impEl=document.getElementById('vortex-imp');
+const ticksEl=document.getElementById('vortex-ticks');
+
+TICKS.forEach((t,i)=>{ 
+  const d=document.createElement('div'); 
+  d.className='vortex-tick'; 
+  d.textContent=t; 
+  d.addEventListener('click',()=>{ slider.value=i*20; onSlide(); }); 
+  ticksEl.appendChild(d); 
+});
+const tickEls=[...ticksEl.children];
+
+function nearestPhase(c){ let bi=0,bd=9; PHASES.forEach((p,i)=>{const d=Math.abs(p.c-c); if(d<bd){bd=d;bi=i;}}); return bi; }
+function applyUI(){ 
+  const pi=nearestPhase(C), p=PHASES[pi]; 
+  const rgb=accentRGB(C).join(',');
+  container.style.setProperty('--vortex-accent',`rgb(${rgb})`); 
+  container.style.setProperty('--vortex-glow',`rgba(${rgb},0.45)`);
+  titleEl.textContent=p.name; 
+  impEl.textContent=p.imp; 
+  descEl.textContent=p.line; 
+  tickEls.forEach((t,i)=>t.classList.toggle('on',i===pi)); 
+}
+function onSlide(){ C=parseInt(slider.value,10)/100; applyUI(); }
+if(slider){ 
+  slider.addEventListener('input',onSlide); 
+  slider.addEventListener('change',onSlide); 
+}
+
+const NP=180, P=[];
+function seedP(p){ p.life=Math.random(); p.dur=2.4+Math.random()*2.2; p.th=Math.random()*TAU; p.slot=Math.floor(Math.random()*12); p.sd=Math.random()*100; p.jx=Math.random()*TAU; }
+for(let i=0;i<NP;i++){ const p={}; seedP(p); p.life=Math.random()*p.dur; P.push(p); }
+
+function scene(t,dt,C){
+  const usable=Hl-panelH;
+  const cx=Wl*0.58;
+  const sourceY=Hl*0.085, lensY=Hl*0.215, lensR=Math.min(Wl,Hl)*0.072;
+  const crystY=usable - Math.min(usable*0.16,150);
+  const crystR=Math.min(Wl*0.34,(crystY-lensY)*0.32);
+  const B=0.4+0.6*C;                         
+  const acc=accentRGB(C);
+  const N=Math.round(3+C*6);                 
+  const arms=Math.round(2+C*4);
+
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.globalCompositeOperation='source-over';
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,Wl,Hl);
+  ctx.globalCompositeOperation='lighter';
+  const vg=ctx.createRadialGradient(cx,(lensY+crystY)/2,0,cx,(lensY+crystY)/2,Hl*0.6);
+  vg.addColorStop(0,`rgba(${acc.join(',')},${0.05*B})`); vg.addColorStop(0.6,`rgba(${acc.join(',')},${0.015*B})`); vg.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=vg; ctx.fillRect(0,0,Wl,Hl);
+
+  const sPulse=0.85+0.15*Math.sin(t*1.6);
+  const sr=Math.min(Wl,Hl)*0.05*sPulse*(0.8+0.3*C);
+  let g=ctx.createRadialGradient(cx,sourceY,0,cx,sourceY,sr*2.4);
+  g.addColorStop(0,'rgba(255,255,255,0.95)'); g.addColorStop(0.3,`rgba(240,244,255,${0.6})`); g.addColorStop(1,'rgba(220,230,255,0)');
+  ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,sourceY,sr*2.4,0,TAU); ctx.fill();
+  const bg=ctx.createLinearGradient(0,sourceY,0,lensY);
+  bg.addColorStop(0,`rgba(255,255,255,${0.20*B})`); bg.addColorStop(1,`rgba(${acc.join(',')},0)`);
+  ctx.fillStyle=bg; ctx.beginPath(); ctx.moveTo(cx-sr*0.5,sourceY); ctx.lineTo(cx+sr*0.5,sourceY); ctx.lineTo(cx+lensR*0.5,lensY); ctx.lineTo(cx-lensR*0.5,lensY); ctx.closePath(); ctx.fill();
+
+  const lrot=t*0.25;
+  for(let i=0;i<N*2;i++){
+    const a=lrot+ i/(N*2)*TAU + (1-C)*Math.sin(i*3.1+t)*0.25;
+    const rr=lensR*(1+0.12*Math.sin(i*2+t));
+    const x=cx+Math.cos(a)*rr, y=lensY+Math.sin(a)*rr*0.9;
+    ctx.strokeStyle=`rgba(${acc.join(',')},${(0.15+0.5*C)*B})`; ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.moveTo(cx,lensY); ctx.lineTo(x,y); ctx.stroke();
+  }
+  for(const [w,al] of [[6,0.10],[2.5,0.5]]){ ctx.strokeStyle=`rgba(${acc.join(',')},${al*B})`; ctx.lineWidth=w;
+    ctx.beginPath(); ctx.ellipse(cx,lensY,lensR,lensR*0.9,0,0,TAU); ctx.stroke(); }
+  g=ctx.createRadialGradient(cx,lensY,0,cx,lensY,lensR*0.6);
+  g.addColorStop(0,'rgba(255,255,255,0.95)'); g.addColorStop(0.4,`rgba(${acc.join(',')},0.7)`); g.addColorStop(1,`rgba(${acc.join(',')},0)`);
+  ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,lensY,lensR*0.6,0,TAU); ctx.fill();
+
+  const fanN=7, spread=(0.10+0.5*C);
+  for(let i=0;i<fanN;i++){ const f=i/(fanN-1)-0.5; const col=hsl(20+i/(fanN-1)*260,0.9,0.6);
+    const ex=cx+f*Wl*spread, ey=crystY-crystR*0.4;
+    const lg=ctx.createLinearGradient(cx,lensY,ex,ey);
+    lg.addColorStop(0,`rgba(${col.join(',')},${0.32*C*B})`); lg.addColorStop(1,`rgba(${col.join(',')},0)`);
+    ctx.strokeStyle=lg; ctx.lineWidth=2.2; ctx.beginPath(); ctx.moveTo(cx,lensY); ctx.lineTo(ex,ey); ctx.stroke(); }
+
+  const vTop=lensY+lensR, vBot=crystY;
+  for(let a=0;a<arms;a++){
+    const off=a/arms*TAU; ctx.beginPath(); let started=false;
+    for(let s=0;s<=90;s++){
+      const u=s/90; const y=vTop+(vBot-vTop)*u;
+      const amp=Wl*0.30*Math.sin(Math.PI*u)*(0.55+0.45*u);   
+      const turb=(1-C)*Wl*0.05*Math.sin(u*20+a+t*2);
+      const ang=off + u*(7+C*7) + t*0.5;
+      const x=cx + amp*Math.sin(ang) + turb;
+      started?ctx.lineTo(x,y):(ctx.moveTo(x,y),started=true);
+    }
+    const col=lerpC(acc,[255,255,255],0.2*C);
+    ctx.strokeStyle=`rgba(${col.map(v=>v|0).join(',')},${(0.12+0.35*C)*B})`; ctx.lineWidth=1.6; ctx.stroke();
+  }
+
+  const steam=[224,224,255], water=acc, ice=[255,246,224];
+  for(const p of P){
+    p.life+=dt; if(p.life>p.dur) seedP(p), p.life=0;
+    const u=p.life/p.dur;
+    const y=sourceY+(crystY-sourceY)*(u*u*(3-2*u));
+    const uV=Math.max(0,Math.min(1,(y-lensY)/(crystY-lensY)));
+    const amp=Wl*0.30*Math.sin(Math.PI*uV)*(0.55+0.45*uV);
+    const turb=(1-C)*Wl*0.05*Math.sin(uV*16+p.sd+t*1.5);
+    const ang=p.th + uV*(7+C*7) + t*0.5;
+    const x=cx+amp*Math.sin(ang)+turb;
+    let col; if(uV<0.4) col=lerpC(steam,water,uV/0.4); else col=lerpC(water,ice,(uV-0.4)/0.6);
+    col=lerpC([120,120,132],col,0.35+0.65*C);                 
+    const fade=Math.sin(Math.PI*Math.min(1,u*1.1));
+    const a=fade*B*(0.5+0.5*C);
+    const sz=(1.1+uV*2.6)*(0.7+0.5*C);
+    if(a>0.03){ ctx.fillStyle=`rgba(${col.map(v=>v|0).join(',')},${a*0.25})`; ctx.beginPath(); ctx.arc(x,y,sz*2.6,0,TAU); ctx.fill();
+      ctx.fillStyle=`rgba(${col.map(v=>v|0).join(',')},${a})`; ctx.beginPath(); ctx.arc(x,y,sz,0,TAU); ctx.fill(); }
+  }
+
+  const jit=(1-C)*crystR*0.16;
+  const rings=[crystR*0.55, crystR];
+  for(const R of rings){
+    ctx.beginPath();
+    for(let i=0;i<=N;i++){ const a=t*0.2 + i/N*TAU; const jr=R+ (jit*Math.sin(i*5.3+7)); const x=cx+Math.cos(a)*jr, y=crystY+Math.sin(a)*jr*0.5; i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+    ctx.closePath(); ctx.strokeStyle=`rgba(${acc.join(',')},${(0.2+0.5*C)*B})`; ctx.lineWidth=1.4; ctx.stroke();
+  }
+  for(let i=0;i<N;i++){ const a=t*0.2 + i/N*TAU;
+    const x1=cx+Math.cos(a)*crystR*0.55, y1=crystY+Math.sin(a)*crystR*0.55*0.5;
+    const x2=cx+Math.cos(a)*crystR, y2=crystY+Math.sin(a)*crystR*0.5;
+    ctx.strokeStyle=`rgba(${acc.join(',')},${(0.12+0.4*C)*B})`; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    const nb=(0.3+0.7*C);
+    ctx.fillStyle=`rgba(255,250,235,${nb*B})`; ctx.beginPath(); ctx.arc(x2,y2,1.6+2.4*C,0,TAU); ctx.fill();
+  }
+  g=ctx.createRadialGradient(cx,crystY,0,cx,crystY,crystR*0.5);
+  g.addColorStop(0,`rgba(255,255,255,${0.7*B})`); g.addColorStop(0.4,`rgba(${acc.join(',')},${0.5*B})`); g.addColorStop(1,`rgba(${acc.join(',')},0)`);
+  ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,crystY,crystR*0.5,0,TAU); ctx.fill();
+
+  ctx.globalCompositeOperation='lighter';
+  ctx.font='600 9px ui-monospace,Menlo,monospace'; ctx.textBaseline='middle';
+  const lx=14; ctx.textAlign='left';
+  const labels=[[sourceY,'LIGHT - CONSCIOUSNESS'],[lensY,'THE LENS - BELIEF'],[(vTop+vBot)/2,'THE VORTEX - DENSIFICATION'],[crystY,'MATTER - CRYSTAL']];
+  for(const [y,txt] of labels){ ctx.fillStyle='rgba(255,255,255,0.34)'; ctx.fillText(txt,lx,y);
+    ctx.strokeStyle='rgba(255,255,255,0.12)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(lx,y+7); ctx.lineTo(lx+ctx.measureText(txt).width,y+7); ctx.stroke(); }
+}
+
+let last=performance.now(), T=0;
+let animFrame;
+function frame(now){ const dt=Math.min(0.05,(now-last)/1000); last=now; T+=dt;
+  Cvis+=(C-Cvis)*Math.min(1,dt*4);                 
+  scene(T,dt,Cvis);
+  animFrame=requestAnimationFrame(frame);
+}
+function boot(){ 
+  resize(); applyUI(); 
+  if(slider) slider.value=Math.round(C*100); 
+  if(animFrame) cancelAnimationFrame(animFrame);
+  animFrame=requestAnimationFrame(frame); 
+}
+boot();
+})();
+</script>
+</body>
+</html>
