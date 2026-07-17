@@ -79,3 +79,18 @@ A continuously rotating 2D projection that offers a 3D perspective of the E8 lat
 ```html
 <iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+---
+
+## 6. Harmonic Resonance Simulator
+
+Every thought carries a frequency — and this interactive instrument lets you watch that idea come alive. Slide through six levels of consciousness, from shame to non-dual awareness, and the field responds in real time: jagged, chaotic waves smoothing into flowing, sacred geometry as the mind rises. The cycling thoughts and cymatic ripples are drawn live in your browser, nothing pre-recorded.
+
+```{=html}
+<iframe src="Holographic-Resonance-Simulator-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Holographic-Resonance-Simulator-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
+```
