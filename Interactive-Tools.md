@@ -114,6 +114,35 @@ This interactive visualization illustrates how the "Light of Consciousness" is s
 
 ## 8. Video Supplements & Lectures
 
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Coherence + Unconditional Love Download Tools For Free",
+  "applicationCategory": "EducationalApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Leo",
+    "identifier": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haus of Dignity",
+    "url": "https://www.hausofdignity.com/",
+    "sameAs": [
+      "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html",
+      "https://www.youtube.com/@HausOfDignity",
+      "https://www.tumblr.com/hausofdignity",
+      "https://www.reddit.com/user/Happy-Mud8709",
+      "https://x.com/HausofDignity"
+    ]
+  },
+  "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+}
+</script>
+```
+
 The following video references provide supplementary visual mapping and conceptual breakdown of the unified field, zero-point energy dynamics, and phase-space projection. 
 
 ### Part 1: Systemic Architecture and Wave-Form Physics
