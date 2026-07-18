@@ -125,8 +125,7 @@ This segment introduces the foundational concepts of macroscopic eigenmode synth
 </div>
 ```
 
-### Part 2: The E8 Lie Group and Harmonic Apertures
-A deeper dive into the geometric topologies of the 240-root E8 lattice and the transition from high-impedance states to frictionless coherence.
+### Part 2: Coherence - Understanding the Effortless Organization of Integrative Geometry
 
 ```{=html}
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 20px;">
