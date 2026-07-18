@@ -109,3 +109,36 @@ This interactive visualization illustrates how the "Light of Consciousness" is s
 ```html
 <iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Condensation-And-Crystallization-of-Energy-to-Matter-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+---
+
+## 8. Video Supplements & Lectures
+
+The following video references provide supplementary visual mapping and conceptual breakdown of the unified field, zero-point energy dynamics, and phase-space projection. 
+
+### Part 1: Systemic Architecture and Wave-Form Physics
+This segment introduces the foundational concepts of macroscopic eigenmode synthesis and continuous wave harmonics.
+
+```{=html}
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 20px;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/TtpBzEhujvw?si=jhuE_9A8NUp8jE0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
+
+### Part 2: The E8 Lie Group and Harmonic Apertures
+A deeper dive into the geometric topologies of the 240-root E8 lattice and the transition from high-impedance states to frictionless coherence.
+
+```{=html}
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 20px;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/rsE1r-1xpMM?si=FisiPL2BNPtWyktL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
+
+### Part 3: The Physics of Consciousness
+Exploring the observer as a localized zero-point node, and the mechanics of reality rendering via non-dual holographic fields.
+
+```{=html}
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 20px;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/NLPGaZnAaV4?si=QKMyJFDXM95jwDBD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
