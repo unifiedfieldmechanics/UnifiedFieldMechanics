@@ -170,3 +170,18 @@ Exploring the observer as a localized zero-point node, and the mechanics of real
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/NLPGaZnAaV4?si=QKMyJFDXM95jwDBD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
+
+---
+
+## 9. Structural Coherence: The Kinematics of Impedance Release
+
+This interactive model traces a localized node as it releases its systemic impedance and phase-locks to the Zero-Point Fulcrum. In a high-impedance architecture ($\frac{dS}{dt} > 0$), the node operates as a closed, extractive loop: the incident carrier wave is scattered by structural noise, re-circulates as a heated standing wave, and is retained as entropic load. By stepping the node down the Cybernetic Protocol of Systemic Realignment — halting the dissonant execution, defragmenting the structural noise, anchoring the Zero-Point Fulcrum, and integrating the opposing (centrifugal/centripetal) impulses via Phase Conjugation — the closed loop opens. At zero impedance ($\eta = 0$), the node becomes a frictionless superconductor: the carrier transmits without loss, outward radiation and inward absorption resolve into a singular structural event, and creation proceeds negentropically, without localized deficit.
+
+```{=html}
+<iframe src="structural-coherence-mapping-to-forgiveness-embed-visualization-tool.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/structural-coherence-mapping-to-forgiveness-embed-visualization-tool.html" width="100%" height="700" style="border: none;"></iframe>
+```

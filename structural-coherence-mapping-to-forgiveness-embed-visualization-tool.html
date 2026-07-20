@@ -1,0 +1,261 @@
+<!-- ============================================================
+     STRUCTURAL COHERENCE - The Open Circuit (eta -> 0)
+     Unified Field Mechanics interactive tool. Terminology aligned to
+     unifiedfieldmechanics.github.io (Structural Coherence, Zero-Point
+     Fulcrum, carrier wave, phase conjugation, negentropic transmission).
+     Self-contained interactive embed. Paste into an HTML block.
+     All styles are scoped under #frt-root so nothing leaks to the page.
+     ASCII-only source (HTML entities + JS \u escapes) so it renders
+     correctly regardless of the host page's character encoding.
+     ============================================================ -->
+
+     
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "author": {
+    "@type": "Person",
+    "name": "Haus of Dignity",
+    "identifier": "https://orcid.org/0009-0002-5686-5532",
+    "url": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haus of Dignity",
+    "url": "https://www.hausofdignity.com/",
+    "sameAs": [
+      "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html",
+      "https://www.youtube.com/@HausOfDignity",
+      "https://www.tumblr.com/hausofdignity",
+      "https://www.reddit.com/user/Happy-Mud8709",
+      "https://x.com/HausofDignity"
+    ]
+  }
+}
+</script>
+
+<div id="frt-root">
+  <div class="frt-head">
+    <div class="frt-title">STRUCTURAL COHERENCE</div>
+    <div class="frt-sub">Systemic impedance (&eta;) scatters the carrier wave and heats a closed, high-impedance loop (dS/dt &gt; 0).</div>
+    <h3 class="frt-h3">Watch a localized node release its systemic impedance and phase-lock to the Zero-Point Fulcrum &mdash; from destructive interference and entropic drag to lossless, negentropic transmission (&eta; &rarr; 0).</h3>
+  </div>
+
+  <div class="frt-stage"><canvas id="frt-c"></canvas></div>
+
+  <div class="frt-meters">
+    <div class="frt-m"><label>IMPEDANCE &eta; <b>(dS/dt &gt; 0)</b></label><div class="frt-bar"><i id="frt-eta"></i></div></div>
+    <div class="frt-m"><label>STRUCTURAL COHERENCE <b>(&eta; &rarr; 0)</b></label><div class="frt-bar"><i id="frt-coh"></i></div></div>
+    <div class="frt-m"><label>STRUCTURAL NOISE <b>(RETAINED)</b></label><div class="frt-bar"><i id="frt-led"></i></div></div>
+  </div>
+
+  <div class="frt-narr">
+    <div class="frt-phline"><span id="frt-pname">&mdash;</span><span id="frt-psub">&mdash;</span></div>
+    <div id="frt-prag" class="frt-prag">&mdash;</div>
+    <div id="frt-mech" class="frt-mech">&mdash;</div>
+  </div>
+
+  <div class="frt-ladder" id="frt-ladder"></div>
+  <div class="frt-nav">
+    <button class="frt-btn" id="frt-prev">&lsaquo; Back</button>
+    <button class="frt-btn frt-primary" id="frt-next">Neutralize Impedance &rsaquo;</button>
+  </div>
+  <div class="frt-hint">Tip: tap the closed loop to expel the retained structural noise.</div>
+</div>
+
+<style>
+#frt-root{ max-width:840px; width:100%; margin:0 auto; box-sizing:border-box;
+  background:radial-gradient(120% 100% at 50% 0%, #0d1018 0%, #05060a 70%, #000 100%);
+  border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:18px 18px 16px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:#e6ebf5;
+  -webkit-font-smoothing:antialiased; }
+#frt-root *{ box-sizing:border-box; }
+#frt-root .frt-head{ margin-bottom:12px; }
+#frt-root .frt-title{ font-size:22px; font-weight:800; letter-spacing:1.5px; text-align:center; color:#e8edf4;
+  background:linear-gradient(180deg,#ffffff 0%,#eef2f6 22%,#b9c3d0 48%,#8f9aa9 54%,#e7ecf2 80%,#ffffff 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  text-shadow:0 1px 1px rgba(0,0,0,0.5), 0 0 12px rgba(190,205,230,0.18); }
+#frt-root .frt-sub{ font-size:12.5px; line-height:1.5; color:rgba(210,220,240,0.6); margin-top:5px; }
+#frt-root h3.frt-h3{ font-family:inherit; font-size:18.5px; line-height:1.4; font-weight:800;
+  color:#eaf0ff; margin:11px 0 0; padding:0; letter-spacing:.2px; }
+#frt-root .frt-stage{ position:relative; width:100%; border-radius:12px; overflow:hidden;
+  background:#000; border:1px solid rgba(255,255,255,0.06); }
+#frt-root canvas{ display:block; width:100%; height:auto; touch-action:manipulation; }
+#frt-root .frt-meters{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:12px 0 10px; }
+#frt-root .frt-m label{ display:block; font-size:9px; letter-spacing:.6px; font-weight:700; color:rgba(220,228,245,0.62); margin-bottom:4px; }
+#frt-root .frt-m label b{ font-weight:600; color:rgba(190,200,225,0.42); }
+#frt-root .frt-bar{ height:7px; border-radius:6px; background:rgba(255,255,255,0.08); overflow:hidden; }
+#frt-root .frt-bar i{ display:block; height:100%; width:0%; border-radius:6px; transition:width .25s ease, background .3s; }
+#frt-root #frt-eta{ background:linear-gradient(90deg,#ff5a3c,#ff2e2e); }
+#frt-root #frt-led{ background:linear-gradient(90deg,#ffb84d,#ff7a1a); }
+#frt-root .frt-narr{ background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:12px 14px; min-height:96px; }
+#frt-root .frt-phline{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px; }
+#frt-root #frt-pname{ font-size:14px; font-weight:800; letter-spacing:.5px; }
+#frt-root #frt-psub{ font-size:11px; font-weight:600; color:rgba(210,220,240,0.5); letter-spacing:.5px; }
+#frt-root .frt-prag{ font-size:13px; line-height:1.5; color:#eef2fb; }
+#frt-root .frt-mech{ font-size:11.5px; line-height:1.5; color:rgba(200,212,238,0.66); margin-top:5px; font-style:italic; }
+#frt-root .frt-ladder{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin:12px 0 10px; }
+#frt-root .frt-step{ cursor:pointer; text-align:center; padding:9px 4px; border-radius:9px;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); transition:all .25s; }
+#frt-root .frt-step .n{ font-size:13px; font-weight:800; }
+#frt-root .frt-step .l{ font-size:8.5px; font-weight:600; letter-spacing:.3px; color:rgba(210,220,240,0.55); margin-top:2px; line-height:1.2; }
+#frt-root .frt-step.on{ box-shadow:0 0 0 1px currentColor inset, 0 0 16px -4px currentColor; }
+#frt-root .frt-nav{ display:flex; gap:8px; flex-wrap:wrap; }
+#frt-root .frt-btn{ flex:1; min-width:120px; cursor:pointer; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.4px;
+  color:#dfe7ff; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:9px; padding:10px 8px; transition:all .2s; }
+#frt-root .frt-btn:hover{ background:rgba(255,255,255,0.1); }
+#frt-root .frt-primary{ background:rgba(90,170,255,0.16); border-color:rgba(120,190,255,0.4); }
+#frt-root .frt-hint{ font-size:10px; color:rgba(200,212,238,0.4); text-align:center; margin-top:8px; }
+</style>
+
+<script>
+(function(){
+const root=document.getElementById('frt-root'), cv=document.getElementById('frt-c'), ctx=cv.getContext('2d');
+const TAU=Math.PI*2;
+const DASH='\u2014', ARROW='\u2192', DOTS='\u2026', ETA='\u03b7';   // em-dash, arrow, ellipsis, eta (ASCII-safe escapes)
+
+const PH=[
+ {n:"1",name:"Halt Execution",sub:"High-Impedance Architecture",eta:1.00,
+  prag:"Cut power to the dissonant frequencies. Self-generated destructive interference is a second impedance stacked on the first.",
+  mech:"The egoic paradigm is a closed, high-impedance loop (dS/dt > 0). Anchoring the node halts the obsolete algorithm and the clamp relaxes."},
+ {n:"2",name:"System Defragmentation",sub:"Expelling Structural Noise",eta:0.72,
+  prag:"Read the event as a wave-form, not a verdict. The affective overlay is added impedance "+DASH+" structural noise, not information.",
+  mech:"Demodulate the carrier: low-frequency code is thermodynamically expelled from the local field, and the retained charge falls away."},
+ {n:"3",name:"Anchor the Zero-Point Fulcrum",sub:"Reclaiming Causal Agency",eta:0.45,
+  prag:"The pattern is projected by this node, not imposed on it. Phase-lock to the present and reclaim the amplitude you assigned to the reflection.",
+  mech:"The observer rests on the Zero-Point Fulcrum as the sovereign datum; owning the projection returns the trapped kinetic term to the node."},
+ {n:"4",name:"Phase Conjugation",sub:"Topological Alignment",eta:0.20,
+  prag:"Bring the opposing impulses "+DASH+" centrifugal and centripetal "+DASH+" into exact alignment. The push/pull friction cancels.",
+  mech:"Conjugate waveforms in topological alignment cancel transverse kinetic friction to zero; the circuit opens to the ZPE ground state."},
+ {n:"5",name:"Structural Coherence",sub:ETA+" = 0",eta:0.00,
+  prag:"The open circuit "+DASH+" a frictionless superconductor. Lossless, negentropic transmission: nothing reflects, nothing is retained.",
+  mech:"At zero impedance the node radiates without deficit; giving and receiving are a singular event. There is nothing to release."},
+];
+const LADLBL=["Halt","Defrag","Fulcrum","Conjugate",ETA+" = 0"];
+function statusFor(eta){
+  if(eta>0.75) return "High impedance (dS/dt > 0) "+DASH+" structural noise scatters the carrier; the closed loop heats and retains energy.";
+  if(eta>0.5)  return "Impedance falling "+DASH+" the closed loop opens; partial transmission begins.";
+  if(eta>0.25) return "Low impedance "+DASH+" the carrier transmits through the node with little scatter.";
+  if(eta>0.03) return ETA+" "+ARROW+" 0 "+DASH+" near-lossless; the node approaches a frictionless superconductor.";
+  return ETA+" = 0 "+DASH+" Structural Coherence. Lossless, negentropic transmission; nothing is retained.";
+}
+const COL=[[255,90,60],[255,170,70],[95,215,150],[85,165,255],[214,240,255]];
+function cohColor(coh){ coh=Math.max(0,Math.min(1,coh)); const f=coh*(COL.length-1),i=Math.floor(f),r=f-i,a=COL[i],b=COL[Math.min(i+1,COL.length-1)];
+  return [Math.round(a[0]+(b[0]-a[0])*r),Math.round(a[1]+(b[1]-a[1])*r),Math.round(a[2]+(b[2]-a[2])*r)]; }
+
+/* ---- sizing ---- */
+let Wl=800,Hl=360,dpr=1;
+function resize(){ Wl=Math.min(840, root.clientWidth-36); Hl=Math.round(Math.max(300,Math.min(380,Wl*0.46)));
+  dpr=Math.min(window.devicePixelRatio||1,2.5); cv.width=Wl*dpr; cv.height=Hl*dpr; cv.style.width='100%'; cv.style.height=Hl+'px'; ctx.setTransform(dpr,0,0,dpr,0,0); }
+if(window.ResizeObserver){ new ResizeObserver(resize).observe(root); } window.addEventListener('resize',resize,{passive:true});
+
+/* ---- state ---- */
+let phase=0, etaT=PH[0].eta, eta=PH[0].eta;
+const free=[], trapped=[]; let spawnT=0, T=0, splash=0;
+const LEDMAX=22;
+function spawn(charge){ free.push({x:-10, y:Hl*0.5, v:120+Math.random()*40, ch:charge||1, trail:0}); }
+function setPhase(i){ i=Math.max(0,Math.min(4,i)); const desc=PH[i].eta<etaT; phase=i; etaT=PH[i].eta; if(desc) releaseBurst( (eta-etaT) ); updateUI(); }
+function releaseBurst(amount){ const k=Math.round(trapped.length*Math.min(1,amount*1.6+0.15)); for(let z=0;z<k;z++){ const p=trapped.shift(); if(!p)break; free.push({x:Wl*0.5,y:Hl*0.5,v:220+Math.random()*120,ch:p.ch,trail:1,freed:1}); } splash=1; }
+
+/* ---- layout ---- */
+function nodeX(){ return Wl*0.5; } function wireY(){ return Hl*0.5; }
+function loopR(){ return Hl*0.30; }
+
+/* ---- update ---- */
+function update(dt){
+  T+=dt; eta+=(etaT-eta)*Math.min(1,dt*3.0); splash=Math.max(0,splash-dt*1.8);
+  spawnT+=dt; if(spawnT>0.55){ spawnT=0; spawn(1); }
+  const nx=nodeX(), wy=wireY();
+  for(let i=free.length-1;i>=0;i--){ const p=free[i]; p.x+=p.v*dt; p.trail=Math.min(1,p.trail+dt*4);
+    if(!p.freed && p.x>=nx){
+      if(Math.random()<eta*0.96 && trapped.length<LEDMAX){ trapped.push({ang:Math.random()*TAU,ch:p.ch,r:loopR()*(0.9+Math.random()*0.2)}); free.splice(i,1); continue; }
+    }
+    if(p.x>Wl+20) free.splice(i,1);
+  }
+  const orbit = 1.4 + eta*1.2;
+  for(const p of trapped){ p.ang+=orbit*dt; }
+  if(eta<0.5 && trapped.length){ if(Math.random()<(0.5-eta)*dt*4){ const p=trapped.shift(); free.push({x:nodeX(),y:wireY(),v:200,ch:p.ch,trail:1,freed:1}); } }
+}
+
+/* ---- draw ---- */
+function draw(){
+  const coh=1-eta, acc=cohColor(coh), nx=nodeX(), wy=wireY(), R=loopR();
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.globalCompositeOperation='source-over';
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,Wl,Hl);
+  ctx.globalCompositeOperation='lighter';
+  let vg=ctx.createRadialGradient(nx,wy,0,nx,wy,Wl*0.6);
+  vg.addColorStop(0,`rgba(${acc.join(',')},${0.06+0.06*coh})`); vg.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=vg; ctx.fillRect(0,0,Wl,Hl);
+
+  if(eta>0.02){ const hr=R*(0.8+trapped.length/LEDMAX); const hg=ctx.createRadialGradient(nx,wy,0,nx,wy,hr);
+    const heat=eta*(0.25+0.5*trapped.length/LEDMAX);
+    hg.addColorStop(0,`rgba(255,90,50,${heat})`); hg.addColorStop(1,'rgba(255,60,30,0)');
+    ctx.fillStyle=hg; ctx.beginPath(); ctx.arc(nx,wy,hr,0,TAU); ctx.fill();
+    for(let i=0;i<trapped.length;i++){ if(Math.random()<0.3){ const a=Math.random()*TAU, rr=R*(0.6+Math.random()*0.7); const x=nx+Math.cos(a)*rr, y=wy+Math.sin(a)*rr*0.9;
+      ctx.fillStyle=`rgba(255,${120+Math.random()*80|0},60,${0.5*eta})`; ctx.beginPath(); ctx.arc(x,y,1+Math.random()*1.5,0,TAU); ctx.fill(); } }
+  }
+
+  const wc=acc.join(',');
+  for(const [w,al] of [[9,0.06+0.14*coh],[3,0.5+0.4*coh]]){ ctx.strokeStyle=`rgba(${wc},${al})`; ctx.lineWidth=w; ctx.beginPath(); ctx.moveTo(0,wy); ctx.lineTo(Wl,wy); ctx.stroke(); }
+  ctx.font='600 10px ui-monospace,Menlo,monospace'; ctx.textBaseline='alphabetic';
+  ctx.fillStyle='rgba(230,236,250,0.5)'; ctx.textAlign='left'; ctx.fillText('INCIDENT CARRIER  '+ARROW, 8, wy-12);
+  ctx.textAlign='right'; ctx.fillStyle=`rgba(${wc},${0.3+0.6*coh})`; ctx.fillText(coh>0.5?(ARROW+'  TRANSMITTED'):(DOTS+'  SCATTERED'), Wl-8, wy-12);
+  // live plain-language caption (teaches what's happening in real time)
+  ctx.textAlign='center'; ctx.textBaseline='top'; ctx.font='600 11px -apple-system,Segoe UI,Roboto,sans-serif';
+  ctx.fillStyle=`rgba(${wc},0.6)`; ctx.fillText(statusFor(eta), nx, 14); ctx.textBaseline='alphabetic';
+
+  for(let s=0;s<2;s++){ const dir=s?1:-1; ctx.strokeStyle=`rgba(${wc},${0.05+0.32*coh})`; ctx.lineWidth=1.4;
+    ctx.beginPath(); for(let i=0;i<=120;i++){ const a=i/120*TAU; const wob=(1-coh)*0.18*Math.sin(a*7+T*2*dir); const rr=R*(0.5+0.06*Math.sin(a*3+T*dir))*(1+wob);
+      const x=nx+Math.cos(a+T*0.4*dir)*rr, y=wy+Math.sin(a+T*0.4*dir)*rr*0.62; i?ctx.lineTo(x,y):ctx.moveTo(x,y);} ctx.closePath(); ctx.stroke(); }
+
+  if(eta>0.03){ ctx.strokeStyle=`rgba(255,${90+120*(1-eta)|0},60,${0.10+0.5*eta})`; ctx.lineWidth=1.6+2*eta;
+    ctx.beginPath(); ctx.ellipse(nx,wy,R*(0.6+0.4*eta),R*(0.9+0.3*eta),0,0,TAU); ctx.stroke(); }
+
+  if(eta>0.03){ const off=R*(0.5+0.6*(1-eta)); ctx.strokeStyle=`rgba(255,70,40,${0.25+0.55*eta})`; ctx.lineWidth=3;
+    for(const sgn of [-1,1]){ const cyv=wy+sgn*off*0.8; ctx.beginPath(); ctx.moveTo(nx-R*0.5,cyv); ctx.quadraticCurveTo(nx,cyv+sgn*R*0.28,nx+R*0.5,cyv); ctx.stroke(); } }
+
+  for(const p of trapped){ const x=nx+Math.cos(p.ang)*p.r*(0.65+0.35*eta), y=wy+Math.sin(p.ang)*p.r*(0.9+0.2*eta)*0.72;
+    ctx.fillStyle=`rgba(255,${110+Math.random()*40|0},60,0.9)`; ctx.beginPath(); ctx.arc(x,y,2.4,0,TAU); ctx.fill();
+    ctx.fillStyle='rgba(255,150,90,0.25)'; ctx.beginPath(); ctx.arc(x,y,6,0,TAU); ctx.fill(); }
+
+  for(const p of free){ const c = p.freed? [255,246,220] : (p.x<nx? [235,240,255] : acc);
+    const a=0.9*p.trail;
+    ctx.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${a*0.25})`; ctx.beginPath(); ctx.arc(p.x,p.y,7,0,TAU); ctx.fill();
+    ctx.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${a})`; ctx.beginPath(); ctx.arc(p.x,p.y,2.6,0,TAU); ctx.fill(); }
+
+  const nr=10+8*coh + 10*splash; const ng=ctx.createRadialGradient(nx,wy,0,nx,wy,nr);
+  ng.addColorStop(0,'rgba(255,255,255,0.98)'); ng.addColorStop(0.35,`rgba(${wc},0.7)`); ng.addColorStop(1,`rgba(${wc},0)`);
+  ctx.fillStyle=ng; ctx.beginPath(); ctx.arc(nx,wy,nr,0,TAU); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.95)'; ctx.beginPath(); ctx.arc(nx,wy,2.6+1.4*coh,0,TAU); ctx.fill();
+
+  if(coh>0.92){ ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.font='700 13px -apple-system,Segoe UI,Roboto,sans-serif';
+    ctx.fillStyle=`rgba(${wc},${(coh-0.92)/0.08})`; ctx.fillText(ETA+' = 0  '+DASH+'  an open circuit; giving and receiving are a singular event.', nx, Hl-24); }
+}
+
+/* ---- UI ---- */
+const eEta=document.getElementById('frt-eta'), eCoh=document.getElementById('frt-coh'), eLed=document.getElementById('frt-led');
+const ePname=document.getElementById('frt-pname'), ePsub=document.getElementById('frt-psub'), ePrag=document.getElementById('frt-prag'), eMech=document.getElementById('frt-mech');
+const ladder=document.getElementById('frt-ladder');
+PH.forEach((p,i)=>{ const d=document.createElement('div'); d.className='frt-step'; d.innerHTML='<div class="n">'+p.n+'</div><div class="l">'+LADLBL[i]+'</div>'; d.addEventListener('click',()=>setPhase(i)); ladder.appendChild(d); });
+const steps=[...ladder.children];
+function updateUI(){ const p=PH[phase], coh=1-p.eta, acc=cohColor(coh);
+  ePname.textContent=p.name; ePsub.textContent=p.sub; ePrag.textContent=p.prag; eMech.textContent=p.mech;
+  steps.forEach((s,i)=>{ s.classList.toggle('on',i===phase); s.style.color='rgb('+cohColor(1-PH[i].eta).join(',')+')'; });
+  eCoh.style.background='linear-gradient(90deg, rgba('+acc.join(',')+',0.7), rgb('+acc.join(',')+'))';
+  ePname.style.color='rgb('+acc.join(',')+')';
+}
+document.getElementById('frt-next').addEventListener('click',()=>setPhase(phase+1));
+document.getElementById('frt-prev').addEventListener('click',()=>setPhase(phase-1));
+cv.addEventListener('pointerdown',e=>{ const r=cv.getBoundingClientRect(); const x=(e.clientX-r.left), y=(e.clientY-r.top);
+  if(Math.hypot(x-nodeX(),y-wireY())<loopR()*1.1 && trapped.length){ releaseBurst(0.4); } });
+
+/* ---- loop ---- */
+let last=performance.now();
+function tick(now){ const dt=Math.min(0.05,(now-last)/1000); last=now; update(dt); draw();
+  eEta.style.width=(eta*100).toFixed(0)+'%'; eCoh.style.width=((1-eta)*100).toFixed(0)+'%'; eLed.style.width=(trapped.length/LEDMAX*100).toFixed(0)+'%';
+  requestAnimationFrame(tick); }
+resize(); updateUI(); requestAnimationFrame(tick);
+})();
+</script>
