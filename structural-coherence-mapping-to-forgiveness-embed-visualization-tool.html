@@ -112,7 +112,12 @@
 
 <script>
 (function(){
-const root=document.getElementById('frt-root'), cv=document.getElementById('frt-c'), ctx=cv.getContext('2d');
+function initTool() {
+const root=document.getElementById('frt-root');
+if (!root) { setTimeout(initTool, 50); return; } // Wait for Ghost CMS to mount the HTML card
+const cv=document.getElementById('frt-c');
+if (!cv) { setTimeout(initTool, 50); return; }
+const ctx=cv.getContext('2d');
 const TAU=Math.PI*2;
 const DASH='\u2014', ARROW='\u2192', DOTS='\u2026', ETA='\u03b7';   // em-dash, arrow, ellipsis, eta (ASCII-safe escapes)
 
@@ -258,5 +263,14 @@ function tick(now){ const dt=Math.min(0.05,(now-last)/1000); last=now; update(dt
   eEta.style.width=(eta*100).toFixed(0)+'%'; eCoh.style.width=((1-eta)*100).toFixed(0)+'%'; eLed.style.width=(trapped.length/LEDMAX*100).toFixed(0)+'%';
   requestAnimationFrame(tick); }
 resize(); updateUI(); requestAnimationFrame(tick);
+}
+
+// Start the robust initialization loop
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTool);
+} else {
+  initTool();
+}
+
 })();
 </script>
