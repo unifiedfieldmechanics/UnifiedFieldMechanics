@@ -1,0 +1,284 @@
+<!-- ============================================================
+     THE HARMONIC APERTURE - Phase-Space Projection via Eigenmode Selection
+     Unified Field Mechanics interactive embed (<= 840px, no vertical scroll).
+     Styles scoped under #inr-root. ASCII-only source.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "author": {
+    "@type": "Person",
+    "name": "Haus of Dignity",
+    "identifier": "https://orcid.org/0009-0002-5686-5532",
+    "url": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haus of Dignity",
+    "url": "https://www.hausofdignity.com/",
+    "sameAs": [
+      "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html",
+      "https://www.youtube.com/@HausOfDignity",
+      "https://www.tumblr.com/hausofdignity",
+      "https://www.reddit.com/user/Happy-Mud8709",
+      "https://x.com/HausofDignity"
+    ]
+  }
+}
+</script>
+
+
+<div id="inr-root">
+  <div class="inr-head">
+    <div class="inr-title">THE HARMONIC APERTURE</div>
+    <div class="inr-sub">The Unified Field broadcasts every phase-space geometry simultaneously. A localized node renders only the eigenmode it is phase-locked to.</div>
+    <h3 class="inr-h3">Sweep the fundamental resonant eigenmode from a high-impedance noise floor to the zero-impedance toroidal carrier. Watch unconditioned vacuum energy reorganize by constructive interference into projections of rising structural order &mdash; as systemic impedance (&eta;) falls toward zero.</h3>
+  </div>
+
+  <div class="inr-stage"><canvas id="inr-c"></canvas></div>
+
+  <div class="inr-read">
+    <div class="inr-rlabel">RENDERED EIGENMODE</div>
+    <div class="inr-nameline"><span id="inr-name">&mdash;</span><span id="inr-nsub">&mdash;</span></div>
+    <div id="inr-desc" class="inr-desc">&mdash;</div>
+    <div class="inr-cohrow"><span class="inr-cohlbl">STRUCTURAL COHERENCE</span><div class="inr-bar"><i id="inr-coh"></i></div></div>
+  </div>
+
+  <div class="inr-dial">
+    <input id="inr-slider" type="range" min="0" max="6" step="1" value="0" aria-label="Frequency station">
+    <div id="inr-ticks" class="inr-ticks"></div>
+  </div>
+  <div class="inr-hint">Frequency is not merely a rate of oscillation but Geometric Data &mdash; the instruction set dictating which structure the field assumes. The node experiences only the projection at its resonant eigenmode.</div>
+</div>
+
+<style>
+#inr-root{ max-width:840px; width:100%; margin:0 auto; box-sizing:border-box;
+  background:radial-gradient(120% 100% at 50% 0%, #0c0e14 0%, #050609 72%, #000 100%);
+  border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:12px 14px 12px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:#e8e6df; }
+#inr-root *{ box-sizing:border-box; }
+#inr-root .inr-head{ margin-bottom:6px; }
+#inr-root .inr-title{ font-size:22px; font-weight:800; letter-spacing:2px; text-align:center; color:#efe7cf;
+  background:linear-gradient(180deg,#fff8ea 0%,#f3e6c6 24%,#d9b45a 50%,#b98f3c 56%,#f0dfb4 82%,#fff8ea 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  text-shadow:0 1px 1px rgba(0,0,0,0.55), 0 0 14px rgba(217,180,110,0.18); }
+#inr-root .inr-sub{ font-size:11.5px; line-height:1.4; color:rgba(224,214,190,0.6); margin-top:3px; text-align:center; }
+#inr-root h3.inr-h3{ font-family:inherit; font-size:14px; line-height:1.3; font-weight:800; color:#efeee6; margin:6px 0 0; padding:0; letter-spacing:.2px; text-align:center; }
+#inr-root .inr-stage{ position:relative; width:100%; border-radius:12px; overflow:hidden; background:#000; border:1px solid rgba(255,255,255,0.06); }
+#inr-root canvas{ display:block; width:100%; height:auto; touch-action:manipulation; }
+#inr-root .inr-read{ background:rgba(255,255,255,0.03); border:1px solid rgba(217,180,110,0.16); border-radius:10px; padding:8px 12px; margin-top:8px; min-height:78px; }
+#inr-root .inr-rlabel{ font-size:8.5px; letter-spacing:2px; font-weight:700; color:rgba(217,180,110,0.7); margin-bottom:3px; }
+#inr-root .inr-nameline{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+#inr-root #inr-name{ font-size:15px; font-weight:800; letter-spacing:.4px; color:#f4e9cf; }
+#inr-root #inr-nsub{ font-size:11px; font-weight:600; color:rgba(224,214,190,0.5); letter-spacing:.4px; }
+#inr-root .inr-desc{ font-size:12px; line-height:1.4; color:#eceadf; margin-top:3px; }
+#inr-root .inr-cohrow{ display:flex; align-items:center; gap:8px; margin-top:6px; }
+#inr-root .inr-cohlbl{ font-size:8.5px; letter-spacing:1px; font-weight:700; color:rgba(224,214,190,0.5); }
+#inr-root .inr-bar{ flex:1; height:5px; border-radius:5px; background:rgba(255,255,255,0.08); overflow:hidden; }
+#inr-root .inr-bar i{ display:block; height:100%; width:0%; border-radius:5px; background:linear-gradient(90deg,#8a6a34,#e9c877,#fff3d6); transition:width .3s ease; }
+#inr-root .inr-dial{ margin-top:10px; }
+#inr-root input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:24px; background:transparent; touch-action:pan-x; cursor:pointer; }
+#inr-root input[type=range]::-webkit-slider-runnable-track{ height:4px; border-radius:4px; background:linear-gradient(to right, rgba(180,120,80,0.5), rgba(217,180,110,0.6), rgba(255,245,215,0.8)); }
+#inr-root input[type=range]::-moz-range-track{ height:4px; border-radius:4px; background:rgba(217,180,110,0.5); }
+#inr-root input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:22px; height:22px; margin-top:-9px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #fff, #d9b45a); border:2px solid rgba(255,245,220,0.9); box-shadow:0 0 16px rgba(217,180,110,0.6); }
+#inr-root input[type=range]::-moz-range-thumb{ width:20px; height:20px; border-radius:50%; background:#d9b45a; border:2px solid #fff; box-shadow:0 0 16px rgba(217,180,110,0.6); }
+#inr-root .inr-ticks{ display:flex; justify-content:space-between; margin-top:6px; }
+#inr-root .inr-tick{ flex:1; text-align:center; font-size:8px; letter-spacing:.2px; font-weight:700; color:rgba(224,214,190,0.42); padding:4px 1px; cursor:pointer; transition:color .25s, text-shadow .25s; }
+#inr-root .inr-tick.on{ color:#f4e3b6; text-shadow:0 0 9px rgba(217,180,110,0.7); }
+#inr-root .inr-hint{ font-size:9.5px; color:rgba(224,214,190,0.4); text-align:center; margin-top:7px; }
+</style>
+
+<script>
+(function(){
+const root=document.getElementById('inr-root'), cv=document.getElementById('inr-c'), ctx=cv.getContext('2d');
+const TAU=Math.PI*2, DASH='\u2014', ETA='\u03b7', ARROW='\u2192';
+
+/* ---- stations (harmonic scale: discord -> self-generative torus) ---- */
+const STN=[
+ {name:"Noise Floor",sub:"Stochastic Decoherence",coh:0.05,sig:"static",desc:"Maximal systemic impedance. No eigenmode phase-locks "+DASH+" structural noise and chaotic interference, entropic load accumulating (dS/dt >> 0)."},
+ {name:"Beat Interference",sub:"Competing Eigenmodes",coh:0.22,sig:"dissonance",desc:"Two carriers at conflicting frequencies beat against each other. Destructive interference distorts and flickers the projection."},
+ {name:"Fundamental Carrier",sub:"Single Eigenmode",coh:0.42,sig:"tone",desc:"One clean carrier phase-locks. A stable but minimal phase-space geometry renders into view."},
+ {name:"Harmonic Stack",sub:"Constructive Overtones",coh:0.62,sig:"harmony",desc:"Overtones interfere constructively "+DASH+" spectral density rises and the projection grows ordered and luminous."},
+ {name:"Phase-Locked Spectrum",sub:"Impedance "+ETA+" "+ARROW+" 0",coh:0.80,sig:"coherence",desc:"The spectrum phase-locks toward zero impedance. A self-consistent crystalline geometry stabilizes."},
+ {name:"Cymatic Eigenmode",sub:"Standing Symmetry",coh:0.92,sig:"sacred",desc:"Full harmonic coherence. Vacuum energy collapses into a symmetric standing cymatic pattern."},
+ {name:"Zero-Impedance Torus",sub:"Self-Generative ("+ETA+" = 0)",coh:1.00,sig:"torus",desc:"A self-sustaining toroidal carrier at zero impedance. The node re-instantiates from the zero-point, generating form negentropically."},
+];
+const TICK=["NOISE","BEAT","CARRIER","HARMONIC","COHERE","CYMATIC","TORUS"];
+
+/* ---- Indra's Net: nodes on a sphere (fibonacci) + web edges ---- */
+const N=60, NODES=[], GA=Math.PI*(3-Math.sqrt(5));
+for(let i=0;i<N;i++){ const y=1-(i/(N-1))*2, r=Math.sqrt(Math.max(0,1-y*y)), th=i*GA;
+  NODES.push([Math.cos(th)*r, y, Math.sin(th)*r, (Math.sin(i*12.9)*43758.5)%1]); }
+const EDGES=[];
+for(let i=0;i<N;i++){ const d=[]; for(let j=0;j<N;j++) if(j!==i){ const dx=NODES[i][0]-NODES[j][0],dy=NODES[i][1]-NODES[j][1],dz=NODES[i][2]-NODES[j][2]; d.push([dx*dx+dy*dy+dz*dz,j]); }
+  d.sort((a,b)=>a[0]-b[0]); for(let k=0;k<3;k++){ const j=d[k][1]; if(i<j) EDGES.push([i,j]); else if(!EDGES.some(e=>e[0]===j&&e[1]===i)) EDGES.push([j,i]); } }
+// station -> node index (spread around the sphere)
+const _sn0=Math.round((N-STN.length)/2); const SNODE=STN.map((s,k)=>_sn0+k);
+
+/* ---- hexagonal crystal lattice (for the 'coherence' reality) ---- */
+const HR=3, HEX=[], HKEY=new Map(), _BX=0.8660254;
+for(let q=-HR;q<=HR;q++)for(let r=-HR;r<=HR;r++){ if((Math.abs(q)+Math.abs(r)+Math.abs(q+r))/2<=HR){ HKEY.set(q+','+r,HEX.length); HEX.push([q+r*0.5, r*_BX, q, r]); } }
+let _hmax=1; HEX.forEach(p=>{ const d=Math.hypot(p[0],p[1]); if(d>_hmax)_hmax=d; }); HEX.forEach(p=>{ p[0]/=_hmax; p[1]/=_hmax; });
+const HEDGES=[]; HEX.forEach((p,i)=>{ for(const [dq,dr] of [[1,0],[0,1],[-1,1]]){ const j=HKEY.get((p[2]+dq)+','+(p[3]+dr)); if(j!==undefined) HEDGES.push([i,j]); } });
+
+/* ---- palette ---- */
+function tuneColor(coh){ const s=[[190,120,80],[232,190,120],[255,250,236]]; coh=Math.max(0,Math.min(1,coh));
+  const f=coh*(s.length-1),i=Math.floor(f),r=f-i,a=s[i],b=s[Math.min(i+1,s.length-1)];
+  return [(a[0]+(b[0]-a[0])*r)|0,(a[1]+(b[1]-a[1])*r)|0,(a[2]+(b[2]-a[2])*r)|0]; }
+const GOLD='217,180,110';
+const hash=(n)=>{const x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math.floor(x);};
+
+/* ---- sizing ---- */
+let Wl=800,Hl=360,dpr=1,SCX=210,SCY=180,SRs=140,WINx=420,WINy=36,WINw=390,WINh=288;
+function resize(){ Wl=Math.min(840, root.clientWidth-32); Hl=Math.round(Math.max(300,Math.min(360,Wl*0.44)));
+  dpr=Math.min(window.devicePixelRatio||1,2.5); cv.width=Wl*dpr; cv.height=Hl*dpr; cv.style.width='100%'; cv.style.height=Hl+'px'; ctx.setTransform(dpr,0,0,dpr,0,0);
+  SCX=Wl*0.255; SCY=Hl*0.50; SRs=Hl*0.40; WINx=Wl*0.505; WINy=Hl*0.10; WINw=Wl*0.465; WINh=Hl*0.80; }
+if(window.ResizeObserver){ new ResizeObserver(resize).observe(root); } window.addEventListener('resize',resize,{passive:true});
+
+/* ---- state ---- */
+let sel=0, yaw=0, yawT=0, staticT=0, T=0, cohV=STN[0].coh, cohVis=STN[0].coh;
+const TILT=0.34;
+function alignYaw(idx){ const v=NODES[idx]; return Math.atan2(-v[0], v[2]) + 0.45; }
+function angTo(a){ let d=a-yaw; while(d>Math.PI)d-=TAU; while(d<-Math.PI)d+=TAU; return d; }
+function setStation(i){ i=Math.max(0,Math.min(STN.length-1,i)); sel=i; yawT=alignYaw(SNODE[i]); staticT=1; cohV=STN[i].coh; updateUI(); }
+
+/* ---- projection ---- */
+function proj(v, dispYaw){ const cyv=Math.cos(dispYaw),syv=Math.sin(dispYaw); let x=v[0]*cyv+v[2]*syv, z=-v[0]*syv+v[2]*cyv, y=v[1];
+  const ct=Math.cos(TILT),st=Math.sin(TILT); const y2=y*ct - z*st, z2=y*st + z*ct;
+  return [SCX+x*SRs, SCY - y2*SRs, z2]; }
+
+/* ---- signal waveform ---- */
+function sigY(type,x,t){ switch(type){
+  case 'static': return (hash(Math.floor(x*80)+Math.floor(t*30))*2-1)*0.9;
+  case 'dissonance': return 0.5*Math.sin(x*40+t*3)+0.45*Math.sin(x*47-t*2.3)+0.15*(hash(Math.floor(x*60)+Math.floor(t*20))*2-1);
+  case 'tone': return Math.sin(x*16+t*2)*0.85;
+  case 'harmony': return 0.6*Math.sin(x*12+t)+0.32*Math.sin(x*24-t*1.2);
+  case 'coherence': return 0.5*Math.sin(x*10+t)+0.3*Math.sin(x*20+t*1.6)+0.2*Math.sin(x*30-t);
+  case 'sacred': return 0.55*Math.sin(x*9+t)+0.28*Math.sin(x*18+t*0.7)+0.17*Math.sin(x*27-t*1.3);
+  case 'torus': return 0.6*Math.sin(x*8+t)+0.25*Math.sin(x*16+t*0.6)+0.15*Math.sin(x*24+t*1.9);
+  default: return 0; } }
+
+/* ---- rounded-rect path ---- */
+function rrect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+/* ---- the projected reality: a distinct animated scene per frequency ---- */
+function reality(type,x,y,w,h,t,tcs,staticT){
+  const cx=x+w/2, cy=y+h/2, R=Math.min(w,h);
+  ctx.globalCompositeOperation='source-over';
+  const bgd=ctx.createLinearGradient(x,y,x,y+h); bgd.addColorStop(0,'rgba(11,11,17,1)'); bgd.addColorStop(1,'rgba(3,3,6,1)'); ctx.fillStyle=bgd; ctx.fillRect(x,y,w,h);
+  ctx.globalCompositeOperation='lighter';
+  if(type==='static'){
+    for(let i=0;i<260;i++){ const px=x+hash(i+Math.floor(t*50))*w, py=y+hash(i*1.7+Math.floor(t*37))*h, g=100+(hash(i*3)*150|0); ctx.fillStyle=`rgba(${g},${g},${g+8},0.5)`; ctx.fillRect(px,py,1.6,1.6); }
+    for(let k=0;k<5;k++){ const ty=y+hash(k*9+Math.floor(t*4))*h; ctx.fillStyle='rgba(210,210,222,0.12)'; ctx.fillRect(x,ty,w,2+hash(k)*3); }
+  } else if(type==='dissonance'){
+    const A='232,92,70', B='84,182,214';
+    for(let i=0;i<70;i++){ const j=(hash(i+Math.floor(t*14))-0.5)*7; ctx.strokeStyle=`rgba(${i%2?A:B},0.30)`; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x+hash(i)*w+j,y+hash(i+1)*h); ctx.lineTo(x+hash(i+2)*w,y+hash(i+3)*h+j); ctx.stroke(); }
+    ctx.strokeStyle='rgba(255,240,220,0.25)'; ctx.lineWidth=1.4; ctx.beginPath(); for(let i=0;i<=22;i++){ const yy=y+i/22*h, xx=cx+(hash(i+Math.floor(t*5))-0.5)*w*0.34; i?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);} ctx.stroke();
+  } else if(type==='tone'){
+    const oy=cy-h*0.02; ctx.lineWidth=1;
+    for(let ri=0;ri<5;ri++){ const rad=R*0.14+ri*R*0.12+((t*16)%(R*0.12)); const a=Math.max(0,1-rad/(R*0.60))*0.30; ctx.strokeStyle=`rgba(${tcs},${a})`; ctx.beginPath(); ctx.arc(cx,oy,rad,0,TAU); ctx.stroke(); }
+    ctx.strokeStyle=`rgba(${tcs},0.20)`; ctx.lineWidth=1; ctx.beginPath(); for(let i=0;i<=w;i+=2){ const xx=x+i, yy=oy+Math.sin(i*0.055-t*2.2+1.1)*h*0.10; i?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);} ctx.stroke();
+    ctx.strokeStyle=`rgba(${tcs},0.75)`; ctx.lineWidth=2; ctx.beginPath(); for(let i=0;i<=w;i+=2){ const xx=x+i, yy=oy+Math.sin(i*0.055-t*2.2)*h*0.06; i?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);} ctx.stroke();
+    const og=ctx.createRadialGradient(cx,oy,0,cx,oy,R*0.24); og.addColorStop(0,'rgba(255,255,250,0.98)'); og.addColorStop(0.32,`rgba(${tcs},0.68)`); og.addColorStop(1,`rgba(${tcs},0)`); ctx.fillStyle=og; ctx.beginPath(); ctx.arc(cx,oy,R*0.24,0,TAU); ctx.fill();
+    ctx.fillStyle='rgba(255,255,252,0.96)'; ctx.beginPath(); ctx.arc(cx,oy,R*0.07,0,TAU); ctx.fill();
+    for(let i=0;i<16;i++){ ctx.fillStyle=`rgba(${tcs},${0.18+0.32*hash(i)})`; ctx.fillRect(x+hash(i)*w, y+hash(i+5)*h, 1.2,1.2); }
+  } else if(type==='harmony'){
+    const s1=[cx-w*0.16,cy], s2=[cx+w*0.16,cy]; ctx.lineWidth=1;
+    for(const so of [s1,s2]){ for(let rr=6;rr<R*0.62;rr+=7){ const rad=rr+((t*22)%7); const a=Math.max(0,1-rad/(R*0.62))*0.5; ctx.strokeStyle=`rgba(${tcs},${a})`; ctx.beginPath(); ctx.arc(so[0],so[1],rad,0,TAU); ctx.stroke(); } }
+  } else if(type==='coherence'){
+    const R2=Math.min(w,h)*0.46, rot=t*0.14, wob=1+0.03*Math.sin(t*0.8);
+    const pts=HEX.map(p=>{ const xx=p[0]*Math.cos(rot)-p[1]*Math.sin(rot), yy=p[0]*Math.sin(rot)+p[1]*Math.cos(rot); return [cx+xx*R2*wob, cy+yy*R2*0.86*wob]; });
+    ctx.lineWidth=1; ctx.strokeStyle=`rgba(${tcs},0.26)`;
+    for(const [i,j] of HEDGES){ ctx.beginPath(); ctx.moveTo(pts[i][0],pts[i][1]); ctx.lineTo(pts[j][0],pts[j][1]); ctx.stroke(); }
+    for(let k=0;k<HEDGES.length;k++){ const ph=(t*0.5 + hash(k*3.7)) % 1; if(ph<0.5){ const [i,j]=HEDGES[k], f=ph/0.5; const px=pts[i][0]+(pts[j][0]-pts[i][0])*f, py=pts[i][1]+(pts[j][1]-pts[i][1])*f; ctx.fillStyle=`rgba(255,250,236,${(1-f)*0.7})`; ctx.beginPath(); ctx.arc(px,py,1.5,0,TAU); ctx.fill(); } }
+    const pulse=0.5+0.5*Math.sin(t*2);
+    for(const p of pts){ ctx.fillStyle=`rgba(${tcs},${0.14*pulse})`; ctx.beginPath(); ctx.arc(p[0],p[1],4,0,TAU); ctx.fill(); ctx.fillStyle=`rgba(255,251,238,${0.4+0.4*pulse})`; ctx.beginPath(); ctx.arc(p[0],p[1],1.8,0,TAU); ctx.fill(); }
+    const cg3=ctx.createRadialGradient(cx,cy,0,cx,cy,R2*0.32); cg3.addColorStop(0,`rgba(255,252,240,${0.45+0.3*pulse})`); cg3.addColorStop(1,`rgba(${tcs},0)`); ctx.fillStyle=cg3; ctx.beginPath(); ctx.arc(cx,cy,R2*0.32,0,TAU); ctx.fill();
+  } else if(type==='sacred'){
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(t*0.12); ctx.strokeStyle=`rgba(${tcs},0.4)`; ctx.lineWidth=1;
+    for(let ring=1;ring<=3;ring++){ const pts=6*ring, rr=R*0.16*ring; for(let i=0;i<pts;i++){ const a=i/pts*TAU; ctx.beginPath(); ctx.arc(Math.cos(a)*rr,Math.sin(a)*rr,R*0.10,0,TAU); ctx.stroke(); } }
+    ctx.restore();
+    const cg2=ctx.createRadialGradient(cx,cy,0,cx,cy,R*0.14); cg2.addColorStop(0,'rgba(255,250,235,0.7)'); cg2.addColorStop(1,`rgba(${tcs},0)`); ctx.fillStyle=cg2; ctx.beginPath(); ctx.arc(cx,cy,R*0.14,0,TAU); ctx.fill();
+  } else if(type==='torus'){
+    ctx.save(); ctx.translate(cx,cy);
+    const Rt=R*0.30, rt=R*0.16, tl=0.45, ct=Math.cos(tl), st=Math.sin(tl);
+    const proj=(u,v)=>{ const rr=Rt+rt*Math.cos(v), X=rr*Math.cos(u), Y=rt*Math.sin(v), Z=rr*Math.sin(u); return [X, -(Y*ct-Z*st), Y*st+Z*ct]; };
+    const NU=34, NV=40;
+    for(let iu=0;iu<NU;iu++){ const u=iu/NU*TAU + t*0.05; ctx.beginPath(); for(let iv=0;iv<=NV;iv++){ const v=iv/NV*TAU, p=proj(u,v); iv?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]); } const a=0.04+0.05*(0.5+0.5*Math.sin(u+t*0.05)); ctx.strokeStyle=`rgba(226,236,255,${a})`; ctx.lineWidth=1; ctx.stroke(); }
+    for(let i=0;i<150;i++){ const u=hash(i)*TAU + t*0.1, v=(hash(i*1.7)*TAU + t*1.7)%TAU, p=proj(u,v); const near=1-Math.min(1,Math.abs(p[0])/(Rt*0.95)), dep=0.5+0.5*(p[2]/(Rt+rt)), b=Math.min(0.9,0.2+0.6*near*near+0.2*dep), g=(232+22*near)|0, bl=(198+57*near)|0; ctx.fillStyle=`rgba(255,${g},${bl},${b})`; ctx.beginPath(); ctx.arc(p[0],p[1],1.4,0,TAU); ctx.fill(); }
+    const axw=R*0.028, axg=ctx.createLinearGradient(-axw,0,axw,0); axg.addColorStop(0,'rgba(255,255,255,0)'); axg.addColorStop(0.5,'rgba(255,255,255,0.85)'); axg.addColorStop(1,'rgba(255,255,255,0)'); ctx.fillStyle=axg; ctx.fillRect(-axw,-h*0.46,axw*2,h*0.92);
+    const cog=ctx.createRadialGradient(0,0,0,0,0,R*0.17); cog.addColorStop(0,'rgba(255,255,255,0.95)'); cog.addColorStop(0.4,`rgba(${tcs},0.4)`); cog.addColorStop(1,'rgba(255,255,255,0)'); ctx.fillStyle=cog; ctx.beginPath(); ctx.arc(0,0,R*0.17,0,TAU); ctx.fill();
+    ctx.restore();
+  }
+  if(staticT>0.02){ const n=Math.floor(staticT*180); for(let i=0;i<n;i++){ const px=x+hash(i+T*97)*w, py=y+hash(i*1.7+T*57)*h; ctx.fillStyle=`rgba(235,235,242,${0.4*staticT})`; ctx.fillRect(px,py,1.5,1.5);} const rb=y+((T*300)%h); ctx.fillStyle=`rgba(255,255,255,${0.1*staticT})`; ctx.fillRect(x,rb,w,3); }
+}
+
+/* ---- draw ---- */
+function draw(dt){
+  T+=dt; staticT=Math.max(0,staticT-dt*1.8); cohVis+=(cohV-cohVis)*Math.min(1,dt*3);
+  yaw+=angTo(yawT)*Math.min(1,dt*3.0); const dispYaw=yaw+0.05*Math.sin(T*0.5);
+  const s=STN[sel], tc=tuneColor(cohVis), tcs=tc.join(','), lock=1-staticT*0.85;
+
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.globalCompositeOperation='source-over'; ctx.fillStyle='#000'; ctx.fillRect(0,0,Wl,Hl);
+  ctx.globalCompositeOperation='lighter';
+
+  // ---- Indra's Net sphere (left) ----
+  const P=NODES.map(v=>proj(v,dispYaw));
+  const eord=EDGES.map((e,idx)=>[(P[e[0]][2]+P[e[1]][2])/2,idx]).sort((a,b)=>a[0]-b[0]);
+  for(const [az,idx] of eord){ const e=EDGES[idx],a=P[e[0]],b=P[e[1]]; const al=0.06+0.18*((az+1)/2);
+    ctx.strokeStyle=`rgba(${GOLD},${al})`; ctx.lineWidth=0.8; ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke(); }
+  const cr=SRs*0.12; const cg=ctx.createRadialGradient(SCX,SCY,0,SCX,SCY,cr*2.4);
+  cg.addColorStop(0,'rgba(255,248,224,0.6)'); cg.addColorStop(0.4,`rgba(${GOLD},0.35)`); cg.addColorStop(1,'rgba(217,180,110,0)');
+  ctx.fillStyle=cg; ctx.beginPath(); ctx.arc(SCX,SCY,cr*2.4,0,TAU); ctx.fill();
+  const nord=[...P.keys()].sort((a,b)=>P[a][2]-P[b][2]); const selNode=SNODE[sel];
+  for(const i of nord){ if(i===selNode) continue; const p=P[i],d=(p[2]+1)/2, sz=2.5+3*d, al=0.16+0.5*d;
+    ctx.strokeStyle=`rgba(232,226,208,${al})`; ctx.lineWidth=0.8; ctx.strokeRect(p[0]-sz,p[1]-sz,sz*2,sz*2);
+    ctx.fillStyle=`rgba(255,250,235,${al*0.5})`; ctx.fillRect(p[0]-0.8,p[1]-0.8,1.6,1.6); }
+  // tuned node highlight on the sphere
+  const sp=P[selNode], nsz=5+3*((sp[2]+1)/2);
+  const ng=ctx.createRadialGradient(sp[0],sp[1],0,sp[0],sp[1],nsz*2.6); ng.addColorStop(0,`rgba(${tcs},${0.7*lock})`); ng.addColorStop(1,`rgba(${tcs},0)`); ctx.fillStyle=ng; ctx.beginPath(); ctx.arc(sp[0],sp[1],nsz*2.6,0,TAU); ctx.fill();
+  ctx.strokeStyle=`rgba(${tcs},${0.4+0.55*lock})`; ctx.lineWidth=1.5; ctx.strokeRect(sp[0]-nsz,sp[1]-nsz,nsz*2,nsz*2);
+
+  // ---- projection beam: tuned node -> reality window ----
+  const wcx=WINx, wcy=WINy+WINh*0.5;
+  const bg=ctx.createLinearGradient(sp[0],sp[1],wcx,wcy); bg.addColorStop(0,`rgba(${tcs},${0.55*lock})`); bg.addColorStop(1,`rgba(${tcs},${0.15*lock})`);
+  ctx.strokeStyle=bg; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(sp[0],sp[1]); ctx.lineTo(wcx,wcy); ctx.stroke();
+
+  // ---- reality window (right): the projected reality for this frequency ----
+  ctx.save(); rrect(WINx,WINy,WINw,WINh,10); ctx.clip();
+  reality(s.sig,WINx,WINy,WINw,WINh,T,tcs,staticT);
+  ctx.restore();
+  ctx.globalCompositeOperation='lighter';
+  for(const [w,al] of [[5,0.10*lock],[1.6,0.2+0.7*lock]]){ ctx.strokeStyle=`rgba(${tcs},${al})`; ctx.lineWidth=w; rrect(WINx,WINy,WINw,WINh,10); ctx.stroke(); }
+  ctx.font='600 8px ui-monospace,Menlo,monospace'; ctx.fillStyle=`rgba(${tcs},0.85)`; ctx.textAlign='left'; ctx.textBaseline='alphabetic'; ctx.fillText('PHASE-SPACE PROJECTION', WINx+2, WINy-5);
+
+  // ---- signal HUD (bottom-left over the sphere) ----
+  const bx=10,by=Hl-42,bw=Math.min(158,Wl*0.24),bh=34;
+  ctx.globalCompositeOperation='source-over'; ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.strokeStyle=`rgba(${GOLD},0.3)`; ctx.lineWidth=1; ctx.beginPath(); ctx.rect(bx,by,bw,bh); ctx.fill(); ctx.stroke();
+  ctx.globalCompositeOperation='lighter';
+  ctx.font='600 7.5px ui-monospace,Menlo,monospace'; ctx.fillStyle=`rgba(${GOLD},0.7)`; ctx.textAlign='left'; ctx.textBaseline='alphabetic'; ctx.fillText('SIGNAL',bx+5,by+10);
+  ctx.strokeStyle=`rgba(${tcs},0.95)`; ctx.lineWidth=1.2; ctx.beginPath();
+  const wx=bx+5, ww=bw-10, wy=by+23, wh=8;
+  for(let i=0;i<=ww;i++){ const xx=i/ww; const yy=wy+sigY(s.sig,xx,T)*wh; i?ctx.lineTo(wx+i,yy):ctx.moveTo(wx+i,yy); } ctx.stroke();
+}
+
+/* ---- UI ---- */
+const eName=document.getElementById('inr-name'), eNsub=document.getElementById('inr-nsub'), eDesc=document.getElementById('inr-desc'), eCoh=document.getElementById('inr-coh');
+const slider=document.getElementById('inr-slider'), ticksEl=document.getElementById('inr-ticks');
+TICK.forEach((t,i)=>{ const d=document.createElement('div'); d.className='inr-tick'; d.textContent=t; d.addEventListener('click',()=>{ slider.value=i; setStation(i); }); ticksEl.appendChild(d); });
+const tickEls=[...ticksEl.children];
+function updateUI(){ const s=STN[sel]; eName.textContent=s.name; eNsub.textContent=s.sub; eDesc.textContent=s.desc; eCoh.style.width=(s.coh*100).toFixed(0)+'%';
+  const tcs=tuneColor(s.coh).join(','); eName.style.color=`rgb(${tcs})`;
+  tickEls.forEach((t,i)=>t.classList.toggle('on',i===sel)); }
+slider.addEventListener('input',()=>setStation(parseInt(slider.value,10)));
+slider.addEventListener('change',()=>setStation(parseInt(slider.value,10)));
+
+/* ---- loop ---- */
+let last=performance.now();
+function tick(now){ const dt=Math.min(0.05,(now-last)/1000); last=now; draw(dt); requestAnimationFrame(tick); }
+resize(); yaw=alignYaw(SNODE[0]); yawT=yaw; updateUI(); requestAnimationFrame(tick);
+})();
+</script>

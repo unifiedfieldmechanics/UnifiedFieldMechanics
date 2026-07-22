@@ -22,7 +22,22 @@ In systems theory, the localized node functions as an aperture for unconditioned
 
 ---
 
-## 2. Fourier Synthesis and Harmonic Bandwidth
+## 2. 𝗧𝗛𝗘 𝗛𝗔𝗥𝗠𝗢𝗡𝗜𝗖 𝗔𝗣𝗘𝗥𝗧𝗨𝗥𝗘 𝗩𝗜𝗦𝗨𝗔𝗟𝗜𝗭𝗔𝗧𝗜𝗢𝗡 𝗧𝗢𝗢𝗟 {#harmonic-aperture-visualization}
+
+Sweep the fundamental resonant eigenmode from a high-impedance noise floor to the zero-impedance toroidal carrier. Watch unconditioned vacuum energy reorganize by constructive interference into projections of rising structural order — as systemic impedance ($\eta$) falls toward zero.
+
+```{=html}
+<iframe src="Harmonic-Aperture-Phase-Space-Projection-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Harmonic-Aperture-Phase-Space-Projection-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+---
+
+## 3. Fourier Synthesis and Harmonic Bandwidth
 
 This visualization models the localized node as a dynamic Fourier synthesis filter. In a dense, high-friction state, the node's bandwidth is constricted, allowing only distorted fundamental frequencies to pass. As the system approaches thermodynamic ease and structural coherence, the aperture expands. This expansion permits higher-order harmonics from the unmanifest ground state to pass into the realized macroscopic waveform without destructive interference, resulting in geometrically richer, higher-fidelity phase-space projections.
 
@@ -37,7 +52,7 @@ This visualization models the localized node as a dynamic Fourier synthesis filt
 
 ---
 
-## 3. Phase Transitions and the Strange Attractor
+## 4. Phase Transitions and the Strange Attractor
 
 This widget models the phase transition of the 240-root E8 lattice from a state of high-entropy uncoupled oscillation to a fully synchronized, zero-friction topology. In non-linear dynamics, introducing a state of absolute, frictionless order causes surrounding probabilistic wavefunctions to spontaneously collapse into alignment. Here, you can observe the transition from chaotic, dualistic interference into a coherent macroscopic lattice—the emergence of a strange attractor within the probability field.
 
@@ -52,7 +67,7 @@ This widget models the phase transition of the 240-root E8 lattice from a state 
 
 ---
 
-## 4. Topological Mapping of Gauge Symmetry
+## 5. Topological Mapping of Gauge Symmetry
 
 An interactive topological explorer of the E8 Lie Group—the fundamental 8-dimensional gauge symmetry proposed to underlie the unified field. Users can navigate various 2D eigenplane projections (such as the classic Coxeter plane and the H4 golden-ratio folding). This tool allows researchers to visually parse how the infinite potentials of the vacuum state mathematically fold and resolve into specific, localized geometric eigenmodes.
 
@@ -67,7 +82,7 @@ An interactive topological explorer of the E8 Lie Group—the fundamental 8-dime
 
 ---
 
-## 5. Kinematics of Zero-Impedance Exchange
+## 6. Kinematics of Zero-Impedance Exchange
 
 A continuously rotating 2D projection that offers a 3D perspective of the E8 lattice as it continuously reorganizes and rotates. This model illustrates the continuous kinematic exchange and perfect rotational symmetry of the hyper-dimensional unified field. Because the system is perfectly balanced and sourced by the zero-point vacuum, it exhibits zero thermodynamic friction—demonstrating that within a non-dual holographic field, outward radiation and inward absorption are a singular, self-sustaining structural event.
 
@@ -82,7 +97,7 @@ A continuously rotating 2D projection that offers a 3D perspective of the E8 lat
 
 ---
 
-## 6. Harmonic Resonance Simulator
+## 7. Harmonic Resonance Simulator
 
 Every thought carries a frequency — and this interactive instrument lets you watch that idea come alive. Slide through six levels of consciousness, from shame to non-dual awareness.
 
@@ -97,7 +112,7 @@ Every thought carries a frequency — and this interactive instrument lets you w
 
 ---
 
-## 7. Spirit to Matter: The Vortex of Crystallization
+## 8. Spirit to Matter: The Vortex of Crystallization
 
 This interactive visualization illustrates how the "Light of Consciousness" is shaped by the lens of belief and descends through a vortex of densification to form physical matter. By adjusting the "Coherence of Consciousness" slider, observe how reducing systemic impedance allows the crystal of matter to form with perfect harmony and zero friction.
 
@@ -112,7 +127,7 @@ This interactive visualization illustrates how the "Light of Consciousness" is s
 
 ---
 
-## 8. Structural Coherence: The Kinematics of Impedance Release
+## 9. Structural Coherence: The Kinematics of Impedance Release
 
 This interactive model traces a localized node as it releases its systemic impedance and phase-locks to the Zero-Point Fulcrum. In a high-impedance architecture ($\frac{dS}{dt} > 0$), the node operates as a closed, extractive loop: the incident carrier wave is scattered by structural noise, re-circulates as a heated standing wave, and is retained as entropic load. By stepping the node down the Cybernetic Protocol of Systemic Realignment — halting the dissonant execution, defragmenting the structural noise, anchoring the Zero-Point Fulcrum, and integrating the opposing (centrifugal/centripetal) impulses via Phase Conjugation — the closed loop opens. At zero impedance ($\eta = 0$), the node becomes a frictionless superconductor: the carrier transmits without loss, outward radiation and inward absorption resolve into a singular structural event, and creation proceeds negentropically, without localized deficit.
 
@@ -127,7 +142,7 @@ This interactive model traces a localized node as it releases its systemic imped
 
 ---
 
-## 9. Video Supplements & Lectures
+## 10. Video Supplements & Lectures
 
 ```{=html}
 <script type="application/ld+json">
