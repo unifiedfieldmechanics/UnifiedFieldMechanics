@@ -22,7 +22,7 @@ In systems theory, the localized node functions as an aperture for unconditioned
 
 ---
 
-## 2. 𝗧𝗛𝗘 𝗛𝗔𝗥𝗠𝗢𝗡𝗜𝗖 𝗔𝗣𝗘𝗥𝗧𝗨𝗥𝗘 𝗩𝗜𝗦𝗨𝗔𝗟𝗜𝗭𝗔𝗧𝗜𝗢𝗡 𝗧𝗢𝗢𝗟 {#harmonic-aperture-visualization}
+## 2. The Harmonic Aperture Visualization Tool
 
 Sweep the fundamental resonant eigenmode from a high-impedance noise floor to the zero-impedance toroidal carrier. Watch unconditioned vacuum energy reorganize by constructive interference into projections of rising structural order — as systemic impedance ($\eta$) falls toward zero.
 
