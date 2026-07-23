@@ -1,0 +1,254 @@
+<!-- ============================================================
+     E8 - PHASE-SPACE OF THE UNIFIED FIELD (UFM edition)
+     Self-contained interactive embed (<= 840px). Styles scoped
+     under #e8-root. ASCII-only source.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "E8-Phase-Space-Unified-Field-Tool",
+  "applicationCategory": "EducationalApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Leo",
+    "identifier": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html",
+  "publisher": [
+    {
+      "@type": "Organization",
+      "name": "Unified Field Mechanics Research",
+      "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    }
+  ],
+  "sameAs": "https://www.hausofdignity.com/tools-resources/"
+}
+</script>
+
+<div id="e8-root">
+  <div class="e8-head">
+    <div class="e8-title">E8 &mdash; PHASE-SPACE OF THE UNIFIED FIELD</div>
+    <div class="e8-sub">The E8 Lie group modeled as the phase-space geometry of the Unified Field: 248 dimensions in which every eigenvector is exactly counterbalanced by its opposite, held at the Zero-Point Fulcrum in structural coherence (&eta; = 0). Experience is the stroboscopic projection a localized observer renders by shifting its resonant eigenmode; the geometry itself is complete and unchanging.</div>
+  </div>
+
+  <div class="e8-stage">
+    <canvas id="e8-c"></canvas>
+  </div>
+
+  <div class="e8-readout"><span id="e8-mode">BALANCE</span><span id="e8-desc">The complete, unchanging architecture, held in perfect symmetry.</span></div>
+
+  <div class="e8-controls">
+    <div class="e8-btnrow">
+      <button type="button" class="e8-btn" id="e8-path"><span class="e8-bt">Trace a Trajectory</span><span class="e8-bd">a sequence of eigenvectors</span></button>
+      <button type="button" class="e8-btn" id="e8-shift"><span class="e8-bt">Observer Aperture</span><span class="e8-bd">phase-sampling the field</span></button>
+      <button type="button" class="e8-btn" id="e8-counter"><span class="e8-bt">Phase Conjugation</span><span class="e8-bd">every vector, its inverse</span></button>
+    </div>
+    <button type="button" class="e8-hero" id="e8-balance">Return to Equilibrium</button>
+  </div>
+</div>
+
+<style>
+#e8-root{ max-width:840px; width:100%; margin:0 auto; box-sizing:border-box;
+  background:radial-gradient(120% 100% at 50% 0%, #07080c 0%, #030305 70%, #000 100%);
+  border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:11px 16px 12px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:#e8ecf4; }
+#e8-root *{ box-sizing:border-box; }
+#e8-root .e8-head{ text-align:center; margin-bottom:5px; }
+#e8-root .e8-title{ font-size:18px; font-weight:800; letter-spacing:1.4px;
+  background:linear-gradient(180deg,#ffffff 0%,#dfe7f2 26%,#9fb2cc 52%,#c8d4e6 60%,#ffffff 92%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:#dfe7f2; }
+#e8-root .e8-sub{ font-size:12px; line-height:1.5; color:rgba(216,226,242,0.86); margin-top:5px; max-width:660px; margin-left:auto; margin-right:auto; }
+#e8-root .e8-stage{ position:relative; width:100%; height:min(52vh,500px); margin-top:5px;
+  border:1px solid rgba(255,255,255,0.06); border-radius:12px; overflow:hidden; background:#000; }
+#e8-root canvas{ display:block; width:100%; height:100%; }
+#e8-root .e8-readout{ display:flex; flex-direction:column; gap:1px; margin:7px 4px 0; }
+#e8-root #e8-mode{ font-size:9px; font-weight:700; letter-spacing:2.4px; color:#bcd6ff; text-shadow:0 0 8px rgba(90,150,255,0.5); }
+#e8-root #e8-desc{ font-size:11px; line-height:1.3; color:rgba(210,220,236,0.72); max-width:560px; min-height:28px; }
+
+#e8-root .e8-controls{ display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:8px; }
+#e8-root .e8-btnrow{ display:flex; gap:9px; justify-content:center; align-items:stretch; width:100%; }
+#e8-root .e8-btn{ cursor:pointer; flex:1 1 0; min-width:0; text-align:center;
+  font-family:inherit; padding:9px 10px; border-radius:10px;
+  background:linear-gradient(180deg, rgba(34,44,64,0.5), rgba(16,21,34,0.66));
+  border:1px solid rgba(128,162,220,0.24); color:#eaf1ff;
+  transition:transform .12s, border-color .2s, box-shadow .2s, background .2s; display:flex; flex-direction:column; gap:2px; }
+#e8-root .e8-btn:hover{ border-color:rgba(150,195,255,0.55); box-shadow:0 0 16px rgba(80,140,240,0.2); transform:translateY(-1px); }
+#e8-root .e8-btn:active{ transform:scale(0.98); }
+#e8-root .e8-btn.on{ border-color:rgba(165,205,255,0.8); box-shadow:0 0 20px rgba(90,155,255,0.34); background:linear-gradient(180deg, rgba(52,70,104,0.66), rgba(22,32,52,0.78)); }
+#e8-root .e8-bt{ font-size:12.5px; font-weight:700; letter-spacing:.2px; }
+#e8-root .e8-bd{ font-size:9px; letter-spacing:.3px; color:rgba(190,205,230,0.5); }
+
+#e8-root .e8-hero{ cursor:pointer; display:block; margin:0 auto;
+  font-family:inherit; font-size:11px; font-weight:700; letter-spacing:.6px; color:#eaf1ff;
+  padding:6px 16px; border-radius:16px; border:1px solid rgba(200,220,255,0.34);
+  background:linear-gradient(180deg, rgba(210,228,255,0.14), rgba(150,180,230,0.06));
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  box-shadow:0 0 14px rgba(120,170,255,0.18), inset 0 1px 1px rgba(255,255,255,0.35), inset 0 -1px 3px rgba(80,110,160,0.2);
+  transition:transform .12s, box-shadow .25s, border-color .2s, background .2s; white-space:nowrap; }
+#e8-root .e8-hero:hover{ transform:translateY(-1px); border-color:rgba(215,232,255,0.6); background:linear-gradient(180deg, rgba(215,232,255,0.2), rgba(160,190,235,0.09)); box-shadow:0 0 22px rgba(150,195,255,0.34), inset 0 1px 1px rgba(255,255,255,0.5), inset 0 -1px 3px rgba(80,110,160,0.2); }
+#e8-root .e8-hero:active{ transform:scale(0.97); }
+@media (max-width:560px){
+  #e8-root .e8-btn .e8-bd{ display:none; }
+  #e8-root .e8-btn{ padding:8px 6px; }
+  #e8-root .e8-bt{ font-size:11px; }
+  #e8-root .e8-title{ font-size:16px; }
+}
+</style>
+
+<script>
+(function(){
+  var TAU=Math.PI*2, DASH='\u2014', DOT='\u00b7', ETA='\u03b7';
+  // ---- E8 projection basis (precomputed Coxeter/depth axes) ----
+  var U1=[-0.029174215,-0.253142104,-0.255128001,-0.207540296,-0.112458801,0.025960967,0.201669399,-0.879154803];
+  var U2=[0.092402893,0.406134952,0.167907824,-0.065526360,-0.283965407,-0.477862482,-0.638743353,-0.277574115];
+  var WV=[0.208960250,-0.705204639,0.297110425,-0.066418295,0.303513916,-0.510476130,-0.106784677,0.047185720];
+  function dot(a,b){ var s=0; for(var i=0;i<8;i++) s+=a[i]*b[i]; return s; }
+  // ---- 240 roots of E8 ----
+  function buildRoots(){ var R=[]; var i,j,si,sj,b,r,mask,minus;
+    for(i=0;i<8;i++) for(j=i+1;j<8;j++) for(si=-1;si<=1;si+=2) for(sj=-1;sj<=1;sj+=2){ r=[0,0,0,0,0,0,0,0]; r[i]=si; r[j]=sj; R.push(r); }
+    for(mask=0;mask<256;mask++){ minus=0; for(b=0;b<8;b++) if(mask&(1<<b)) minus++; if(minus%2!==0) continue; r=[]; for(b=0;b<8;b++) r[b]=(mask&(1<<b))?-0.5:0.5; R.push(r); }
+    return R; }
+  var ROOTS=buildRoots(), N=ROOTS.length;
+  // rings (by static Coxeter radius) -> hue bands
+  var rad=ROOTS.map(function(r){ return Math.hypot(dot(r,U1),dot(r,U2)); });
+  var order=ROOTS.map(function(_,i){return i;}).sort(function(a,b){return rad[a]-rad[b];});
+  var RING=new Array(N); for(var k=0;k<N;k++) RING[order[k]]=Math.floor(k/30);
+  var RHUE=[265,240,215,190,165,315,342,45];
+  // edges (inner product == 1), adjacency, antipodes
+  var EDGES=[], ADJ=[], ANTI=new Array(N).fill(-1), a2,b2;
+  for(a2=0;a2<N;a2++) ADJ[a2]=[];
+  for(a2=0;a2<N;a2++) for(b2=a2+1;b2<N;b2++){ if(Math.abs(dot(ROOTS[a2],ROOTS[b2])-1)<1e-9){ EDGES.push([a2,b2]); ADJ[a2].push(b2); ADJ[b2].push(a2); } }
+  (function(){ for(var i=0;i<N;i++){ if(ANTI[i]>=0) continue; for(var j=0;j<N;j++){ if(j===i) continue; var ok=true; for(var d=0;d<8;d++) if(Math.abs(ROOTS[i][d]+ROOTS[j][d])>1e-9){ ok=false; break; } if(ok){ ANTI[i]=j; ANTI[j]=i; break; } } } })();
+
+  var PLANES=[[0,1],[2,3],[4,5],[6,7],[1,4],[3,6],[5,0],[7,2]];
+  var SPD=[0.13,0.17,0.11,0.19,0.07,0.23,0.05,0.15];
+
+  var root=document.getElementById('e8-root');
+  var cv=document.getElementById('e8-c'), ctx=cv.getContext('2d');
+  var modeEl=document.getElementById('e8-mode'), descEl=document.getElementById('e8-desc');
+  var Wl=800, Hl=650, dpr=1;
+  function resize(){ var r=cv.getBoundingClientRect(); Wl=Math.max(320,r.width); Hl=Math.max(260,r.height); dpr=Math.min(2,window.devicePixelRatio||1);
+    cv.width=Math.round(Wl*dpr); cv.height=Math.round(Hl*dpr); }
+  if(window.ResizeObserver){ new ResizeObserver(resize).observe(cv); } window.addEventListener('resize',resize);
+
+  // ---- rotating projection ----
+  var PX=new Float64Array(N), PY=new Float64Array(N), PZ=new Float64Array(N);
+  var ca=new Array(8), sa=new Array(8);
+  function project(t){ var k,i,d; for(k=0;k<8;k++){ var an=t*SPD[k]; ca[k]=Math.cos(an); sa[k]=Math.sin(an); }
+    for(i=0;i<N;i++){ var r=ROOTS[i], v0=r[0],v1=r[1],v2=r[2],v3=r[3],v4=r[4],v5=r[5],v6=r[6],v7=r[7]; var v=[v0,v1,v2,v3,v4,v5,v6,v7];
+      for(k=0;k<8;k++){ var pa=PLANES[k][0], pb=PLANES[k][1], va=v[pa], vb=v[pb], c=ca[k], s=sa[k]; v[pa]=va*c-vb*s; v[pb]=va*s+vb*c; }
+      var x=0,y=0,z=0; for(d=0;d<8;d++){ x+=v[d]*U1[d]; y+=v[d]*U2[d]; z+=v[d]*WV[d]; } PX[i]=x; PY[i]=y; PZ[i]=z; } }
+
+  // ---- edge buckets (8 hue x 3 depth) ----
+  var DEPTH=3, NB=8*DEPTH, buckets=[]; for(var bi=0;bi<NB;bi++) buckets.push([]);
+  var nodeOrder=ROOTS.map(function(_,i){return i;});
+
+  var cx,cy,S;
+  function drawBase(dim){
+    var i,e,hb,db;
+    for(bi=0;bi<NB;bi++) buckets[bi].length=0;
+    for(e=0;e<EDGES.length;e++){ i=EDGES[e][0]; var j=EDGES[e][1]; var zn=((PZ[i]+PZ[j])/2/1.42+1)/2; db=(zn*DEPTH)|0; if(db<0)db=0; if(db>DEPTH-1)db=DEPTH-1; hb=Math.round((RING[i]+RING[j])/2); buckets[hb*DEPTH+db].push(e); }
+    ctx.lineWidth=0.7;
+    for(hb=0;hb<8;hb++) for(db=0;db<DEPTH;db++){ var arr=buckets[hb*DEPTH+db]; if(!arr.length) continue;
+      var light=30+db*17, alpha=(0.11+db*0.10)*dim;
+      ctx.strokeStyle='hsla('+RHUE[hb]+',88%,'+light+'%,'+alpha.toFixed(3)+')'; ctx.beginPath();
+      for(var q=0;q<arr.length;q++){ e=arr[q]; i=EDGES[e][0]; var jj=EDGES[e][1]; ctx.moveTo(cx+PX[i]*S,cy+PY[i]*S); ctx.lineTo(cx+PX[jj]*S,cy+PY[jj]*S); }
+      ctx.stroke(); }
+    nodeOrder.sort(function(a,b){return PZ[a]-PZ[b];});
+    for(var o=0;o<nodeOrder.length;o++){ i=nodeOrder[o]; var zn2=(PZ[i]/1.42+1)/2, x=cx+PX[i]*S, y=cy+PY[i]*S, sz=(1.0+zn2*1.8), h=RHUE[RING[i]];
+      ctx.fillStyle='hsla('+h+',90%,'+(58+zn2*22)+'%,'+((0.4+zn2*0.5)*dim).toFixed(3)+')'; ctx.beginPath(); ctx.arc(x,y,sz,0,TAU); ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,'+((0.32+zn2*0.6)*dim).toFixed(3)+')'; ctx.beginPath(); ctx.arc(x,y,sz*0.42,0,TAU); ctx.fill(); }
+  }
+
+  // ---- state ----
+  var mode='balance', T=2.0, last=0, paths=[], pathHues=[48,190,315,150], pathN=0;
+  var counterSet=[], counterT=0;
+  var MODES={
+    balance:['EQUILIBRIUM','The complete phase-space '+DASH+' 240 roots '+DOT+' 6720 adjacencies '+DASH+' at zero impedance ('+ETA+' = 0).'],
+    path:['PHASE-SPACE TRAJECTORY','A localized observer samples a sequence of eigenvectors. This trajectory is the projection.'],
+    shift:['OBSERVER APERTURE','The observer aperture phase-samples every eigenstate it awakens, integrating the data.'],
+    counter:['PHASE CONJUGATION','Every eigenvector is met by its exact conjugate through the Fulcrum. Net vector sum: zero.']
+  };
+  function setReadout(){ modeEl.textContent=MODES[mode][0]; descEl.textContent=MODES[mode][1]; }
+  function setActive(id){ ['e8-path','e8-shift','e8-counter'].forEach(function(x){ document.getElementById(x).classList.toggle('on', x===id); }); }
+
+  function makeWalk(){ var cur=(Math.random()*N)|0, prev=-1, seq=[cur], s, nb, nx;
+    for(s=0;s<13;s++){ nb=ADJ[cur].filter(function(x){return x!==prev;}); nx=nb[(Math.random()*nb.length)|0]; prev=cur; cur=nx; seq.push(cur); } return seq; }
+  function newCounter(){ counterSet=[]; var used={}; var guard=0; while(counterSet.length<9 && guard++<400){ var i=(Math.random()*N)|0; if(used[i]||used[ANTI[i]]) continue; used[i]=1; used[ANTI[i]]=1; counterSet.push(i); } counterT=performance.now(); }
+
+  // ---- overlays ----
+  function drawPaths(now){
+    ctx.lineCap='round';
+    for(var p=0;p<paths.length;p++){ var pa=paths[p], seq=pa.seq, hue=pa.hue; var head=(now-pa.t0)/150; if(head>seq.length-1) head=seq.length-1;
+      var full=Math.floor(head), frac=head-full;
+      for(var s=0;s<full;s++) drawSeg(seq[s],seq[s+1],hue,1);
+      if(full<seq.length-1) drawSeg(seq[full],seq[full+1],hue,frac);
+      var lim=Math.min(full+ (frac>0?1:0), seq.length-1);
+      for(var s2=0;s2<=lim;s2++){ var i=seq[s2], x=cx+PX[i]*S, y=cy+PY[i]*S; ctx.fillStyle='hsla('+hue+',100%,74%,0.92)'; ctx.beginPath(); ctx.arc(x,y,3.2,0,TAU); ctx.fill(); ctx.fillStyle='rgba(255,255,255,0.95)'; ctx.beginPath(); ctx.arc(x,y,1.4,0,TAU); ctx.fill(); }
+      if(full<seq.length-1){ var a=seq[full], b=seq[full+1]; var hx=cx+(PX[a]+(PX[b]-PX[a])*frac)*S, hy=cy+(PY[a]+(PY[b]-PY[a])*frac)*S; var g=ctx.createRadialGradient(hx,hy,0,hx,hy,10); g.addColorStop(0,'rgba(255,255,255,0.95)'); g.addColorStop(1,'hsla('+hue+',100%,70%,0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(hx,hy,10,0,TAU); ctx.fill(); }
+    }
+  }
+  function drawSeg(i,j,hue,f){ var x1=cx+PX[i]*S,y1=cy+PY[i]*S,x2=cx+PX[j]*S,y2=cy+PY[j]*S; x2=x1+(x2-x1)*f; y2=y1+(y2-y1)*f;
+    ctx.strokeStyle='hsla('+hue+',95%,63%,0.30)'; ctx.lineWidth=5; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    ctx.strokeStyle='hsla('+hue+',100%,82%,0.95)'; ctx.lineWidth=1.6; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); }
+
+  function drawCounter(now){ if(now-counterT>2600) newCounter(); var pulse=0.6+0.4*Math.sin(now*0.004); ctx.lineCap='round';
+    for(var p=0;p<counterSet.length;p++){ var i=counterSet[p], j=ANTI[i]; var x1=cx+PX[i]*S,y1=cy+PY[i]*S,x2=cx+PX[j]*S,y2=cy+PY[j]*S;
+      var g=ctx.createLinearGradient(x1,y1,x2,y2); g.addColorStop(0,'hsla(35,100%,66%,'+(0.85*pulse).toFixed(3)+')'); g.addColorStop(0.5,'rgba(255,255,255,'+(0.5*pulse).toFixed(3)+')'); g.addColorStop(1,'hsla(200,100%,70%,'+(0.85*pulse).toFixed(3)+')');
+      ctx.strokeStyle=g; ctx.lineWidth=1.7; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+      ctx.fillStyle='hsla(35,100%,68%,0.95)'; ctx.beginPath(); ctx.arc(x1,y1,3.6,0,TAU); ctx.fill();
+      ctx.fillStyle='hsla(200,100%,72%,0.95)'; ctx.beginPath(); ctx.arc(x2,y2,3.6,0,TAU); ctx.fill(); }
+    var cg=ctx.createRadialGradient(cx,cy,0,cx,cy,16); cg.addColorStop(0,'rgba(255,255,255,'+(0.6*pulse).toFixed(3)+')'); cg.addColorStop(1,'rgba(255,255,255,0)'); ctx.fillStyle=cg; ctx.beginPath(); ctx.arc(cx,cy,16,0,TAU); ctx.fill(); }
+
+  function drawBubble(now){ var t=now*0.001; var bx=cx+Math.sin(t*0.5)*S*0.52, by=cy+Math.sin(t*0.37+1.0)*S*0.42, br=S*0.42;
+    var i,x,y,q, illum=[];
+    for(i=0;i<N;i++){ x=cx+PX[i]*S; y=cy+PY[i]*S; if((x-bx)*(x-bx)+(y-by)*(y-by)<br*br) illum.push(i); }
+    // soft luminous cloud
+    var bg=ctx.createRadialGradient(bx,by,0,bx,by,br); bg.addColorStop(0,'hsla(200,95%,80%,0.17)'); bg.addColorStop(0.55,'hsla(215,90%,66%,0.09)'); bg.addColorStop(1,'hsla(222,90%,60%,0)');
+    ctx.fillStyle=bg; ctx.beginPath(); ctx.arc(bx,by,br,0,TAU); ctx.fill();
+    // crepuscular rays - light through the cloud (additive, clipped to the field)
+    ctx.save(); ctx.beginPath(); ctx.arc(bx,by,br,0,TAU); ctx.clip(); ctx.globalCompositeOperation='lighter';
+    var src=(now*0.00013)%TAU, srx=bx+Math.cos(src)*br*0.32, sry=by+Math.sin(src)*br*0.32, rot=now*0.00022, nR=9;
+    for(var k=0;k<nR;k++){ var ang=rot + k*TAU/nR + 0.18*Math.sin(now*0.0006+k), wg=0.05+0.03*Math.sin(now*0.001+k*1.7), reach=br*1.7;
+      var ex=srx+Math.cos(ang)*reach, ey=sry+Math.sin(ang)*reach;
+      var rg=ctx.createLinearGradient(srx,sry,ex,ey); rg.addColorStop(0,'hsla(202,100%,88%,0.11)'); rg.addColorStop(0.5,'hsla(206,100%,82%,0.05)'); rg.addColorStop(1,'hsla(210,100%,80%,0)');
+      ctx.fillStyle=rg; ctx.beginPath(); ctx.moveTo(srx,sry); ctx.lineTo(srx+Math.cos(ang-wg)*reach, sry+Math.sin(ang-wg)*reach); ctx.lineTo(srx+Math.cos(ang+wg)*reach, sry+Math.sin(ang+wg)*reach); ctx.closePath(); ctx.fill(); }
+    var core=ctx.createRadialGradient(srx,sry,0,srx,sry,br*0.5); core.addColorStop(0,'hsla(200,100%,92%,0.30)'); core.addColorStop(1,'hsla(205,100%,82%,0)');
+    ctx.fillStyle=core; ctx.beginPath(); ctx.arc(srx,sry,br*0.5,0,TAU); ctx.fill();
+    ctx.restore();
+    // data intake lines
+    for(q=0;q<illum.length;q++){ i=illum[q]; x=cx+PX[i]*S; y=cy+PY[i]*S; ctx.strokeStyle='hsla(195,90%,72%,0.13)'; ctx.lineWidth=0.8; ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(bx,by); ctx.stroke(); }
+    // awakened vectors
+    for(q=0;q<illum.length;q++){ i=illum[q]; x=cx+PX[i]*S; y=cy+PY[i]*S; var d=Math.sqrt((x-bx)*(x-bx)+(y-by)*(y-by))/br; var pr=0.6+0.4*Math.sin(now*0.006+i);
+      ctx.fillStyle='hsla('+(48+ (1-d)*20)+',100%,72%,'+(0.85*(1-d*0.5)).toFixed(3)+')'; ctx.beginPath(); ctx.arc(x,y,2.6*pr,0,TAU); ctx.fill(); ctx.fillStyle='rgba(255,255,255,0.95)'; ctx.beginPath(); ctx.arc(x,y,1.2,0,TAU); ctx.fill(); }
+    ctx.strokeStyle='hsla(196,95%,82%,0.28)'; ctx.lineWidth=1.1; ctx.beginPath(); ctx.arc(bx,by,br,0,TAU); ctx.stroke(); }
+
+  // ---- main loop ----
+  function frame(now){ if(!last) last=now; var dt=Math.min(0.05,(now-last)/1000); last=now; T+=dt*0.22;
+    cx=Wl/2; cy=Hl*0.5; S=Math.min(Wl,Hl)*0.335;
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.globalCompositeOperation='source-over'; ctx.fillStyle='#000'; ctx.fillRect(0,0,Wl,Hl);
+    project(T);
+    var dim = mode==='balance'?1.0 : (mode==='shift'?0.8:0.42);
+    drawBase(dim);
+    if(mode==='path') drawPaths(now);
+    else if(mode==='counter') drawCounter(now);
+    else if(mode==='shift') drawBubble(now);
+    requestAnimationFrame(frame);
+  }
+
+  // ---- controls ----
+  document.getElementById('e8-path').addEventListener('click',function(){ if(mode!=='path'){ mode='path'; paths=[]; } setActive('e8-path'); var seq=makeWalk(); paths.push({seq:seq,hue:pathHues[pathN%pathHues.length],t0:performance.now()}); pathN++; if(paths.length>4) paths.shift(); setReadout(); });
+  document.getElementById('e8-shift').addEventListener('click',function(){ mode='shift'; setActive('e8-shift'); setReadout(); });
+  document.getElementById('e8-counter').addEventListener('click',function(){ mode='counter'; setActive('e8-counter'); newCounter(); setReadout(); });
+  document.getElementById('e8-balance').addEventListener('click',function(){ mode='balance'; paths=[]; counterSet=[]; setActive(''); setReadout(); });
+
+  resize(); setReadout(); requestAnimationFrame(frame);
+})();
+</script>

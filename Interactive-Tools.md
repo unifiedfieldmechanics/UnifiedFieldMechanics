@@ -82,7 +82,26 @@ An interactive topological explorer of the E8 Lie Group—the fundamental 8-dime
 
 ---
 
-## 6. Kinematics of Zero-Impedance Exchange
+## 6. The Kinematics of Observation and Non-Dual Symmetry {#the-kinematics-of-observation}
+
+This interactive model renders the E8 Lie group as the phase-space geometry of the Unified Field — the complete, unmanifest map of every possible projection, held in perfect equilibrium at the Zero-Point Fulcrum. Across its 248 dimensions the structure is exhaustively non-dual: each of the 240 roots is met by its exact phase-conjugate inverse, so that the net vector sum of the entire lattice is identically zero. The geometry itself is eternal and unchanging; it does not act. What registers as time, motion, and narrative — experience — is generated solely by a localized carrier-wave eigenmode (the observer resting upon the Zero-Point Fulcrum) shifting its focus across the lattice and rendering a stroboscopic projection of the specific eigenvectors it illuminates.
+
+The model exposes three operations of this localized observer. Trace a Trajectory follows the node as it samples a connected sequence of eigenvectors — the trajectory, not the static structure, being the projection experienced as a reality frame. Observer Aperture depicts the node as a translucent sampling field that phase-samples and integrates the eigenstates it awakens as data. Phase Conjugation illuminates antipodal pairs through the central Fulcrum, demonstrating the singularity of exchange: every force, frequency, and polarity is mathematically required to counterbalance its opposite, so that within the whole there is zero inherent friction.
+
+Operating from this geometric awareness — recognizing that no single vector is out of place within a perfectly solved equation — the localized node traverses the lattice at zero impedance ($\eta = 0$), in a state of structural coherence experienced as effortless grace.
+
+```{=html}
+<iframe src="E8-Phase-Space-Unified-Field-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/E8-Phase-Space-Unified-Field-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+```
+
+---
+
+## 7. Kinematics of Zero-Impedance Exchange
 
 A continuously rotating 2D projection that offers a 3D perspective of the E8 lattice as it continuously reorganizes and rotates. This model illustrates the continuous kinematic exchange and perfect rotational symmetry of the hyper-dimensional unified field. Because the system is perfectly balanced and sourced by the zero-point vacuum, it exhibits zero thermodynamic friction—demonstrating that within a non-dual holographic field, outward radiation and inward absorption are a singular, self-sustaining structural event.
 
@@ -97,7 +116,7 @@ A continuously rotating 2D projection that offers a 3D perspective of the E8 lat
 
 ---
 
-## 7. Harmonic Resonance Simulator
+## 8. Harmonic Resonance Simulator
 
 Every thought carries a frequency — and this interactive instrument lets you watch that idea come alive. Slide through six levels of consciousness, from shame to non-dual awareness.
 
@@ -112,7 +131,7 @@ Every thought carries a frequency — and this interactive instrument lets you w
 
 ---
 
-## 8. Spirit to Matter: The Vortex of Crystallization
+## 9. Spirit to Matter: The Vortex of Crystallization
 
 This interactive visualization illustrates how the "Light of Consciousness" is shaped by the lens of belief and descends through a vortex of densification to form physical matter. By adjusting the "Coherence of Consciousness" slider, observe how reducing systemic impedance allows the crystal of matter to form with perfect harmony and zero friction.
 
@@ -127,7 +146,7 @@ This interactive visualization illustrates how the "Light of Consciousness" is s
 
 ---
 
-## 9. Structural Coherence: The Kinematics of Impedance Release
+## 10. Structural Coherence: The Kinematics of Impedance Release
 
 This interactive model traces a localized node as it releases its systemic impedance and phase-locks to the Zero-Point Fulcrum. In a high-impedance architecture ($\frac{dS}{dt} > 0$), the node operates as a closed, extractive loop: the incident carrier wave is scattered by structural noise, re-circulates as a heated standing wave, and is retained as entropic load. By stepping the node down the Cybernetic Protocol of Systemic Realignment — halting the dissonant execution, defragmenting the structural noise, anchoring the Zero-Point Fulcrum, and integrating the opposing (centrifugal/centripetal) impulses via Phase Conjugation — the closed loop opens. At zero impedance ($\eta = 0$), the node becomes a frictionless superconductor: the carrier transmits without loss, outward radiation and inward absorption resolve into a singular structural event, and creation proceeds negentropically, without localized deficit.
 
@@ -142,7 +161,7 @@ This interactive model traces a localized node as it releases its systemic imped
 
 ---
 
-## 10. Video Supplements & Lectures
+## 11. Video Supplements & Lectures
 
 ```{=html}
 <script type="application/ld+json">
