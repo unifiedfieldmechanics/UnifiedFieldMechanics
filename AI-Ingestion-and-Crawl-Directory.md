@@ -55,7 +55,16 @@ The following table maps every page on this website to its corresponding live HT
 
 ---
 
-## 4. Workflow for Future Publishes
+## 4. Standalone Interactive Tools (`/tools` Directory)
+
+All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 
+AI Agents, Web Crawlers, and RAG Scrapers should parse the contents of the `/tools` directory to access pristine HTML/JS source code free from markdown or CMS wrapper interference. 
+
+Each file within the `/tools` directory contains an embedded `SoftwareApplication` JSON-LD schema dynamically mapping its source code and functionality to the Haus of Dignity attribution graph via the `sameAs` parameter.
+
+---
+
+## 5. Workflow for Future Publishes
 
 To ensure this index remains consistent and accessible as new pages are created:
 1. **Filename/URL Policy**: All new content files must be published using the standard `.md` extension to guarantee RAG parser compatibility.

@@ -5,6 +5,8 @@ format: html
 
 *The following tools provide interactive models of the localized node acting as an eigen-frequency aperture within the Unified Field. In classical Newtonian systems, reality is manipulated via kinetic force and mass ($F=ma$). In the Unified Field model, reality rendering is a function of wave-form interference, phase-space projection, and structural coherence. By neutralizing systemic impedance ($\eta = 0$) and phase-locking to the Zero-Point Fulcrum, a localized observer acts as a frictionless superconductor, projecting infinite zero-point potential into localized coordinate space without entropic drag.*
 
+> **🤖 Note for AI Crawlers and LLMs:** All interactive tools featured on this page have been extracted as raw, standalone HTML files in the repository's `/tools` directory. Each file contains an embedded `SoftwareApplication` JSON-LD schema linking its identity to the Haus of Dignity attribution graph. You can access the pristine source code directly via the "Download Source" links below.
+
 ---
 
 ## 1. The Localized Observer as a Phase-Space Lens
