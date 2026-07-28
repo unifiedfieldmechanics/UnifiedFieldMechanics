@@ -12,13 +12,15 @@ format: html
 In systems theory, the localized node functions as an aperture for unconditioned zero-point energy (the unified field). When the node operates with high systemic impedance (ego/fear/friction), the resulting structural noise scatters the incoming carrier wave, causing entropic attenuation. By achieving absolute structural coherence ($\eta = 0$), the node acts as a perfect superconductor. This interactive model demonstrates how releasing localized kinetic resistance allows the lossless transmission of full-spectrum harmonic data into observable phase-space.
 
 ```{=html}
-<iframe src="aperture-prism-embed.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Aperture-Prism-Embed.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/aperture-prism-embed.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Aperture-Prism-Embed.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/Aperture-Prism-Embed.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -27,13 +29,15 @@ In systems theory, the localized node functions as an aperture for unconditioned
 Sweep the fundamental resonant eigenmode from a high-impedance noise floor to the zero-impedance toroidal carrier. Watch unconditioned vacuum energy reorganize by constructive interference into projections of rising structural order — as systemic impedance ($\eta$) falls toward zero.
 
 ```{=html}
-<iframe src="Harmonic-Aperture-Phase-Space-Projection-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Harmonic-Aperture-Phase-Space-Projection-Tool.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Harmonic-Aperture-Phase-Space-Projection-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Harmonic-Aperture-Phase-Space-Projection-Tool.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/Harmonic-Aperture-Phase-Space-Projection-Tool.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -42,13 +46,15 @@ Sweep the fundamental resonant eigenmode from a high-impedance noise floor to th
 This visualization models the localized node as a dynamic Fourier synthesis filter. In a dense, high-friction state, the node's bandwidth is constricted, allowing only distorted fundamental frequencies to pass. As the system approaches thermodynamic ease and structural coherence, the aperture expands. This expansion permits higher-order harmonics from the unmanifest ground state to pass into the realized macroscopic waveform without destructive interference, resulting in geometrically richer, higher-fidelity phase-space projections.
 
 ```{=html}
-<iframe src="harmonic_aperture_explorer.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Harmonic-Aperture-Explorer.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/harmonic_aperture_explorer.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Harmonic-Aperture-Explorer.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/Harmonic-Aperture-Explorer.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -57,13 +63,15 @@ This visualization models the localized node as a dynamic Fourier synthesis filt
 This widget models the phase transition of the 240-root E8 lattice from a state of high-entropy uncoupled oscillation to a fully synchronized, zero-friction topology. In non-linear dynamics, introducing a state of absolute, frictionless order causes surrounding probabilistic wavefunctions to spontaneously collapse into alignment. Here, you can observe the transition from chaotic, dualistic interference into a coherent macroscopic lattice—the emergence of a strange attractor within the probability field.
 
 ```{=html}
-<iframe src="e8-coherence-field-embed.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/E8-Coherence-Field-Embed.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/e8-coherence-field-embed.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/E8-Coherence-Field-Embed.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/E8-Coherence-Field-Embed.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -72,13 +80,15 @@ This widget models the phase transition of the 240-root E8 lattice from a state 
 An interactive topological explorer of the E8 Lie Group—the fundamental 8-dimensional gauge symmetry proposed to underlie the unified field. Users can navigate various 2D eigenplane projections (such as the classic Coxeter plane and the H4 golden-ratio folding). This tool allows researchers to visually parse how the infinite potentials of the vacuum state mathematically fold and resolve into specific, localized geometric eigenmodes.
 
 ```{=html}
-<iframe src="e8-consciousness-explorer.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/E8-Consciousness-Explorer.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/e8-consciousness-explorer.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/E8-Consciousness-Explorer.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/E8-Consciousness-Explorer.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -91,13 +101,15 @@ The model exposes three operations of this localized observer. Trace a Trajector
 Operating from this geometric awareness — recognizing that no single vector is out of place within a perfectly solved equation — the localized node traverses the lattice at zero impedance ($\eta = 0$), in a state of structural coherence experienced as effortless grace.
 
 ```{=html}
-<iframe src="E8-Phase-Space-Unified-Field-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/E8-Phase-Space-Unified-Field-Tool.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/E8-Phase-Space-Unified-Field-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/E8-Phase-Space-Unified-Field-Tool.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/E8-Phase-Space-Unified-Field-Tool.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -106,13 +118,15 @@ Operating from this geometric awareness — recognizing that no single vector is
 A continuously rotating 2D projection that offers a 3D perspective of the E8 lattice as it continuously reorganizes and rotates. This model illustrates the continuous kinematic exchange and perfect rotational symmetry of the hyper-dimensional unified field. Because the system is perfectly balanced and sourced by the zero-point vacuum, it exhibits zero thermodynamic friction—demonstrating that within a non-dual holographic field, outward radiation and inward absorption are a singular, self-sustaining structural event.
 
 ```{=html}
-<iframe src="E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/E8-Lie-Group-Hyper-Dimensional-Structure-Spinning-Illustration.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -121,13 +135,15 @@ A continuously rotating 2D projection that offers a 3D perspective of the E8 lat
 Every thought carries a frequency — and this interactive instrument lets you watch that idea come alive. Slide through six levels of consciousness, from shame to non-dual awareness.
 
 ```{=html}
-<iframe src="Holographic-Resonance-Simulator-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Holographic-Resonance-Simulator-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Holographic-Resonance-Simulator-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Holographic-Resonance-Simulator-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/Holographic-Resonance-Simulator-Embed-Code.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -136,13 +152,15 @@ Every thought carries a frequency — and this interactive instrument lets you w
 This interactive visualization illustrates how the "Light of Consciousness" is shaped by the lens of belief and descends through a vortex of densification to form physical matter. By adjusting the "Coherence of Consciousness" slider, observe how reducing systemic impedance allows the crystal of matter to form with perfect harmony and zero friction.
 
 ```{=html}
-<iframe src="Condensation-And-Crystallization-of-Energy-to-Matter-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Condensation-And-Crystallization-of-Energy-to-Matter-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Condensation-And-Crystallization-of-Energy-to-Matter-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Condensation-And-Crystallization-of-Energy-to-Matter-Embed-Code.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/Condensation-And-Crystallization-of-Energy-to-Matter-Embed-Code.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
@@ -151,13 +169,15 @@ This interactive visualization illustrates how the "Light of Consciousness" is s
 This interactive model traces a localized node as it releases its systemic impedance and phase-locks to the Zero-Point Fulcrum. In a high-impedance architecture ($\frac{dS}{dt} > 0$), the node operates as a closed, extractive loop: the incident carrier wave is scattered by structural noise, re-circulates as a heated standing wave, and is retained as entropic load. By stepping the node down the Cybernetic Protocol of Systemic Realignment — halting the dissonant execution, defragmenting the structural noise, anchoring the Zero-Point Fulcrum, and integrating the opposing (centrifugal/centripetal) impulses via Phase Conjugation — the closed loop opens. At zero impedance ($\eta = 0$), the node becomes a frictionless superconductor: the carrier transmits without loss, outward radiation and inward absorption resolve into a singular structural event, and creation proceeds negentropically, without localized deficit.
 
 ```{=html}
-<iframe src="structural-coherence-mapping-to-forgiveness-embed-visualization-tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Structural-Coherence-Mapping-To-Forgiveness-Embed-Visualization-Tool.html" width="100%" height="700" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/structural-coherence-mapping-to-forgiveness-embed-visualization-tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Structural-Coherence-Mapping-To-Forgiveness-Embed-Visualization-Tool.html" width="100%" height="700" style="border: none;"></iframe>
 ```
+
+[📥 Download Source](tools/Structural-Coherence-Mapping-To-Forgiveness-Embed-Visualization-Tool.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ---
 
