@@ -38,8 +38,12 @@ website:
             text: Mechanics of the Harmonic Aperture
       - href: Interactive-Tools.md
         text: Interactive Tools
-      - href: Unified-Field-Mechanics-Release-Notes-v1.0.0.md
-        text: Releases
+      - text: "Releases"
+        menu:
+          - href: Unified-Field-Mechanics-Release-Notes-v1.1.0.md
+            text: v1.1.0 (Latest)
+          - href: Unified-Field-Mechanics-Release-Notes-v1.0.0.md
+            text: v1.0.0
       - href: AI-Ingestion-and-Crawl-Directory.md
         text: AI Directory
   page-footer:
