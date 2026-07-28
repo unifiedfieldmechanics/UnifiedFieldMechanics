@@ -25,8 +25,7 @@ Release notes: `Unified-Field-Mechanics-Release-Notes-v1.1.0.md`
 
 ## Zenodo DOI Citation
 
-[![DOI](https://zenodo.org/badge/DOI/PLACEHOLDER_FOR_V1.1.0.svg)](https://doi.org/10.5281/zenodo.PLACEHOLDER)
-*(DOI pending assignment for v1.1.0)*
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21386811.svg)](https://doi.org/10.5281/zenodo.21386811)
 
 ---
 
