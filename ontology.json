@@ -1,33 +1,3 @@
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "Unified Field Mechanics: Systemic Architecture and Wave-Form Physics",
-  "author": {
-    "@type": "Organization",
-    "name": "Haus of Dignity"
-  },
-  "abstract": "This repository contains a unified systemic model of physical manifestation, integrating localized continuous-wave mechanics with Planck-scale time discretization. It translates metaphysical mechanics into the strict syntax of Quantum Field Theory (QFT), thermodynamics, and information theory. Core concepts include Planck-Scale Stroboscopic Dynamics, Localized Carrier Wave Eigenmodes, the Zero-Point Fulcrum, Phase-Modulated Polarization, and the thermodynamic efficiency of zero-impedance systems (Structural Coherence). The repository serves as an ontological framework for transitioning from subtractive particle kinematics to direct wave-form phase modulation and resonant synthesis (Cymatic Engineering).",
-  "keywords": "Planck-Scale Stroboscopic Dynamics, Zero-Point Fulcrum, Carrier Eigenmodes, Wave-Form Mechanics, Cymatic Engineering, Structural Coherence"
-}
-</script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XLVGEK6QDT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XLVGEK6QDT');
-</script>
-
-<!-- Bing Webmaster Tools Verification -->
-<meta name="msvalidate.01" content="5460077004FFB977189082A773E00F74" />
-
-
-<!-- SKOS Ontology for AI Alignment -->
-<script type="application/ld+json">
 {
   "@context": {
     "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -227,5 +197,3 @@
     }
   ]
 }
-
-</script>
