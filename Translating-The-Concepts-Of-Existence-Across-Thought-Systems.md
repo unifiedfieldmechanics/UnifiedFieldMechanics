@@ -24,13 +24,15 @@ By translating these concepts across systems, we can begin to see that terms lik
 
 <br><br><hr><br>
 
+## Glossary
+
 ```{=html}
-<iframe src="tools/Glossary-Accordion-Science.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Glossary-Accordion-Science.html" width="100%" height="1500" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Glossary-Accordion-Science.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Glossary-Accordion-Science.html" width="100%" height="1500" style="border: none;"></iframe>
 ```
 
 [📥 Download Source](tools/Glossary-Accordion-Science.html){.btn .btn-outline-primary .btn-sm target="_blank"}
