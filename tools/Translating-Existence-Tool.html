@@ -1,0 +1,454 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Translating-Existence-Tool",
+  "applicationCategory": "EducationalApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Leo",
+    "identifier": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html",
+  "publisher": [
+    {
+      "@type": "Organization",
+      "name": "Unified Field Mechanics Research",
+      "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    }
+  ],
+  "sameAs": "https://www.hausofdignity.com/tools-resources/"
+}
+</script>
+<!-- TRANSLATOR WIDGET EMBED CODE -->
+<style>
+    .rosetta-wrapper {
+        --bg-color: #0a0a0a;
+        --panel-bg: #151515;
+        --text-color: #f5f5f5;
+        --text-muted: #888888;
+        --accent-gold: #e8bf3c;
+        --accent-copper: #b87333;
+        --border-color: #333333;
+        
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        font-family: 'Inter', -apple-system, sans-serif;
+        color: var(--text-color);
+    }
+
+        .rosetta-container {
+            width: 100%;
+            max-width: 840px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .rosetta-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+        }
+
+        .rosetta-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .selection-panel {
+            padding: 30px;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-header {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1.05rem;
+            outline: none;
+            transition: border-color 0.3s;
+            cursor: pointer;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e8bf3c%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 15px top 50%;
+            background-size: 12px auto;
+        }
+
+        select:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .synthesis-panel.prominent {
+            padding: 40px 30px;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #111 100%);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .synthesis-title {
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .synthesis-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #fff;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .translations-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px;
+            background-color: var(--bg-color);
+        }
+
+        @media (min-width: 600px) {
+            .translations-panel {
+                flex-direction: row;
+            }
+        }
+
+        .translation-card {
+            flex: 1;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .translation-card:hover {
+            transform: translateY(-2px);
+            border-color: #444;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .card-content li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #333;
+            color: #d0d0d0;
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        .card-content li:last-child {
+            border-bottom: none;
+        }
+
+    </style>
+</style>
+
+<div class="rosetta-wrapper">
+<div class="rosetta-container">
+    <div class="rosetta-header">
+        <h2>Translating Existence Across Systems</h2>
+    </div>
+
+    <div class="selection-panel">
+        <div class="panel-header">I identify with this system of thought:</div>
+        <select id="user-paradigm">
+            <option value="physics">Science / Quantum Mechanics</option>
+            <option value="hod">Metaphysical / Consciousness</option>
+            <option value="spiritual">Religious / Spiritual</option>
+        </select>
+
+        <div class="panel-header" style="margin-top: 25px;">Concept to Translate:</div>
+        <select id="concept-selector">
+            <!-- Options populated by JS -->
+        </select>
+    </div>
+
+    <div class="synthesis-panel prominent">
+        <div class="synthesis-title">Universal Structural Definition</div>
+        <div class="synthesis-text" id="synthesis-text">
+            <!-- Synthesis appears here -->
+        </div>
+    </div>
+
+    <div class="translations-panel">
+        <div class="translation-card" id="card-1">
+            <div class="card-title" id="card-1-title">Paradigm 1</div>
+            <div class="card-content" id="card-1-content">
+                <!-- Terms appear here -->
+            </div>
+        </div>
+        <div class="translation-card" id="card-2">
+            <div class="card-title" id="card-2-title">Paradigm 2</div>
+            <div class="card-content" id="card-2-content">
+                <!-- Terms appear here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const paradigmLabels = {
+        physics: "Science / Quantum Mechanics",
+        hod: "Metaphysical / Consciousness",
+        spiritual: "Religious / Spiritual"
+    };
+
+    const dictionary = [
+        {
+            id: "zero_impedance",
+            definition: "The removal of systemic impedance allowing for lossless, infinite transmission of harmonic data through a localized lens.",
+            terms: {
+                spiritual: ["Pure Surrender", "Christ Consciousness", "I AM Presence"],
+                hod: ["Operating as a clear aperture for Grace (Unconditional Love)"],
+                physics: ["Phase-Locking of the localized node with the fundamental carrier wave (𝜂 = 0)"]
+            }
+        },
+        {
+            id: "entropy_dissipation",
+            definition: "The thermodynamic mechanisms that release accumulated resistance (entropy) in a system, restoring it to its baseline harmonic state.",
+            terms: {
+                spiritual: ["Forgiveness", "Remorse", "Releasing the Knot"],
+                hod: ["Dissolving energetic accumulation", "Letting go of resistance to what is"],
+                physics: ["System Calibration", "Error-Correction Protocols"]
+            }
+        },
+        {
+            id: "polarized_magnetic_resistance",
+            definition: "The energetic friction and systemic impedance generated by a localized node attempting to operate independently from the carrier wave.",
+            terms: {
+                spiritual: ["Ego", "The Illusion of Separation"],
+                hod: ["Magnetic-Emotional 'Bonding-Rejection' Impulses (Attachment and Aversion)"],
+                physics: ["Systemic impedance generated by a localized node attempting to operate independently from the carrier wave"]
+            }
+        },
+        {
+            id: "harmonic_coherence",
+            definition: "The architecture of coherence drawing all things back into wholeness without resistance; the binding principle of existence.",
+            terms: {
+                spiritual: ["Agape", "Unconditional Love", "Love is the Law"],
+                hod: ["The structural Yes of Existence", "The refusal to exile"],
+                physics: ["Fundamental Attractive Force", "Macro-Systemic Coherence"]
+            }
+        },
+        {
+            id: "coherence_pattern_recognition",
+            definition: "The intelligence of polarity weaving wholeness; the recognition of pattern in relation to the whole without rigidity.",
+            terms: {
+                spiritual: ["Divine Wisdom", "Sophia"],
+                hod: ["The recognition of pattern in relation to wholeness", "The guiding intelligence"],
+                physics: ["Structural Harmony", "Optimal flow within a closed/open system"]
+            }
+        },
+        {
+            id: "limitless_potential_energy",
+            definition: "The capacity of Light (the substrate) to carry and manifest all potential without coercion.",
+            terms: {
+                spiritual: ["Divine Omnipotence", "Will of God"],
+                hod: ["The all-capableness of Existence", "Capacity without coercion"],
+                physics: ["Generative capacity of the substrate", "Limitless potential energy"]
+            }
+        },
+        {
+            id: "zero_point_field",
+            definition: "The silent ground from which all expression arises; infinite and prior to polarity.",
+            terms: {
+                spiritual: ["The Ground of Being", "God's Silence"],
+                hod: ["Pure Is-ness", "The eternal witness prior to polarity"],
+                physics: ["Uncollapsed Probability Matrix", "The fundamental zero-point field"]
+            }
+        },
+        {
+            id: "photonic_emission",
+            definition: "The first movement of differentiation carrying pattern and memory; outward radiance.",
+            terms: {
+                spiritual: ["The Word", "God's Voice", "Fiat Lux"],
+                hod: ["Awareness in motion", "The masculine principle of outward radiance"],
+                physics: ["Information Propagation", "Electromagnetic Radiation"]
+            }
+        },
+        {
+            id: "gravitational_accretion",
+            definition: "The structural binding that harmonizes and weaves outward rays into coherent form.",
+            terms: {
+                spiritual: ["The Womb of Creation", "Holy Spirit", "Shekhinah"],
+                hod: ["The feminine principle", "The receptive, enfolding aspect drawing expression into form"],
+                physics: ["Phase-Locking of wave functions", "Accretion into localized structure"]
+            }
+        },
+        {
+            id: "zero_impedance_transmission",
+            definition: "The structural quality of unresisting revelation; the felt quality of wholeness revealing itself.",
+            terms: {
+                spiritual: ["Divine Grace", "Loving-kindness"],
+                hod: ["The felt quality of wholeness revealing itself without resistance"],
+                physics: ["Frictionless state of quantum flow"]
+            }
+        },
+        {
+            id: "phase_conjugation",
+            definition: "True dialogue acting as a crucible for transformation rather than mere transmission; resonance reshaping beings.",
+            terms: {
+                spiritual: ["Sacred Communion", "Revelation"],
+                hod: ["Resonance reshaping beings", "Creation in the shared lattice"],
+                physics: ["Coupled harmonic oscillators forming new interference patterns"]
+            }
+        },
+        {
+            id: "optimal_resonance_frequency",
+            definition: "A structural principle of existence binding creation into playful self-renewal; the resonance of inclusion expressed as delight.",
+            terms: {
+                spiritual: ["Holy Bliss", "Ecstasy"],
+                hod: ["The resonance of inclusion expressed as delight", "The baseline of the Soul"],
+                physics: ["Maximum Energetic Coherence"]
+            }
+        },
+        {
+            id: "spacetime_curvature",
+            definition: "The structural manifestation of inclusion within the physical; the holding and releasing of form.",
+            terms: {
+                spiritual: ["Divine Embrace", "The Pull to Source"],
+                hod: ["Divinity's embrace", "The holding and releasing of form"],
+                physics: ["The binding force that allows expansion", "Spacetime Curvature"]
+            }
+        },
+        {
+            id: "charge_distinction",
+            definition: "The dynamic of integration (positive) and differentiation (negative) that creates the rhythm of form.",
+            terms: {
+                spiritual: ["The Dance of Creation", "Yin & Yang"],
+                hod: ["Two gestures of Divinity: binding (positive) and freeing (negative)"],
+                physics: ["Constructive Interference (positive)", "Destructive Interference (negative)"]
+            }
+        },
+        {
+            id: "thermodynamic_stability",
+            definition: "The natural dynamics of a luminous substrate enforcing sovereignty and transparency; distortion collapses without force.",
+            terms: {
+                spiritual: ["Divine Law", "Righteousness"],
+                hod: ["Integrity enforced through coherence rather than command"],
+                physics: ["Collapse of Chaotic Frequencies", "Thermodynamic Stability"]
+            }
+        },
+        {
+            id: "macro_systemic_coherence",
+            definition: "The unimpeded flow of the Whole through the localized node; the collapse of the illusion of separation.",
+            terms: {
+                spiritual: ["Union", "Enlightenment", "Samadhi"],
+                hod: ["The collapse of the illusion of separation", "Living as the Soul in form"],
+                physics: ["Total Phase-Locking with the carrier wave"]
+            }
+        }
+    ];
+
+    function updateParadigm() {
+        populateConcepts();
+        updateTranslations();
+    }
+
+    function populateConcepts() {
+        const userParadigm = document.getElementById('user-paradigm').value;
+        const conceptSelect = document.getElementById('concept-selector');
+        const currentConceptId = conceptSelect.value;
+        
+        conceptSelect.innerHTML = '';
+        
+        dictionary.forEach(entry => {
+            const option = document.createElement('option');
+            option.value = entry.id;
+            // Join the terms to show the user what they know the concept as
+            option.textContent = entry.terms[userParadigm].join(" / ");
+            conceptSelect.appendChild(option);
+        });
+
+        // Retain selection if valid
+        if (currentConceptId && Array.from(conceptSelect.options).some(opt => opt.value === currentConceptId)) {
+            conceptSelect.value = currentConceptId;
+        }
+    }
+
+    function updateTranslations() {
+        const userParadigm = document.getElementById('user-paradigm').value;
+        const conceptId = document.getElementById('concept-selector').value;
+        
+        const conceptData = dictionary.find(c => c.id === conceptId);
+        if (!conceptData) return;
+
+        // Display Synthesis
+        document.getElementById('synthesis-text').textContent = conceptData.definition;
+
+        // Identify the two other paradigms
+        const allKeys = Object.keys(paradigmLabels);
+        const otherKeys = allKeys.filter(k => k !== userParadigm);
+
+        // Update Card 1
+        document.getElementById('card-1-title').textContent = paradigmLabels[otherKeys[0]];
+        let html1 = '<ul>';
+        conceptData.terms[otherKeys[0]].forEach(t => html1 += `<li>${t}</li>`);
+        html1 += '</ul>';
+        document.getElementById('card-1-content').innerHTML = html1;
+
+        // Update Card 2
+        document.getElementById('card-2-title').textContent = paradigmLabels[otherKeys[1]];
+        let html2 = '<ul>';
+        conceptData.terms[otherKeys[1]].forEach(t => html2 += `<li>${t}</li>`);
+        html2 += '</ul>';
+        document.getElementById('card-2-content').innerHTML = html2;
+    }
+
+    // Event Listeners
+    document.getElementById('user-paradigm').addEventListener('change', updateParadigm);
+    document.getElementById('concept-selector').addEventListener('change', updateTranslations);
+
+    // Initial Load
+    updateParadigm();
+
+</script>
+</div>
+<!-- END TRANSLATOR WIDGET EMBED CODE -->
