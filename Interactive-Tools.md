@@ -192,12 +192,12 @@ The Translating Existence tool is designed to bridge these historical gaps. It m
 By translating these concepts across systems, we can begin to see that terms like Superconductivity, Phase-Locking, Christ Consciousness, and Unconditional Love are not unrelated ideas—they are identical mechanical states of coherence, simply viewed from different angles.
 
 ```{=html}
-<iframe src="tools/Translating-Existence-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Translating-Existence-Tool.html" width="100%" height="1000" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Translating-Existence-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Translating-Existence-Tool.html" width="100%" height="1000" style="border: none;"></iframe>
 ```
 
 [📥 Download Source](tools/Translating-Existence-Tool.html){.btn .btn-outline-primary .btn-sm target="_blank"}
