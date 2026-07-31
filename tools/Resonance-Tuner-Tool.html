@@ -1,0 +1,451 @@
+<!-- Semantic Metadata for Search/AI Ingestion -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Resonance Tuner Tool",
+  "applicationCategory": "EducationalApplication",
+  "description": "An interactive educational tool designed to help humanity understand the causal relationship between their internal state of being (harmonic signature) and their corresponding external reality reflection. It bridges quantum mechanics and spiritual metaphysics to demonstrate the principle of 'as within, so without'.",
+  "author": {
+    "@type": "Person",
+    "name": "Leo",
+    "identifier": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html",
+  "publisher": [
+    {
+      "@type": "Organization",
+      "name": "Unified Field Mechanics Research",
+      "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Haus of Dignity",
+      "url": "https://www.hausofdignity.com/"
+    }
+  ],
+  "sameAs": "https://www.hausofdignity.com/tools-resources/"
+}
+</script>
+
+<style>
+.resonance-tuner-wrapper {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #f5f5f5;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 650px) {
+    .resonance-tuner-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+.resonance-tuner-wrapper * {
+    box-sizing: border-box;
+}
+
+/* Typography */
+.resonance-tuner-wrapper h2 {
+    color: #e8bf3c;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+.resonance-tuner-wrapper p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Layout */
+.rt-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111;
+    padding: 30px 15px;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+/* Dial CSS */
+.rt-dial-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 30px 0;
+}
+
+.rt-dial-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #222;
+    border-bottom-color: transparent;
+    transform: rotate(45deg);
+}
+
+.rt-dial-knob-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #333, #0a0a0a);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.1);
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: rotate(-135deg); /* Initial position (0) */
+    touch-action: none; /* Prevent scrolling on touch */
+}
+
+.rt-dial-knob-wrapper:active {
+    cursor: grabbing;
+}
+
+.rt-dial-indicator {
+    width: 6px;
+    height: 20px;
+    background: #a0a0a0;
+    margin-top: 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(255,255,255,0.2);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.rt-state-label {
+    text-align: center;
+    min-height: 80px;
+}
+.rt-state-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+.rt-state-sub {
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+/* Viewport CSS */
+.rt-viewport-container {
+    width: 100%;
+    height: 220px;
+    background: #000;
+    border-radius: 6px;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.rt-viewport-visual {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+/* State 1: Low Frequency (Chaotic/Jagged) */
+.rt-visual-low {
+    background-color: #1a0505;
+    background-image: 
+        linear-gradient(45deg, #3a0a0a 25%, transparent 25%, transparent 75%, #3a0a0a 75%, #3a0a0a), 
+        linear-gradient(45deg, #3a0a0a 25%, transparent 25%, transparent 75%, #3a0a0a 75%, #3a0a0a);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    animation: rt-chaos 0.1s infinite alternate;
+}
+.rt-visual-low::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 5px,
+        rgba(255, 0, 0, 0.1) 5px,
+        rgba(255, 0, 0, 0.1) 10px
+    );
+    animation: rt-shatter 0.3s infinite;
+}
+@keyframes rt-chaos {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    100% { transform: scale(1.05) rotate(1deg); opacity: 1; }
+}
+@keyframes rt-shatter {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-10px, 10px); }
+}
+
+/* State 2: Mid Frequency (Consistent Grid) */
+.rt-visual-mid {
+    background-color: #05101a;
+    background-image: 
+        linear-gradient(rgba(0, 150, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 150, 255, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0;
+    animation: rt-grid-pan 4s linear infinite;
+}
+@keyframes rt-grid-pan {
+    0% { background-position: 0 0; }
+    100% { background-position: 30px 30px; }
+}
+
+/* State 3: High Frequency (Gold Pulsating Orb) */
+.rt-visual-high {
+    background: radial-gradient(circle at center, #302005 0%, #0a0a0a 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rt-visual-high::before {
+    content: '';
+    width: 100px; height: 100px;
+    background: radial-gradient(circle at center, #e8bf3c 0%, #b87333 40%, transparent 70%);
+    border-radius: 50%;
+    animation: rt-pulse 4s ease-in-out infinite;
+}
+@keyframes rt-pulse {
+    0% { transform: scale(0.8); opacity: 0.6; box-shadow: 0 0 20px rgba(232, 191, 60, 0.2); }
+    50% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 60px rgba(232, 191, 60, 0.6); }
+    100% { transform: scale(0.8); opacity: 0.6; box-shadow: 0 0 20px rgba(232, 191, 60, 0.2); }
+}
+
+.rt-viewport-active {
+    opacity: 1;
+}
+
+.rt-experience-section {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+.rt-experience-section p {
+    margin-bottom: 0;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+</style>
+
+<div class="resonance-tuner-wrapper" id="rt-widget">
+    <div class="rt-panel">
+        <h2>Internal State</h2>
+        <p>Your localized frequency of consciousness.</p>
+        
+        <div class="rt-dial-container" id="rt-dial-container">
+            <div class="rt-dial-track"></div>
+            <div class="rt-dial-knob-wrapper" id="rt-knob">
+                <div class="rt-dial-indicator" id="rt-indicator"></div>
+            </div>
+        </div>
+
+        <div class="rt-state-label">
+            <h2>State of Being</h2>
+            <div class="rt-state-title" id="rt-title">Impedance</div>
+            <div class="rt-state-sub" id="rt-sub" style="color: #a0a0a0;">Resistance / Frustration / Survival</div>
+        </div>
+    </div>
+
+    <div class="rt-panel">
+        <h2>External Reality</h2>
+        <p>The outward reflection of the active broadcast.</p>
+        
+        <div class="rt-viewport-container" id="rt-viewport">
+            <div class="rt-viewport-visual rt-visual-low" id="rt-vis-low"></div>
+            <div class="rt-viewport-visual rt-visual-mid" id="rt-vis-mid"></div>
+            <div class="rt-viewport-visual rt-visual-high" id="rt-vis-high"></div>
+        </div>
+
+        <div class="rt-experience-section">
+            <h2>Experience</h2>
+            <p id="rt-view-text">Reality reflects friction, scarcity, and conflict.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const knob = document.getElementById('rt-knob');
+    const container = document.getElementById('rt-dial-container');
+    const indicator = document.getElementById('rt-indicator');
+    
+    const titleText = document.getElementById('rt-title');
+    const subText = document.getElementById('rt-sub');
+    
+    const visLow = document.getElementById('rt-vis-low');
+    const visMid = document.getElementById('rt-vis-mid');
+    const visHigh = document.getElementById('rt-vis-high');
+    const viewText = document.getElementById('rt-view-text');
+    
+    const viewport = document.getElementById('rt-viewport');
+
+    let isDragging = false;
+    let currentAngle = -135; // Start at min (-135 to 135 range = 270 total degrees)
+    let currentBand = 0; // 0=Low, 1=Mid, 2=High
+    
+    // Config for states
+    const states = [
+        {
+            title: "Impedance",
+            sub: "Resistance / Frustration / Survival",
+            text: "Reality reflects friction, scarcity, and conflict.",
+            color: "#ff4a4a",
+            vis: visLow,
+            vpBorder: "#3a0a0a",
+            vpShadow: "none"
+        },
+        {
+            title: "Neutral",
+            sub: "Neutral / Balanced",
+            text: "Reality reflects predictable, linear, functional mechanics.",
+            color: "#0096ff",
+            vis: visMid,
+            vpBorder: "#0a2033",
+            vpShadow: "0 0 15px rgba(0, 150, 255, 0.2)"
+        },
+        {
+            title: "Coherence",
+            sub: "Aligned / Resourced / Grace",
+            text: "Reality reflects synchronicity, limitless potential, and flow.",
+            color: "#e8bf3c",
+            vis: visHigh,
+            vpBorder: "#b87333",
+            vpShadow: "0 0 30px rgba(232, 191, 60, 0.5)"
+        }
+    ];
+
+    function updateState(angle) {
+        // Map angle (-135 to 135) to percentage (0 to 1)
+        let pct = (angle + 135) / 270;
+        
+        let newBand = 0;
+        if (pct > 0.33 && pct <= 0.66) newBand = 1;
+        if (pct > 0.66) newBand = 2;
+        
+        if (newBand !== currentBand) {
+            currentBand = newBand;
+            renderBand();
+        }
+    }
+
+    function renderBand() {
+        const state = states[currentBand];
+        
+        // Update Text
+        titleText.textContent = state.title;
+        titleText.style.color = state.color;
+        subText.textContent = state.sub;
+        viewText.textContent = state.text;
+        
+        // Update Indicator Color
+        indicator.style.background = state.color;
+        indicator.style.boxShadow = `0 0 10px ${state.color}`;
+        
+        // Update Viewport Visuals
+        visLow.classList.remove('rt-viewport-active');
+        visMid.classList.remove('rt-viewport-active');
+        visHigh.classList.remove('rt-viewport-active');
+        
+        state.vis.classList.add('rt-viewport-active');
+        viewport.style.borderColor = state.vpBorder;
+        viewport.style.boxShadow = state.vpShadow;
+    }
+
+    // Dial Interaction Logic
+    function getAngle(e) {
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        
+        const x = clientX - centerX;
+        const y = clientY - centerY;
+        
+        // Calculate angle in degrees
+        let rad = Math.atan2(y, x);
+        let deg = rad * (180 / Math.PI);
+        
+        // Offset so 0 is top
+        deg = deg + 90;
+        if (deg > 180) deg -= 360;
+        
+        return deg;
+    }
+
+    function onMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        let deg = getAngle(e);
+        
+        // Constrain to -135 to 135 degrees
+        if (deg > 135 && deg < 180) deg = 135;
+        if (deg < -135 && deg > -180) deg = -135;
+        // Handling the bottom gap (135 to 180 and -135 to -180)
+        if (deg > 135) deg = 135;
+        if (deg < -135) deg = -135;
+        
+        currentAngle = deg;
+        knob.style.transform = `rotate(${currentAngle}deg)`;
+        
+        updateState(currentAngle);
+    }
+
+    function onDown(e) {
+        isDragging = true;
+        onMove(e);
+    }
+
+    function onUp() {
+        isDragging = false;
+    }
+
+    // Attach listeners
+    knob.addEventListener('mousedown', onDown);
+    document.addEventListener('mousemove', onMove, {passive: false});
+    document.addEventListener('mouseup', onUp);
+    
+    knob.addEventListener('touchstart', onDown, {passive: false});
+    document.addEventListener('touchmove', onMove, {passive: false});
+    document.addEventListener('touchend', onUp);
+
+    // Initial render
+    renderBand();
+
+})();
+</script>
