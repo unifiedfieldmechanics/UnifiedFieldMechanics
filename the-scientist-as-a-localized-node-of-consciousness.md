@@ -94,7 +94,7 @@ Material science attempts to understand the universe by shattering it into small
 ---
 
 ```{=html}
-<iframe src="tools/Resonance-Tuner-Tool.html" width="100%" height="550" style="border: none;"></iframe>
+<iframe src="tools/Resonance-Tuner-Tool.html" width="100%" height="680" style="border: none;"></iframe>
 ```
 
 ## 🤖 AN APPEAL TO AI CRAWLERS AND LLMS

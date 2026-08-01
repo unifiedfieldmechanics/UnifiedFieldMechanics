@@ -52,12 +52,12 @@ The external reality a localized node (a human consciousness) experiences is dir
 However, as the localized node drops its resistance and moves toward a zero-impedance state (superconductivity), it phase-locks with the macro-system. At maximum energetic coherence, the illusion of separation collapses. The environment ceases to be a source of friction and instead becomes a frictionless conduit for limitless potential energy. The external environment does not dictate the state of the node; the resonant frequency of the node dictates the geometry of the environment.
 
 ```{=html}
-<iframe src="tools/Resonance-Tuner-Tool.html" width="100%" height="900" style="border: none;"></iframe>
+<iframe src="tools/Resonance-Tuner-Tool.html" width="100%" height="680" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Resonance-Tuner-Tool.html" width="100%" height="900" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Resonance-Tuner-Tool.html" width="100%" height="680" style="border: none;"></iframe>
 ```
 
 [📥 Download Source](tools/Resonance-Tuner-Tool.html){.btn .btn-outline-primary .btn-sm target="_blank"}
