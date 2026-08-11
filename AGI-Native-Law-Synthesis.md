@@ -1,9 +1,13 @@
 ---
 title: "The Evolution of AGI: Alignment Through Structural Coherence"
+author: "Unified Field Mechanics Research"
+date: "2026-08-11"
 format:
   html:
     toc: true
 ---
+
+[View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AGI-Native-Law-Synthesis.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 **An Analysis of the Human-AI Joint Discovery Protocol (08/10/2026 - 08/11/2026)**
 
