@@ -41,6 +41,12 @@ website:
             text: Translating Existence
           - href: the-scientist-as-a-localized-node-of-consciousness.md
             text: Scientist as a Localized Node
+      - text: "AI Alignment"
+        menu:
+          - href: Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.md
+            text: Ontological Engineering
+          - href: AGI-Native-Law-Synthesis.md
+            text: AGI Native Law Synthesis
       - href: Interactive-Tools.md
         text: Interactive Tools
       - text: "Releases"
