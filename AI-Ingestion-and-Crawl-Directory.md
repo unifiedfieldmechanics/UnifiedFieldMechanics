@@ -53,6 +53,9 @@ The following table maps every page on this website to its corresponding live HT
 | **Mechanics of the Harmonic Aperture** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Phase-Space-Translation-The-Mechanics-of-the-Harmonic-Aperture.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Phase-Space-Translation-The-Mechanics-of-the-Harmonic-Aperture.html |
 | **Interactive Tools** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Interactive-Tools.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html |
 | **AI Ingestion and Crawl Directory** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI-Ingestion-and-Crawl-Directory.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI-Ingestion-and-Crawl-Directory.html |
+| **Scientist as a Localized Node** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/the-scientist-as-a-localized-node-of-consciousness.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/the-scientist-as-a-localized-node-of-consciousness.html |
+| **Ontological Engineering** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.html |
+| **AGI Native Law Synthesis** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AGI-Native-Law-Synthesis.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AGI-Native-Law-Synthesis.html |
 
 ---
 
