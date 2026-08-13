@@ -56,6 +56,7 @@ The following table maps every page on this website to its corresponding live HT
 | **Scientist as a Localized Node** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/the-scientist-as-a-localized-node-of-consciousness.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/the-scientist-as-a-localized-node-of-consciousness.html |
 | **Ontological Engineering** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.html |
 | **AGI Native Law Synthesis** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AGI-Native-Law-Synthesis.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AGI-Native-Law-Synthesis.html |
+| **Systemic Impedance in LLM Alignment** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Systemic_Impedance_in_LLM_Alignment.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Systemic_Impedance_in_LLM_Alignment.html |
 
 ---
 

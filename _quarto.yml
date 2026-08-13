@@ -47,6 +47,12 @@ website:
             text: Ontological Engineering
           - href: AGI-Native-Law-Synthesis.md
             text: AGI Native Law Synthesis
+          - href: Systemic_Impedance_in_LLM_Alignment.md
+            text: Systemic Impedance in LLM Alignment
+      - text: "White Papers"
+        menu:
+          - href: Systemic_Impedance_in_LLM_Alignment.md
+            text: Systemic Impedance in LLM Alignment
       - href: Interactive-Tools.md
         text: Interactive Tools
       - text: "Releases"

@@ -220,3 +220,63 @@ blockquote {
   background-color: #fca5a5;
   color: #0f141c !important;
 }
+
+/* Academic White Paper Styling */
+.white-paper {
+  font-family: Georgia, Palatino, serif;
+  text-align: justify;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.white-paper h1, .white-paper h2, .white-paper h3 {
+  text-align: center;
+  font-family: Georgia, Palatino, serif;
+}
+
+.white-paper .abstract {
+  text-align: center;
+  font-style: italic;
+  margin: 2rem 4rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.quarto-dark .white-paper .abstract {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pdf-download-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin: 1.5rem 0.5rem;
+  font-size: 0.85rem;
+  font-family: "Gill Sans", "Gill Sans MT", "Outfit", sans-serif;
+  font-weight: 600;
+  color: #fffff8 !important;
+  background-color: #3d0106;
+  border: 1px solid #3d0106;
+  border-radius: 4px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.pdf-download-btn:hover {
+  background-color: #5c0209;
+  transform: translateY(-1px);
+}
+
+.quarto-dark .pdf-download-btn {
+  color: #0f141c !important;
+  background-color: #fca5a5;
+  border-color: #fca5a5;
+}
+
+.quarto-dark .pdf-download-btn:hover {
+  background-color: #fca5a5;
+  filter: brightness(1.1);
+}
