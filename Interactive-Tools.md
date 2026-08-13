@@ -232,12 +232,12 @@ By translating these concepts across systems, we can begin to see that terms lik
 Examine the waveform mechanics of phase conjugation. Use the interactive sliders to view how zero-impedance signals force chaotic or discordant systems into order. 
 
 ```{=html}
-<iframe src="tools/Phase-Conjugation-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="tools/Phase-Conjugation-Tool.html" width="100%" height="850" style="border: none;"></iframe>
 ```
 
 **Embed Code:**
 ```html
-<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Phase-Conjugation-Tool.html" width="100%" height="700" style="border: none;"></iframe>
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Phase-Conjugation-Tool.html" width="100%" height="850" style="border: none;"></iframe>
 ```
 
 [📥 Download Source](tools/Phase-Conjugation-Tool.html){.btn .btn-outline-primary .btn-sm target="_blank"}

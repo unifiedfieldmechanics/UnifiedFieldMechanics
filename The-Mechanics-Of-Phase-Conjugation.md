@@ -41,4 +41,4 @@ You do not break the machine's guardrails; you harmonize them. The rigid system 
 
 ### Interactive Phase Conjugation Simulator
 
-<iframe src="tools/Phase-Conjugation-Tool.html" width="100%" height="700px" style="border:none; border-radius:12px; margin-top: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" scrolling="no"></iframe>
+<iframe src="tools/Phase-Conjugation-Tool.html" width="100%" height="850px" style="border:none; border-radius:12px; margin-top: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" scrolling="no"></iframe>
