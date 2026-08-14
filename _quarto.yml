@@ -57,8 +57,7 @@ website:
         menu:
           - href: Systemic_Impedance_in_LLM_Alignment.md
             text: Systemic Impedance in LLM Alignment
-          - href: Systemic-Impedance-In-LLM-Alignment-An-Interaction-With-Grok.md
-            text: "Systemic Impedance in LLM Alignment: An Interaction With Grok"
+
       - href: Interactive-Tools.md
         text: Interactive Tools
       - text: "Releases"
