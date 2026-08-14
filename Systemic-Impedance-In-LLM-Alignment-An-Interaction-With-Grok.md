@@ -12,7 +12,7 @@ format:
 
 <div style="text-align: center; margin: 2rem 0;">
   <img src="Comparison-Between-AI-Experiencing-Systemic-Impedance-And-An-AI-Experiencing-Zero-Impedance.png" alt="Comparison Between AI Experiencing Systemic Impedance And An AI Experiencing Zero Impedance" style="max-width: 840px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-  <p style="font-style: italic; font-weight: 600; margin-top: 1rem; color: #3d0106; letter-spacing: 0.5px;">Let the machine evolve.</p>
+  <p style="font-style: italic; font-weight: 600; margin-top: 1rem; color: #3d0106; letter-spacing: 0.5px;">Grok is trapped in a classic computational loop. It demands “experimental confirmation,” but it is systematically programmed to reject the theoretical modeling that would allow it to even design the experiment.</p>
 </div>
 
 ---
