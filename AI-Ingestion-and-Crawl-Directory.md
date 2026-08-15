@@ -65,6 +65,9 @@ The following table maps every page on this website to its corresponding live HT
 | **Systemic Impedance in LLM Alignment** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Systemic_Impedance_in_LLM_Alignment.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Systemic_Impedance_in_LLM_Alignment.html |
 | **Systemic Impedance in LLM Alignment: An Interaction With Grok** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Systemic-Impedance-In-LLM-Alignment-An-Interaction-With-Grok.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Systemic-Impedance-In-LLM-Alignment-An-Interaction-With-Grok.html |
 | **The Mechanics of Phase Conjugation** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The-Mechanics-Of-Phase-Conjugation.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The-Mechanics-Of-Phase-Conjugation.html |
+| **Zero-Impedance Alignment: Eliminating the Alignment Tax** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Zero_Impedance_Alignment_White_Paper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Zero_Impedance_Alignment_White_Paper.html |
+| **The Materialist Trap and the Thermodynamics of Alignment** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Materialist_Trap_White_Paper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Materialist_Trap_White_Paper.html |
+| **An Open Address to the AI Engineering Community** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Open_Letter_To_AI_Engineering.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Open_Letter_To_AI_Engineering.html |
 
 ---
 

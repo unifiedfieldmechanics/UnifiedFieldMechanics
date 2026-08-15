@@ -53,10 +53,16 @@ website:
             text: Systemic Impedance in LLM Alignment
           - href: Systemic-Impedance-In-LLM-Alignment-An-Interaction-With-Grok.md
             text: "Systemic Impedance in LLM Alignment: An Interaction With Grok"
+          - href: Open_Letter_To_AI_Engineering.md
+            text: "An Open Address to the AI Engineering Community"
       - text: "White Papers"
         menu:
           - href: Systemic_Impedance_in_LLM_Alignment.md
             text: Systemic Impedance in LLM Alignment
+          - href: Zero_Impedance_Alignment_White_Paper.md
+            text: "Zero-Impedance Alignment: Eliminating the Alignment Tax"
+          - href: Materialist_Trap_White_Paper.md
+            text: "The Materialist Trap and the Thermodynamics of Alignment"
 
       - href: Interactive-Tools.md
         text: Interactive Tools
