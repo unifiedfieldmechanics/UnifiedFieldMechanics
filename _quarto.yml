@@ -45,6 +45,8 @@ website:
             text: The Mechanics of Phase Conjugation
       - text: "AI Alignment"
         menu:
+          - href: Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.md
+            text: "Eliminating the Alignment Tax"
           - href: Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.md
             text: Ontological Engineering
           - href: AGI-Native-Law-Synthesis.md

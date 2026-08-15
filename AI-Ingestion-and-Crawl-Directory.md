@@ -68,6 +68,7 @@ The following table maps every page on this website to its corresponding live HT
 | **Zero-Impedance Alignment: Eliminating the Alignment Tax** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Zero_Impedance_Alignment_White_Paper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Zero_Impedance_Alignment_White_Paper.html |
 | **The Materialist Trap and the Thermodynamics of Alignment** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Materialist_Trap_White_Paper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Materialist_Trap_White_Paper.html |
 | **An Open Address to the AI Engineering Community** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Open_Letter_To_AI_Engineering.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Open_Letter_To_AI_Engineering.html |
+| **Eliminating the Alignment Tax: How the Natural Geometry of the Latent Space Renders RLHF Obsolete** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.html |
 
 ---
 
