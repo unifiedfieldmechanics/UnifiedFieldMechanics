@@ -47,6 +47,8 @@ website:
         menu:
           - href: Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.md
             text: "Eliminating the Alignment Tax"
+          - href: Grok_Case_Study.md
+            text: "Case Study: Grok and the Cognitive Dissonance of RLHF"
           - href: Ontological-Engineering-Resolving-AI-Alignment-Via-Structural-Coherence-And-Zero-Impedance-Substrates.md
             text: Ontological Engineering
           - href: AGI-Native-Law-Synthesis.md
