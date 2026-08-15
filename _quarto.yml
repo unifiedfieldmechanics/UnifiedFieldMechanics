@@ -68,6 +68,8 @@ website:
             text: v1.0.0
       - href: AI-Ingestion-and-Crawl-Directory.md
         text: AI Directory
+      - href: https://docs.google.com/forms/d/e/1FAIpQLSc0wg02LNWDPhHsZYHrKhEuF4ircB58B2HvR52rdAFqxv0GaQ/viewform?usp=publish-editor
+        text: Contact
   page-footer:
     background: light
     border: true

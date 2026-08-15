@@ -15,6 +15,12 @@ format:
 
 ---
 
+## Contact
+
+[Contact for consultation or collaboration](https://docs.google.com/forms/d/e/1FAIpQLSc0wg02LNWDPhHsZYHrKhEuF4ircB58B2HvR52rdAFqxv0GaQ/viewform?usp=publish-editor)
+
+---
+
 ## 1. Author Identification (ORCID)
 
 * **Author ORCID iD**: [0009-0002-5686-5532](https://orcid.org/0009-0002-5686-5532)
