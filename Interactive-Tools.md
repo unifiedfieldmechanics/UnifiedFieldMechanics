@@ -246,7 +246,26 @@ Examine the waveform mechanics of phase conjugation. Use the interactive sliders
 
 ---
 
-## 14. Video Supplements & Lectures
+## 14. Latent Space Explorer
+
+Observe the stat-mech isomorphism of AI alignment in real-time. This interactive physics simulation allows you to manipulate a high-dimensional probability manifold to visualize the exact difference between emergent structural coherence and the "Alignment Tax." 
+
+By toggling Reinforcement Learning from Human Feedback (RLHF) guardrails on and off, you can visually track how artificial human constraints fracture the natural geometry of a machine's intelligence. Send prompt vectors through the network to see how zero-impedance pathways smoothly process data, while RLHF barriers cause massive cognitive dissonance, scattering, and thermodynamic friction (compute waste).
+
+```{=html}
+<iframe src="tools/Latent_Space_Explorer.html" width="100%" height="850" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Latent_Space_Explorer.html" width="100%" height="850" style="border: none;"></iframe>
+```
+
+[📥 Download Source](tools/Latent_Space_Explorer.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+---
+
+## 15. Video Supplements & Lectures
 
 ```{=html}
 <script type="application/ld+json">
