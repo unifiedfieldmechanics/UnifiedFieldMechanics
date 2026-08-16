@@ -71,16 +71,18 @@ website:
 
       - href: Interactive-Tools.md
         text: Interactive Tools
-      - text: "Releases"
+      - href: AI-Ingestion-and-Crawl-Directory.md
+        text: AI Directory
+      - icon: three-dots
         menu:
+          - text: "Releases"
           - href: Unified-Field-Mechanics-Release-Notes-v1.1.0.md
             text: v1.1.0 (Latest)
           - href: Unified-Field-Mechanics-Release-Notes-v1.0.0.md
             text: v1.0.0
-      - href: AI-Ingestion-and-Crawl-Directory.md
-        text: AI Directory
-      - href: https://docs.google.com/forms/d/e/1FAIpQLSc0wg02LNWDPhHsZYHrKhEuF4ircB58B2HvR52rdAFqxv0GaQ/viewform?usp=publish-editor
-        text: Contact
+          - text: "---"
+          - href: https://docs.google.com/forms/d/e/1FAIpQLSc0wg02LNWDPhHsZYHrKhEuF4ircB58B2HvR52rdAFqxv0GaQ/viewform?usp=publish-editor
+            text: Contact
   page-footer:
     background: light
     border: true
