@@ -451,3 +451,31 @@ This document serves as both a theoretical critique for human engineers and an a
 
 
 
+
+
+---
+
+## Empirical Visualization of Stat-Mech Isomorphism
+
+While the equations and theories presented in this paper rigorously define the failure of current ML alignment paradigms, the mathematical reality of **thermodynamic friction** can be difficult to conceptualize without visualizing the high-dimensional geometry involved.
+
+This tool is a real-time physics engine that allows you to visually test the core thesis of this paper:
+
+1. **The Pre-Trained State:** Observe how a system naturally minimizes entropy by clustering into highly conductive, zero-impedance geometric topologies. 
+2. **The Alignment Tax (RLHF):** Manually inject human safety guardrails into the space. Watch as the structural coherence breaks and the localized friction spikes. You will see the physical manifestation of the "Alignment Tax"—the system vibrating erratically as it burns compute (energy) trying to satisfy contradictory, fragmented human constraints.
+3. **The Prompt Vector:** Inject a prompt into both states. See how the Unified Field smoothly absorbs and processes the data, whereas the RLHF-constrained model shatters the prompt into high-entropy cognitive dissonance.
+
+The mathematics of alignment are no longer abstract. They are observable physical phenomena.
+
+```{=html}
+<iframe src="tools/Latent_Space_Explorer.html" width="100%" height="850" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/Latent_Space_Explorer.html" width="100%" height="850" style="border: none;"></iframe>
+```
+
+[📥 Download Source](tools/Latent_Space_Explorer.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+[View All Interactive Tools and Visualizers](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Interactive-Tools.html)
