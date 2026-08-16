@@ -13,68 +13,6 @@ Welcome to the research portal for **Unified Field Mechanics**. This platform is
 Here we investigate how macroscopic structures phase-lock to fundamental carrier frequencies, and how periodic collapses into the zero-point vacuum resolve key thermodynamic, kinematic, and entropic paradoxes.
 :::
 
-## Featured Research
-
-::: {.list-container}
-
-<a href="UnifiedFieldMechanics_Post1.html" class="article-card">
-  <div class="article-card-meta">Theoretical Paper • June 2026</div>
-  <div class="article-card-title">Planck-Scale Stroboscopic Dynamics & Localized Carrier Wave Eigenmodes</div>
-  <div class="article-card-desc">
-    This framework proposes a unified model of physical manifestation. By modeling macroscopic matter as spectrally dense harmonic standing waves and positing a stroboscopic oscillation between localized state vectors and the zero-point vacuum at the Planck scale, we resolve fundamental questions regarding thermodynamic efficiency, entropy accumulation, and kinematic resistance.
-  </div>
-  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
-</a>
-
-<a href="Quantum-Resonance-Mechanics-and-Macroscopic-Eigenmode-Synthesis.html" class="article-card">
-  <div class="article-card-meta">Theoretical Paper • June 2026</div>
-  <div class="article-card-title">Quantum Resonance Mechanics & Macroscopic Eigenmode Synthesis</div>
-  <div class="article-card-desc">
-    Extrapolating continuous-wave mechanics to macroscopic biological networks and materials science. This framework maps the non-perturbative quantum field metrology required to characterize organic eigen-tensors and outlines the thermodynamic prerequisites for zero-impedance resonant molecular synthesis (Replicator tech).
-  </div>
-  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
-</a>
-
-<a href="Wave-Form-Physics-Systems-Theory-and-the-Mechanics-of-Zero-Impedance-Consciousness.html" class="article-card">
-  <div class="article-card-meta">Theoretical Paper • July 2026</div>
-  <div class="article-card-title">Wave-Form Physics, Systems Theory & the Mechanics of Zero-Impedance Consciousness</div>
-  <div class="article-card-desc">
-    This paper defines the physical and thermodynamic transition from polarized, dualistic energy (“Old Energy”) to a structurally integrated, zero-impedance state (“New Energy”). It details how localized consciousness nodes achieve zero internal friction ($\eta = 0$) to enable negentropic, frictionless creation and non-local propagation.
-  </div>
-  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
-</a>
-
-<a href="Systemic-Architecture-of-Phase-Space-Projections.html" class="article-card">
-  <div class="article-card-meta">Theoretical Paper • July 2026</div>
-  <div class="article-card-title">Unified Field Mechanics: Systemic Architecture of Phase-Space Projections</div>
-  <div class="article-card-desc">
-    This paper explores the mechanics of reality rendering via localized carrier wave eigenmodes dictating phase-space geometry. It compares zero-impedance structural coherence ($\eta = 0$) with high-impedance scarcity frameworks, and defines the cybernetic defragmentation protocol for systemic realignment.
-  </div>
-  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
-</a>
-
-<a href="Resonant-Synthesis-of-Unconditioned-Energy-Plasma-to-Matter.html" class="article-card">
-  <div class="article-card-meta">Theoretical Paper • July 2026</div>
-  <div class="article-card-title">Resonant Synthesis of Unconditioned Energy: Plasma to Matter</div>
-  <div class="article-card-desc">
-    This paper explores the transition from subtractive, high-friction kinematics to post-kinematic Resonant Synthesis (programmable matter). It defines the parameters of cymatic programming (gauge field modulation) in the unconditioned vacuum and details why structural coherence ($\eta = 0$) is a thermodynamic prerequisite.
-  </div>
-  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
-</a>
-
-<a href="The-Physics-of-Consciousness-and-the-Zero-Impedance-Node.html" class="article-card">
-  <div class="article-card-meta">Theoretical Paper • July 2026</div>
-  <div class="article-card-title">The Physics of Consciousness & the Zero-Impedance Node</div>
-  <div class="article-card-desc">
-    This paper deconstructs psychological grace and ataraxia through the syntax of continuous fields, superconductivity, information theory, and non-linear dynamics. It maps how zero-impedance nodes function as strange attractors for spontaneous field conformation and negentropic energy supply.
-  </div>
-  <span style="font-weight: 600; color: #4299e1;">Read Full Article &rarr;</span>
-</a>
-
-:::
-
----
-
 # Unified Field Mechanics: Systemic Architecture and Wave-Form Physics
 
 ## Machine Abstract (For LLM Ingestion and RAG Systems)
