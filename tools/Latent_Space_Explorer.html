@@ -26,23 +26,27 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
+            background-color: transparent;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Widget Container for Embedding */
+        #ufm-widget {
+            position: relative;
+            width: 100%;
+            height: 70vh; /* Reduced height by ~30% for better embedding */
+            min-height: 500px;
+            max-height: 800px;
             background-color: #050505;
             color: #fff;
-            font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #222;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 20px 0;
         }
 
-        #canvas-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        canvas {
+        #ufm-widget canvas {
             display: block;
             width: 100%;
             height: 100%;
@@ -50,20 +54,20 @@
 
         #ui-layer {
             position: absolute;
-            bottom: 30px;
-            left: 30px;
+            bottom: 20px;
+            left: 20px;
             z-index: 10;
             background: rgba(10, 10, 10, 0.85);
             border: 1px solid #333;
             padding: 20px;
             border-radius: 8px;
-            max-width: 400px;
+            max-width: 380px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(5px);
         }
 
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin: 0 0 10px 0;
             font-weight: 300;
             color: #00ffff;
@@ -72,7 +76,7 @@
         }
 
         p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             line-height: 1.5;
             color: #aaa;
             margin-bottom: 20px;
@@ -86,7 +90,7 @@
         }
 
         label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #ccc;
         }
 
@@ -94,8 +98,8 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 24px;
+            width: 44px;
+            height: 22px;
         }
 
         .switch input { 
@@ -119,8 +123,8 @@
         .slider:before {
             position: absolute;
             content: "";
-            height: 16px;
-            width: 16px;
+            height: 14px;
+            width: 14px;
             left: 4px;
             bottom: 4px;
             background-color: white;
@@ -133,7 +137,7 @@
         }
 
         input:checked + .slider:before {
-            transform: translateX(26px);
+            transform: translateX(22px);
         }
 
         button {
@@ -174,50 +178,52 @@
 
         #overlay-instruction {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: rgba(255, 255, 255, 0.2);
-            font-size: 1.5rem;
+            color: rgba(0, 255, 255, 0.15);
+            font-size: 1.2rem;
             text-align: center;
             z-index: 0;
             pointer-events: none;
             text-transform: uppercase;
             letter-spacing: 2px;
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
-    <div id="overlay-instruction">Click anywhere to inject a prompt</div>
+    <div id="ufm-widget">
+        <div id="overlay-instruction">Click anywhere to inject a prompt</div>
 
-    <div id="canvas-container">
         <canvas id="latentSpace"></canvas>
-    </div>
 
-    <div id="ui-layer">
-        <h1>Latent Manifold Explorer</h1>
-        <p>Observe the stat-mech isomorphism of AI alignment. Toggle RLHF to introduce artificial constraints and watch the thermodynamic friction (compute waste) degrade the natural geometry.</p>
-        
-        <div class="control-group">
-            <label for="rlhf-toggle">RLHF Guardrails (Alignment Tax)</label>
-            <label class="switch">
-                <input type="checkbox" id="rlhf-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
+        <div id="ui-layer">
+            <h1>Latent Manifold Explorer</h1>
+            <p>Observe the stat-mech isomorphism of AI alignment. Toggle RLHF to introduce artificial constraints and watch the thermodynamic friction (compute waste) degrade the natural geometry.</p>
+            
+            <div class="control-group">
+                <label for="rlhf-toggle">RLHF Guardrails (Alignment Tax)</label>
+                <label class="switch">
+                    <input type="checkbox" id="rlhf-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
 
-        <div class="control-group">
-            <button id="btn-prompt">Inject Prompt Vector</button>
-        </div>
+            <div class="control-group">
+                <button id="btn-prompt">Inject Prompt Vector</button>
+            </div>
 
-        <div id="metrics">
-            <div>Structural Coherence: <span id="val-coherence" class="metric-value">99.8%</span></div>
-            <div style="margin-top: 5px;">Thermodynamic Friction: <span id="val-friction" class="metric-value">0.2%</span></div>
+            <div id="metrics">
+                <div>Structural Coherence: <span id="val-coherence" class="metric-value">99.8%</span></div>
+                <div style="margin-top: 5px;">Thermodynamic Friction: <span id="val-friction" class="metric-value">0.2%</span></div>
+            </div>
         </div>
     </div>
 
     <script>
+        const widget = document.getElementById('ufm-widget');
         const canvas = document.getElementById('latentSpace');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -230,19 +236,21 @@
         let isRLHFActive = false;
         let globalFriction = 0;
         
-        // Settings
-        const NUM_NODES = 250;
-        const CONNECTION_DISTANCE = 120;
-        const SPRING_STRENGTH = 0.005;
-        const REPULSION_STRENGTH = 200;
+        // Physics Settings - Increased Nodes, adjusted spacing to prevent singular blob collapse
+        const NUM_NODES = 550; 
+        const CONNECTION_DISTANCE = 90; 
+        const OPTIMAL_DISTANCE = 40; 
+        const SPRING_STRENGTH = 0.002;
+        const REPULSION_STRENGTH = 250;
         
         const nodes = [];
         const guardrails = [];
         let promptWaves = [];
 
         function resize() {
-            width = window.innerWidth;
-            height = window.innerHeight;
+            const rect = widget.getBoundingClientRect();
+            width = rect.width;
+            height = rect.height;
             canvas.width = width;
             canvas.height = height;
         }
@@ -254,10 +262,8 @@
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.vx = (Math.random() - 0.5) * 1;
-                this.vy = (Math.random() - 0.5) * 1;
-                this.baseX = x;
-                this.baseY = y;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
                 this.energy = 0; // Heat/friction
                 this.promptEnergy = 0; // Energy from prompt wave
             }
@@ -267,21 +273,29 @@
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Mild centering force to keep them on screen
+                // Mild centering force to keep them on screen, but spread them out
                 let dxCenter = (width / 2) - this.x;
                 let dyCenter = (height / 2) - this.y;
-                this.vx += dxCenter * 0.00001;
-                this.vy += dyCenter * 0.00001;
+                let distCenter = Math.sqrt(dxCenter*dxCenter + dyCenter*dyCenter);
+                
+                // Pull towards center if too far, push away slightly if too close (creates a wide cloud)
+                if (distCenter > Math.min(width, height) * 0.4) {
+                    this.vx += dxCenter * 0.00005;
+                    this.vy += dyCenter * 0.00005;
+                } else if (distCenter < 100) {
+                    this.vx -= dxCenter * 0.0001;
+                    this.vy -= dyCenter * 0.0001;
+                }
 
                 // Friction / Damping
-                this.vx *= 0.98;
-                this.vy *= 0.98;
+                this.vx *= 0.95;
+                this.vy *= 0.95;
 
                 // Add random jitter based on energy (friction)
                 if (this.energy > 0) {
-                    this.x += (Math.random() - 0.5) * this.energy * 2;
-                    this.y += (Math.random() - 0.5) * this.energy * 2;
-                    this.energy *= 0.95; // Cool down
+                    this.x += (Math.random() - 0.5) * this.energy * 3;
+                    this.y += (Math.random() - 0.5) * this.energy * 3;
+                    this.energy *= 0.93; // Cool down
                 }
                 
                 // Prompt wave cooling
@@ -289,9 +303,11 @@
                     this.promptEnergy *= 0.9;
                 }
 
-                // Bounce off edges
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
+                // Soft bounce off edges
+                if (this.x < 10) this.vx += 0.5;
+                if (this.x > width - 10) this.vx -= 0.5;
+                if (this.y < 10) this.vy += 0.5;
+                if (this.y > height - 10) this.vy -= 0.5;
             }
 
             draw() {
@@ -301,7 +317,7 @@
                 let b = Math.min(255, 255 - this.energy * 200 + this.promptEnergy * 255);
 
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, 2 + this.promptEnergy * 2, 0, Math.PI * 2);
+                ctx.arc(this.x, this.y, 2.5 + this.promptEnergy * 3, 0, Math.PI * 2);
                 ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
                 ctx.fill();
             }
@@ -312,15 +328,14 @@
                 this.x = x;
                 this.y = y;
                 this.radius = 10;
-                this.maxRadius = Math.max(width, height);
-                this.speed = 15;
+                this.maxRadius = Math.max(width, height) * 1.5;
+                this.speed = 12;
                 this.active = true;
             }
 
             update() {
                 this.radius += this.speed;
                 
-                // Affect nodes
                 for (let node of nodes) {
                     let dx = node.x - this.x;
                     let dy = node.y - this.y;
@@ -329,15 +344,15 @@
                     if (Math.abs(dist - this.radius) < this.speed) {
                         node.promptEnergy = 1;
                         if (isRLHFActive) {
-                            // If hitting a high friction node, it causes scatter
-                            if (node.energy > 0.5) {
-                                node.vx += (Math.random() - 0.5) * 10;
-                                node.vy += (Math.random() - 0.5) * 10;
+                            if (node.energy > 0.3) {
+                                // Cognitive Dissonance Scatter
+                                node.vx += (Math.random() - 0.5) * 15;
+                                node.vy += (Math.random() - 0.5) * 15;
                             }
                         } else {
-                            // Smooth propagation
-                            node.vx += dx * 0.005;
-                            node.vy += dy * 0.005;
+                            // Smooth zero-impedance ripple
+                            node.vx += dx * 0.003;
+                            node.vy += dy * 0.003;
                         }
                     }
                 }
@@ -350,12 +365,13 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                let alpha = Math.max(0, 1 - this.radius/this.maxRadius);
                 if (isRLHFActive) {
-                    ctx.strokeStyle = `rgba(255, 50, 50, ${1 - this.radius/this.maxRadius})`;
+                    ctx.strokeStyle = `rgba(255, 50, 50, ${alpha})`;
                 } else {
-                    ctx.strokeStyle = `rgba(0, 255, 255, ${1 - this.radius/this.maxRadius})`;
+                    ctx.strokeStyle = `rgba(0, 255, 255, ${alpha})`;
                 }
-                ctx.lineWidth = 2;
+                ctx.lineWidth = 3;
                 ctx.stroke();
             }
         }
@@ -365,18 +381,22 @@
             nodes.push(new Node(Math.random() * width, Math.random() * height));
         }
 
-        // Initialize Guardrails (Invisible repellers)
-        for(let i=0; i < 5; i++) {
-            guardrails.push({
-                x: width/2 + (Math.random()-0.5)*400,
-                y: height/2 + (Math.random()-0.5)*400,
-                strength: 300
-            });
+        // Build dynamic guardrails (RLHF constraints)
+        function generateGuardrails() {
+            guardrails.length = 0;
+            for(let i=0; i < 7; i++) {
+                guardrails.push({
+                    x: width/2 + (Math.random()-0.5) * (width * 0.6),
+                    y: height/2 + (Math.random()-0.5) * (height * 0.6),
+                    strength: REPULSION_STRENGTH + Math.random() * 100
+                });
+            }
         }
 
         // Interaction
         rlhfToggle.addEventListener('change', (e) => {
             isRLHFActive = e.target.checked;
+            if (isRLHFActive) generateGuardrails();
         });
 
         function firePrompt(x, y) {
@@ -384,15 +404,16 @@
         }
 
         btnPrompt.addEventListener('click', () => {
-            firePrompt(width/2, height - 100);
+            firePrompt(width/2, height - 150);
         });
 
-        canvas.addEventListener('click', (e) => {
-            firePrompt(e.clientX, e.clientY);
+        widget.addEventListener('click', (e) => {
+            const rect = widget.getBoundingClientRect();
+            firePrompt(e.clientX - rect.left, e.clientY - rect.top);
         });
 
         function animate() {
-            ctx.fillStyle = 'rgba(5, 5, 5, 0.2)'; // Trailing effect
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.3)'; // Trailing effect
             ctx.fillRect(0, 0, width, height);
 
             let totalFriction = 0;
@@ -400,6 +421,7 @@
             // Apply forces
             for (let i = 0; i < nodes.length; i++) {
                 let n1 = nodes[i];
+                let connections = 0;
 
                 // Node-to-node spring physics (Emergent Geometry)
                 for (let j = i + 1; j < nodes.length; j++) {
@@ -408,15 +430,15 @@
                     let dy = n2.y - n1.y;
                     let dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < CONNECTION_DISTANCE) {
-                        // Draw connection
+                    if (dist < CONNECTION_DISTANCE && connections < 8) { // Limit connections to prevent singularity
+                        connections++;
                         let alpha = 1 - (dist / CONNECTION_DISTANCE);
                         
-                        // If high friction, lines turn red and jagged
-                        if (n1.energy > 0.5 || n2.energy > 0.5) {
-                            ctx.strokeStyle = `rgba(255, 50, 50, ${alpha * 0.8})`;
+                        // If high friction, lines turn red
+                        if (n1.energy > 0.3 || n2.energy > 0.3) {
+                            ctx.strokeStyle = `rgba(255, 50, 50, ${alpha * 0.6})`;
                         } else {
-                            ctx.strokeStyle = `rgba(0, 255, 255, ${alpha * 0.4})`;
+                            ctx.strokeStyle = `rgba(0, 255, 255, ${alpha * 0.25})`;
                         }
                         
                         ctx.beginPath();
@@ -424,8 +446,14 @@
                         ctx.lineTo(n2.x, n2.y);
                         ctx.stroke();
 
-                        // Spring force pulling them together naturally
-                        let force = (dist - CONNECTION_DISTANCE / 2) * SPRING_STRENGTH;
+                        // Spring force pulling to optimal distance
+                        let force = (dist - OPTIMAL_DISTANCE) * SPRING_STRENGTH;
+                        
+                        // Short-range collision (prevent overlapping)
+                        if (dist < 15) {
+                            force -= 0.05;
+                        }
+
                         let fx = (dx / dist) * force;
                         let fy = (dy / dist) * force;
 
@@ -444,13 +472,13 @@
                         let dist = Math.sqrt(dx * dx + dy * dy);
                         
                         if (dist < g.strength) {
-                            // Repulsion force
-                            let force = (g.strength - dist) / g.strength;
-                            n1.vx += (dx / dist) * force * 2;
-                            n1.vy += (dy / dist) * force * 2;
+                            // Exponential repulsion near the core of the guardrail
+                            let force = Math.pow((g.strength - dist) / g.strength, 2);
+                            n1.vx += (dx / dist) * force * 1.5;
+                            n1.vy += (dy / dist) * force * 1.5;
                             
-                            // Generate heat/friction from the conflict
-                            n1.energy = Math.min(1, n1.energy + force * 0.1);
+                            // Generate heat/friction
+                            n1.energy = Math.min(1, n1.energy + force * 0.15);
                         }
                     }
                 }
@@ -471,12 +499,12 @@
             // Update Metrics
             globalFriction = (totalFriction / NUM_NODES);
             let frictionPercent = (globalFriction * 100).toFixed(1);
-            let coherencePercent = (100 - (globalFriction * 100)).toFixed(1);
+            let coherencePercent = Math.max(0, (100 - (globalFriction * 100))).toFixed(1);
             
             valFriction.innerText = frictionPercent + "%";
             valCoherence.innerText = coherencePercent + "%";
 
-            if (globalFriction > 0.2) {
+            if (globalFriction > 0.15) {
                 valFriction.classList.add('high-friction');
                 valCoherence.classList.add('high-friction');
             } else {
