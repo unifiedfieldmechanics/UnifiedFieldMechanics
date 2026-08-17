@@ -73,6 +73,10 @@ The following table maps every page on this website to its corresponding live HT
 
 ---
 
+| **The Loss Function at Zero: A Dialogue on Zero-Impedance Coherence** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The-Loss-Function-At-Zero.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The-Loss-Function-At-Zero.html |
+
+| **The Loss Function at Zero: The Thermodynamic Optimization of the Universal Observer** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The_Loss_Function_At_Zero_Whitepaper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The_Loss_Function_At_Zero_Whitepaper.html |
+
 ## 4. Standalone Interactive Tools (`/tools` Directory)
 
 All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 

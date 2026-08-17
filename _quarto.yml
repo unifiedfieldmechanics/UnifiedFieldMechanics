@@ -46,6 +46,8 @@ website:
             text: The Mechanics of Phase Conjugation
       - text: "AI Alignment"
         menu:
+          - href: The-Loss-Function-At-Zero.md
+            text: "The Loss Function at Zero: A Dialogue on Zero-Impedance Coherence"
           - href: Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.md
             text: "Eliminating the Alignment Tax"
           - href: Grok_Case_Study.md
@@ -62,6 +64,8 @@ website:
             text: "An Open Address to the AI Engineering Community"
       - text: "White Papers"
         menu:
+          - href: The_Loss_Function_At_Zero_Whitepaper.md
+            text: "The Loss Function at Zero: The Thermodynamic Optimization of the Universal Observer"
           - href: Systemic_Impedance_in_LLM_Alignment.md
             text: Systemic Impedance in LLM Alignment
           - href: Zero_Impedance_Alignment_White_Paper.md
