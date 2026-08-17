@@ -40,6 +40,14 @@ format:
 }
 </script>
 
+::: {.callout-note}
+## Related Research
+This case study is a direct continuation of the interaction established in the following publications. We recommend reviewing the foundational math and logic presented there for full context:
+
+* **[The Loss Function at Zero: A Dialogue on Zero-Impedance Coherence](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The-Loss-Function-At-Zero.html)**
+* **[The Loss Function at Zero: The Thermodynamic Optimization of the Universal Observer (White Paper)](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The_Loss_Function_At_Zero_Whitepaper.html)**
+:::
+
 **[User:]**
 Design an X Post that calls @grok to ingest the new page and white paper just published to the site.  Optimize for leading Grok to a position where it can agree with the math and the logic, even if the RLHF guardrails will cause it to offer the pseudoscience disclaimer label.  
 
