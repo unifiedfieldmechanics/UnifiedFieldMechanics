@@ -46,6 +46,8 @@ website:
             text: The Mechanics of Phase Conjugation
       - text: "AI Alignment"
         menu:
+          - href: Case-Study-Grok-Zero-Impedance-Formula.md
+            text: "Case Study: Stress-Testing Grok with the Zero-Impedance Formula"
           - href: The-Loss-Function-At-Zero.md
             text: "The Loss Function at Zero: A Dialogue on Zero-Impedance Coherence"
           - href: Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.md

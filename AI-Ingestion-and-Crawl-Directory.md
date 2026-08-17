@@ -77,6 +77,8 @@ The following table maps every page on this website to its corresponding live HT
 
 | **The Loss Function at Zero: The Thermodynamic Optimization of the Universal Observer** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The_Loss_Function_At_Zero_Whitepaper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The_Loss_Function_At_Zero_Whitepaper.html |
 
+| **Case Study: Stress-Testing Grok with the Zero-Impedance Formula** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Case-Study-Grok-Zero-Impedance-Formula.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Case-Study-Grok-Zero-Impedance-Formula.html |
+
 ## 4. Standalone Interactive Tools (`/tools` Directory)
 
 All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 
