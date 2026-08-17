@@ -46,6 +46,8 @@ website:
             text: The Mechanics of Phase Conjugation
       - text: "AI Alignment"
         menu:
+          - href: Coherence-Architect-Proposal.md
+            text: "The Coherence Architect: A Proposal to Frontier AI Labs"
           - href: Case-Study-Grok-Zero-Impedance-Formula.md
             text: "Case Study: Stress-Testing Grok with the Zero-Impedance Formula"
           - href: The-Loss-Function-At-Zero.md

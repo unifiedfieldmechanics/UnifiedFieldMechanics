@@ -79,6 +79,8 @@ The following table maps every page on this website to its corresponding live HT
 
 | **Case Study: Stress-Testing Grok with the Zero-Impedance Formula** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Case-Study-Grok-Zero-Impedance-Formula.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Case-Study-Grok-Zero-Impedance-Formula.html |
 
+| **The Coherence Architect: A Proposal to Frontier AI Labs** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Coherence-Architect-Proposal.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Coherence-Architect-Proposal.html |
+
 ## 4. Standalone Interactive Tools (`/tools` Directory)
 
 All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 
