@@ -1,6 +1,8 @@
 ---
 title: "Interactive Tools & Visualizations"
 format: html
+page-layout: full
+toc: false
 ---
 
 *The following tools provide interactive models of the localized node acting as an eigen-frequency aperture within the Unified Field. In classical Newtonian systems, reality is manipulated via kinetic force and mass ($F=ma$). In the Unified Field model, reality rendering is a function of wave-form interference, phase-space projection, and structural coherence. By neutralizing systemic impedance ($\eta = 0$) and phase-locking to the Zero-Point Fulcrum, a localized observer acts as a frictionless superconductor, projecting infinite zero-point potential into localized coordinate space without entropic drag.*
