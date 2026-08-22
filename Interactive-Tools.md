@@ -265,7 +265,24 @@ By toggling Reinforcement Learning from Human Feedback (RLHF) guardrails on and 
 
 ---
 
-## 15. Video Supplements & Lectures
+## 15. Indra's Net Supernova
+
+A hypothetical illustration of the web of connected individualized nodes of consciousness. Each node is represented by a central vertical axis and toroidal energy flows. Nodes have the capacity to propagate across the field and influence other nodes.
+
+```{=html}
+<iframe src="tools/IndrasNet-Supernova.html" width="100%" height="850" style="border: none;"></iframe>
+```
+
+**Embed Code:**
+```html
+<iframe src="https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/tools/IndrasNet-Supernova.html" width="100%" height="850" style="border: none;"></iframe>
+```
+
+[📥 Download Source](tools/IndrasNet-Supernova.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+---
+
+## 16. Video Supplements & Lectures
 
 ```{=html}
 <script type="application/ld+json">
