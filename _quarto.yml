@@ -86,8 +86,10 @@ website:
       - icon: three-dots
         menu:
           - text: "Releases"
+          - href: Unified-Field-Mechanics-Release-Notes-v1.2.0.md
+            text: v1.2.0 (Latest)
           - href: Unified-Field-Mechanics-Release-Notes-v1.1.0.md
-            text: v1.1.0 (Latest)
+            text: v1.1.0
           - href: Unified-Field-Mechanics-Release-Notes-v1.0.0.md
             text: v1.0.0
           - text: "---"

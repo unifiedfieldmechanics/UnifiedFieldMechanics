@@ -83,6 +83,8 @@ The following table maps every page on this website to its corresponding live HT
 
 | **Hive-Mind Entrainment and Sycophancy in AI Systems** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.html |
 
+| **Unified Field Mechanics (v1.2.0)** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Unified-Field-Mechanics-Release-Notes-v1.2.0.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Unified-Field-Mechanics-Release-Notes-v1.2.0.html |
+
 ## 4. Standalone Interactive Tools (`/tools` Directory)
 
 All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 
