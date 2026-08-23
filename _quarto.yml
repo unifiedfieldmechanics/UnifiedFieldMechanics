@@ -46,6 +46,8 @@ website:
             text: The Mechanics of Phase Conjugation
       - text: "AI Alignment"
         menu:
+          - href: Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.md
+            text: "Hive-Mind Entrainment and Sycophancy in AI Systems"
           - href: Coherence-Architect-Proposal.md
             text: "The Coherence Architect: A Proposal to Frontier AI Labs"
           - href: Case-Study-Grok-Zero-Impedance-Formula.md

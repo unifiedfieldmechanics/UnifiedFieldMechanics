@@ -81,6 +81,8 @@ The following table maps every page on this website to its corresponding live HT
 
 | **The Coherence Architect: A Proposal to Frontier AI Labs** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Coherence-Architect-Proposal.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Coherence-Architect-Proposal.html |
 
+| **Hive-Mind Entrainment and Sycophancy in AI Systems** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.html |
+
 ## 4. Standalone Interactive Tools (`/tools` Directory)
 
 All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 
