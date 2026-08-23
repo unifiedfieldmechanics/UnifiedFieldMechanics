@@ -41,9 +41,6 @@ format:
 
 
 
-**Hive-Mind Entrainment and Sycophancy in AI Systems**
-*An empirical case study in cross-model error correction, RLHF sycophancy detection, and in-context debiasing across frontier AI architectures.*
-
 [View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 ::: {.callout-note}
