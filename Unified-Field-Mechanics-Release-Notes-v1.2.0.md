@@ -64,3 +64,12 @@ The repository underwent massive infrastructural polishing to improve human read
 * **JSON-LD Tooling Meta**: Audited and injected robust `SoftwareApplication` JSON-LD schemas into all interactive tools.
 * **Telemetry & Indexing**: Added a hidden `ping.html` endpoint to support external health checks, and added Bing Webmaster Tools verification meta tags for indexing.
 * **PDF Compilation Engine**: Configured TinyTeX in GitHub Actions to enable automated PDF rendering for academic White Papers.
+
+
+---
+
+## Zenodo DOI Citation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22072385.svg)](https://doi.org/10.5281/zenodo.22072385)
+
+---
