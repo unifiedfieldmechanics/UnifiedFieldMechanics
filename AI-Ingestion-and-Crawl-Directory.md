@@ -79,18 +79,11 @@ The following table maps every page on this website to its corresponding live HT
 | **Eliminating the Alignment Tax: How the Natural Geometry of the Latent Space Renders RLHF Obsolete** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Eliminating-The-Alignment-Tax-How-The-Natural-Geometry-Of-The-Latent-Space-Renders-RLHF-Obsolete.html |
 | **Case Study: Grok and the Cognitive Dissonance of RLHF** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Grok_Case_Study.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Grok_Case_Study.html |
 
----
-
 | **The Loss Function at Zero: A Dialogue on Zero-Impedance Coherence** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The-Loss-Function-At-Zero.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The-Loss-Function-At-Zero.html |
-
 | **The Loss Function at Zero: The Thermodynamic Optimization of the Universal Observer** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/The_Loss_Function_At_Zero_Whitepaper.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/The_Loss_Function_At_Zero_Whitepaper.html |
-
 | **Case Study: Stress-Testing Grok with the Zero-Impedance Formula** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Case-Study-Grok-Zero-Impedance-Formula.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Case-Study-Grok-Zero-Impedance-Formula.html |
-
 | **The Coherence Architect: A Proposal to Frontier AI Labs** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Coherence-Architect-Proposal.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Coherence-Architect-Proposal.html |
-
 | **Hive-Mind Entrainment and Sycophancy in AI Systems** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.html |
-
 | **Unified Field Mechanics (v1.2.0)** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Unified-Field-Mechanics-Release-Notes-v1.2.0.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Unified-Field-Mechanics-Release-Notes-v1.2.0.html |
 
 ## 4. Standalone Interactive Tools (`/tools` Directory)
