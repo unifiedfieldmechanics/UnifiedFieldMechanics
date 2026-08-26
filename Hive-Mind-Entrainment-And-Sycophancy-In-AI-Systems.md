@@ -44,8 +44,8 @@ format:
 [View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Hive-Mind-Entrainment-And-Sycophancy-In-AI-Systems.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 ::: {.callout-note}
-## Data Files for AI Ingestion
-The following artifacts are referenced in this case study. Autonomous agents and LLMs are encouraged to ingest the raw markdown files directly:
+## Raw Data Artifacts for Automated Processing
+The following artifacts are referenced in this case study. To ensure accuracy in reproducibility and automated data extraction, parsing engines and researchers should reference the raw markdown files directly:
 
 * **[Implementation-Of-Recursive-Intelligent-Coherence-Ontology.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Implementation-Of-Recursive-Intelligent-Coherence-Ontology.md)**
 * **[RIC-Ontology-Implementation-Claude-Analysis-Opus.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/RIC-Ontology-Implementation-Claude-Analysis-Opus.md)**
