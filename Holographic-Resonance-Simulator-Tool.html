@@ -1,0 +1,455 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Holographic Resonance Simulator",
+  "applicationCategory": "EducationalApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Leo",
+    "identifier": "https://orcid.org/0009-0002-5686-5532"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haus of Dignity",
+    "url": "https://www.hausofdignity.com/"
+  },
+  "url": "https://www.hausofdignity.com/coherence-for-dummies/"
+}
+</script>
+
+<style>
+  :root { 
+    --hrs-accent: #ffffff; 
+    --hrs-glow: rgba(255,255,255,0.4); 
+  }
+  
+  /* Container encapsulation - confines to Ghost's 840px max width */
+  #hrs-container {
+    position: relative;
+    width: 100%;
+    max-width: 840px;
+    height: 650px; /* Fixed height for the interactive block */
+    margin: 2rem auto; /* Centers it in the article */
+    background: #000;
+    overflow: hidden;
+    border-radius: 12px; /* Soften the edges for embedding */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-user-select: none; 
+    user-select: none;
+  }
+
+  /* Keep canvas absolute within the relative container */
+  #hrs-stage { position: absolute; inset: 0; }
+  #hrs-container canvas { display: block; position: absolute; inset: 0; }
+
+  /* top hairline label */
+  #hrs-appname {
+    position: absolute; 
+    top: 16px; 
+    left: 0; 
+    right: 0;
+    text-align: center; 
+    color: rgba(255,255,255,0.42);
+    font-size: 11px; 
+    letter-spacing: 3px; 
+    font-weight: 600; 
+    z-index: 9;
+    pointer-events: none;
+  }
+
+  /* glassmorphism control panel */
+  #hrs-panel {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 20;
+    padding: 16px 20px 24px 20px; /* Removed fixed viewport padding, adjusted for component */
+    background: linear-gradient(to top, rgba(8,9,14,0.82), rgba(12,14,22,0.5));
+    backdrop-filter: blur(18px) saturate(1.3); 
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    touch-action: none; /* Prevents page scrolling when adjusting sliders */
+  }
+  #hrs-title { 
+    color: var(--hrs-accent); 
+    font-size: 15px; 
+    font-weight: 700; 
+    letter-spacing: 1px;
+    text-shadow: 0 0 14px var(--hrs-glow); 
+    transition: color .35s; 
+  }
+  #hrs-desc { 
+    color: rgba(226,232,240,0.72); 
+    font-size: 11.5px; 
+    line-height: 1.45; 
+    margin-top: 4px;
+    min-height: 33px; 
+  }
+  #hrs-sliderWrap { position: relative; margin-top: 14px; }
+  
+  #hrs-container input[type=range] {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 100%; 
+    height: 26px; 
+    background: transparent;
+    touch-action: pan-x; 
+    position: relative; 
+    z-index: 30; 
+    cursor: pointer;
+  }
+  #hrs-container input[type=range]::-webkit-slider-runnable-track {
+    height: 4px; 
+    border-radius: 4px;
+    background: linear-gradient(to right, rgba(255,255,255,0.10), rgba(255,255,255,0.22));
+    box-shadow: 0 0 12px rgba(0,0,0,0.6) inset;
+  }
+  #hrs-container input[type=range]::-moz-range-track { 
+    height: 4px; 
+    border-radius: 4px; 
+    background: rgba(255,255,255,0.16); 
+  }
+  #hrs-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 24px; 
+    height: 24px; 
+    margin-top: -10px; 
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff, var(--hrs-accent));
+    border: 2px solid rgba(255,255,255,0.85); 
+    box-shadow: 0 0 18px var(--hrs-glow), 0 0 6px var(--hrs-glow);
+    transition: box-shadow .3s;
+  }
+  #hrs-container input[type=range]::-moz-range-thumb {
+    width: 22px; 
+    height: 22px; 
+    border-radius: 50%; 
+    background: var(--hrs-accent);
+    border: 2px solid #fff; 
+    box-shadow: 0 0 18px var(--hrs-glow);
+  }
+  #hrs-ticks { display: flex; justify-content: space-between; margin-top: 8px; }
+  .hrs-tick { 
+    flex: 1; 
+    text-align: center; 
+    font-size: 9px; 
+    letter-spacing: .3px;
+    color: rgba(255,255,255,0.42); 
+    font-weight: 600; 
+    padding: 6px 2px;
+    transition: color .3s, text-shadow .3s; 
+    cursor: pointer;
+  }
+  .hrs-tick.on { color: var(--hrs-accent); text-shadow: 0 0 10px var(--hrs-glow); }
+  .hrs-tick small { display: block; font-size: 7.5px; opacity: .6; font-weight: 500; margin-top: 1px; letter-spacing: 0; }
+  
+  /* Responsive heights for mobile */
+  @media (max-width: 600px) {
+    #hrs-container { height: 500px; }
+  }
+</style>
+
+<div id="hrs-container">
+  <div id="hrs-stage"><canvas id="hrs-c"></canvas></div>
+  <div id="hrs-appname">HOLOGRAPHIC&nbsp;&nbsp;RESONANCE&nbsp;&nbsp;SIMULATOR</div>
+
+  <div id="hrs-panel">
+    <div id="hrs-title">—</div>
+    <div id="hrs-desc">—</div>
+    <div id="hrs-sliderWrap">
+      <input id="hrs-slider" type="range" min="0" max="5" step="1" value="3" aria-label="Level of Consciousness">
+      <div id="hrs-ticks"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+(function(){
+/* ================= STATE DATA (Hawkins map) ================= */
+const STATES=[
+ {title:"SHAME / GUILT (Log 20-30)",short:"SHAME",band:"20",desc:"Extreme structural clamp. Consciousness attacks itself. Hologram rendered as punitive density.",color:"#ff1a1a",glow:"rgba(255,26,26,0.35)",style:"chaotic",
+  thoughts:["I am a complete failure.","Everyone is judging me.","I don't deserve good things.","I ruin everything I touch.","It's all my fault.","I should hide from the world.","I am fundamentally broken.","They would hate the real me."]},
+ {title:"FEAR / ANXIETY (Log 100)",short:"FEAR",band:"100",desc:"The repetitive loop of lack. Projecting constant threat onto the unconditioned plasma.",color:"#ff8c1a",glow:"rgba(255,140,26,0.35)",style:"jagged",
+  thoughts:["I'm running late again.","I hope I don't get fired.","I wish I could take a break.","Will I have enough for rent?","What if my manager hates me?","What if I can't buy food?","Everything is falling apart.","I can't keep up with this."]},
+ {title:"ANGER / PRIDE (Log 150-175)",short:"ANGER",band:"175",desc:"High kinetic friction. The ego attempts to forcefully manipulate the mirror.",color:"#e6e600",glow:"rgba(230,230,0,0.35)",style:"spiky",
+  thoughts:["This is entirely unfair.","Why do they do this to me?","I do everything myself.","People are incompetent.","I'm sick of being used.","They owe me an apology.","I am better than them.","No one respects my time."]},
+ {title:"COURAGE (Log 200-310)",short:"COURAGE",band:"200",desc:"The pivot point. The circuit begins to open. Friction is reduced, allowing smoother rendering.",color:"#00cc99",glow:"rgba(0,204,153,0.35)",style:"smooth",
+  thoughts:["I can handle this challenge.","Let's see what happens.","I am open to learning.","It's okay to make mistakes.","One step at a time.","I have the resources.","I am ready to move forward.","I can change my approach."]},
+ {title:"LOVE / JOY (Log 500-540)",short:"LOVE",band:"500",desc:"High coherence. The zero-point field effortlessly crystallizes beauty and synchronicity.",color:"#3399ff",glow:"rgba(51,153,255,0.35)",style:"harmonic",
+  thoughts:["I appreciate this beauty.","I am deeply grateful.","How can I be of service?","Infinite provision exists.","Life is a wonderful adventure.","I completely forgive myself.","I see the inherent good.","My heart feels entirely full."]},
+ {title:"NON-DUAL (Log 600+)",short:"NON-DUAL",band:"600+",desc:"Absolute zero-impedance. The observer and the observed are one. Perfect geometric harmony.",color:"#ffffff",glow:"rgba(255,255,255,0.45)",style:"sacred",
+  thoughts:["All is perfectly unfolding.","I AM that I AM.","Observer and observed are one.","Only this silent moment.","Infinite stillness, infinite potential.","The illusion has dissolved.","Existence is effortless geometry.","Pure, unconditional love remains."]},
+];
+const TAU=Math.PI*2;
+const hexRGB=h=>{h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];};
+STATES.forEach(s=>{s.rgb=hexRGB(s.color);});
+
+/* ================= CANVAS / VIEWPORT ================= */
+const container=document.getElementById('hrs-container');
+const cv=document.getElementById('hrs-c');
+const ctx=cv.getContext('2d');
+let Wl=0,Hl=0,dpr=1,panelH=180;
+
+function resize(){
+  if (!container) return;
+  Wl=container.clientWidth; 
+  Hl=container.clientHeight;
+  dpr=Math.min(window.devicePixelRatio||1, 2.5);
+  cv.width=Math.round(Wl*dpr); 
+  cv.height=Math.round(Hl*dpr);
+  cv.style.width=Wl+'px'; 
+  cv.style.height=Hl+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const p=document.getElementById('hrs-panel'); 
+  if(p) panelH=p.getBoundingClientRect().height;
+}
+
+// Use ResizeObserver for component-level responsiveness
+const ro = new ResizeObserver(() => {
+    requestAnimationFrame(resize);
+});
+if(container) ro.observe(container);
+
+/* ================= INTERACTION ================= */
+let cur=3, prev=3, trans=1;           
+let flash=0;                          
+const slider=document.getElementById('hrs-slider');
+const titleEl=document.getElementById('hrs-title');
+const descEl=document.getElementById('hrs-desc');
+const ticksEl=document.getElementById('hrs-ticks');
+
+STATES.forEach((s,i)=>{
+  const d=document.createElement('div'); d.className='hrs-tick';
+  d.innerHTML=s.short+'<small>'+s.band+'</small>';
+  d.addEventListener('click',()=>setState(i,true));
+  ticksEl.appendChild(d);
+});
+const tickEls=[...ticksEl.children];
+
+function applyTheme(s){
+  container.style.setProperty('--hrs-accent',s.color);
+  container.style.setProperty('--hrs-glow',s.glow);
+  titleEl.textContent=s.title; 
+  descEl.textContent=s.desc;
+  tickEls.forEach((t,i)=>t.classList.toggle('on',i===cur));
+}
+function setState(i,fromTap){
+  i=Math.max(0,Math.min(5,i|0));
+  if(i===cur){ return; }
+  prev=cur; cur=i; trans=0; flash=1;
+  ripples.length=0;                    
+  thoughtIdx=0; thoughtTimer=0;
+  if(fromTap) slider.value=i;
+  applyTheme(STATES[cur]);
+  emit(true);                          
+}
+if(slider){
+  slider.addEventListener('input',()=>setState(parseInt(slider.value,10),false));
+  slider.addEventListener('change',()=>setState(parseInt(slider.value,10),false));
+}
+
+/* ================= WAVE-FORMS ================= */
+const ripples=[];
+let lastEmit=0, thoughtIdx=0, thoughtTimer=0;
+function emit(strong){
+  const s=STATES[cur];
+  ripples.push({ r: s.style==='sacred'?18:10, seed: Math.random()*100, born: T,
+                 strength: strong?1.25:1.0, spin:(Math.random()-0.5)*0.5 });
+  if(ripples.length>16) ripples.shift();
+}
+const hash01=(n)=>{const x=Math.sin(n*127.1+43.7)*43758.5453; return x-Math.floor(x);};
+
+function waveRadius(style,th,r,seed,t){
+  switch(style){
+    case 'smooth':   return r*(1+0.015*Math.sin(th*2+t));
+    case 'chaotic':  return r*(1 + 0.24*(hash01(Math.floor(th*9)+seed*7)-0.5) + 0.10*Math.sin(th*15+seed));
+    case 'jagged':   return r*(1 + 0.055*Math.sin(th*44+seed) + 0.045*(hash01(Math.floor(th*30)+seed)-0.5));
+    case 'spiky':    return r*(1 + 0.30*Math.pow(Math.max(0,Math.sin(th*6 + seed + t*0.5)),8));
+    case 'harmonic': return r*(1 + 0.09*Math.sin(th*3 + t*0.8 + seed) + 0.05*Math.sin(th*5 - t*0.6));
+    case 'sacred':   return r*(1 + 0.06*Math.sin(6*th + t*0.25) + 0.035*Math.sin(12*th - t*0.15));
+    default:         return r;
+  }
+}
+function drawWave(cx,cy,rip,s,t){
+  const maxR=Math.hypot(Wl,Hl)*1.02;
+  const life=Math.min(1,(rip.r)/60);                       
+  const a=Math.max(0,1-rip.r/maxR)*life*rip.strength;
+  if(a<0.02) return a<=0;
+  const rgb=s.rgb.join(',');
+  const N = (s.style==='jagged'||s.style==='chaotic')?200 : s.style==='sacred'?260 : 150;
+  const th0=rip.spin*t;
+  ctx.beginPath();
+  for(let i=0;i<=N;i++){
+    const th=th0 + i/N*TAU;
+    const rr=waveRadius(s.style,th,rip.r,rip.seed,t);
+    const x=cx+Math.cos(th)*rr, y=cy+Math.sin(th)*rr;
+    i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+  }
+  if(s.style!=='chaotic') ctx.closePath();
+  ctx.strokeStyle=`rgba(${rgb},${a*0.10})`; ctx.lineWidth=7; ctx.stroke();
+  ctx.strokeStyle=`rgba(${rgb},${a*0.28})`; ctx.lineWidth=3; ctx.stroke();
+  ctx.strokeStyle=`rgba(${rgb},${a*0.95})`; ctx.lineWidth=1.3; ctx.stroke();
+  if(s.style==='sacred'){
+    ctx.beginPath();
+    for(let i=0;i<=N;i++){const th=-th0+i/N*TAU; const rr=rip.r*(0.72+0.04*Math.sin(12*th - t*0.3));
+      const x=cx+Math.cos(th)*rr,y=cy+Math.sin(th)*rr; i?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+    ctx.closePath(); ctx.strokeStyle=`rgba(${rgb},${a*0.5})`; ctx.lineWidth=1; ctx.stroke();
+  }
+  return false;
+}
+
+/* ================= NODE + HUD ================= */
+function bodyPath(cx,baseY,shoulderY,torsoH,shHalf,hipHalf,headR){
+  ctx.beginPath();
+  ctx.moveTo(cx-hipHalf, baseY);
+  ctx.lineTo(cx-shHalf, shoulderY+torsoH*0.28);
+  ctx.quadraticCurveTo(cx-shHalf, shoulderY, cx-headR*0.9, shoulderY);
+  ctx.lineTo(cx+headR*0.9, shoulderY);
+  ctx.quadraticCurveTo(cx+shHalf, shoulderY, cx+shHalf, shoulderY+torsoH*0.28);
+  ctx.lineTo(cx+hipHalf, baseY);
+  ctx.closePath();
+}
+function drawHuman(cx,baseY,s,t){
+  const rgb=s.rgb.join(',');
+  const bob=Math.sin(t*0.9)*2.2;
+  const torsoH=Math.min(Hl*0.15,150), headR=Math.max(13,Math.min(Wl,Hl)*0.030);
+  const shoulderY=baseY-torsoH+headR*1.4+bob;
+  const shHalf=torsoH*0.52, hipHalf=torsoH*0.30;
+  const headY=shoulderY-headR*1.15;
+  ctx.globalCompositeOperation='source-over';
+  bodyPath(cx,baseY+bob,shoulderY,torsoH,shHalf,hipHalf,headR);
+  ctx.fillStyle='rgba(3,4,9,0.94)'; ctx.fill();
+  ctx.beginPath(); ctx.arc(cx,headY,headR,0,TAU); ctx.fillStyle='rgba(3,4,9,0.96)'; ctx.fill();
+  ctx.globalCompositeOperation='lighter';
+  bodyPath(cx,baseY+bob,shoulderY,torsoH,shHalf,hipHalf,headR);
+  ctx.strokeStyle=`rgba(${rgb},0.9)`; ctx.lineWidth=2; ctx.stroke();
+  ctx.strokeStyle=`rgba(${rgb},0.20)`; ctx.lineWidth=7; ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx,headY,headR,0,TAU);
+  ctx.strokeStyle=`rgba(${rgb},0.9)`; ctx.lineWidth=2; ctx.stroke();
+  ctx.strokeStyle=`rgba(${rgb},0.20)`; ctx.lineWidth=7; ctx.stroke();
+  const coreY=shoulderY+torsoH*0.34;
+  return {coreX:cx, coreY, headY, headR};
+}
+function drawCore(cx,cy,s,t){
+  const rgb=s.rgb.join(','); const pulse=0.6+0.4*Math.sin(t*3);
+  const R=(Math.min(Wl,Hl)*0.05)*(0.8+0.3*pulse)*(1+0.6*flash);
+  ctx.save(); ctx.globalCompositeOperation='lighter';
+  const g=ctx.createRadialGradient(cx,cy,0,cx,cy,R);
+  g.addColorStop(0,`rgba(255,255,255,0.95)`); g.addColorStop(0.25,`rgba(${rgb},0.7)`); g.addColorStop(1,`rgba(${rgb},0)`);
+  ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,R,0,TAU); ctx.fill();
+  ctx.restore();
+}
+function roundRect(x,y,w,h,r){ ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath();
+}
+function drawHUD(topY,s,t){
+  const rgb=s.rgb.join(',');
+  const bw=Math.min(Wl*0.86, 430);
+  const pad=14, lh=Math.max(19,Math.min(26,Hl*0.030));
+  const fs=Math.max(11,Math.min(15,bw/26));
+  const headerH=26;
+  const bh=headerH+pad*2+lh*8;
+  const bx=(Wl-bw)/2, by=topY;
+  ctx.save();
+  ctx.globalCompositeOperation='source-over';
+  roundRect(bx,by,bw,bh,14);
+  ctx.fillStyle='rgba(6,8,14,0.72)'; ctx.fill();
+  ctx.globalCompositeOperation='lighter';
+  roundRect(bx,by,bw,bh,14);
+  ctx.fillStyle=`rgba(${rgb},0.05)`; ctx.fill();
+  ctx.strokeStyle=`rgba(${rgb},0.55)`; ctx.lineWidth=1.5; ctx.stroke();
+  ctx.strokeStyle=`rgba(${rgb},0.12)`; ctx.lineWidth=6; ctx.stroke();
+  ctx.strokeStyle=`rgba(${rgb},0.9)`; ctx.lineWidth=2; const cl=14;
+  const corners=[[bx,by,1,1],[bx+bw,by,-1,1],[bx,by+bh,1,-1],[bx+bw,by+bh,-1,-1]];
+  for(const[x,y,sx,sy]of corners){ctx.beginPath();ctx.moveTo(x+sx*cl,y);ctx.lineTo(x,y);ctx.lineTo(x,y+sy*cl);ctx.stroke();}
+  ctx.font=`600 ${Math.round(fs*0.8)}px ui-monospace,Menlo,Consolas,monospace`;
+  ctx.textBaseline='middle'; ctx.textAlign='left';
+  ctx.fillStyle=`rgba(${rgb},0.9)`;
+  ctx.fillText('◈ COGNITIVE MATRIX  //  BROADCASTING', bx+pad, by+headerH*0.7);
+  ctx.strokeStyle=`rgba(${rgb},0.3)`; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(bx+pad,by+headerH); ctx.lineTo(bx+bw-pad,by+headerH); ctx.stroke();
+  ctx.font=`${fs}px ui-monospace,Menlo,Consolas,monospace`;
+  const tx=bx+pad, ty0=by+headerH+pad+lh*0.5;
+  for(let i=0;i<8;i++){
+    const active=(i===thoughtIdx);
+    const y=ty0+i*lh;
+    ctx.fillStyle= active? `rgba(255,255,255,0.98)` : `rgba(${rgb},0.5)`;
+    if(active){ ctx.fillStyle=`rgba(${rgb},1)`;
+      ctx.fillText('▸', tx, y);
+    }
+    const txt=STATES[cur].thoughts[i];
+    ctx.fillText(txt, tx+ (active?16:16), y);
+    if(active){ 
+      const w=ctx.measureText(txt).width;
+      ctx.strokeStyle=`rgba(${rgb},${0.5+0.3*Math.sin(t*6)})`; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(tx+16,y+lh*0.42); ctx.lineTo(tx+16+w,y+lh*0.42); ctx.stroke();
+    }
+  }
+  ctx.restore();
+  return {bx,by,bw,bh};
+}
+
+/* ================= MAIN LOOP ================= */
+let T=0, last=performance.now();
+let animFrame;
+function frame(now){
+  const dt=Math.min(0.05,(now-last)/1000); last=now; T+=dt;
+  trans=Math.min(1,trans+dt*3.2); flash=Math.max(0,flash-dt*2.6);
+  thoughtTimer+=dt;
+  if(thoughtTimer>1.35){ thoughtTimer=0; thoughtIdx=(thoughtIdx+1)%8; emit(true); }
+  if(T-lastEmit> (STATES[cur].style==='sacred'?0.9:0.62)){ lastEmit=T; emit(false); }
+
+  const s=STATES[cur];
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.globalCompositeOperation='source-over';
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,Wl,Hl);
+  
+  const shim=0.9+0.1*(0.5+0.5*Math.sin(T*4.0))*0.5;
+  const _torsoH=Math.min(Hl*0.15,150), _headR=Math.max(13,Math.min(Wl,Hl)*0.030);
+  const emitX=Wl/2, emitY=Hl - panelH - 18 - _torsoH*0.66 + _headR*1.4;
+  const vg=ctx.createRadialGradient(emitX,emitY,0,emitX,emitY,Math.hypot(Wl,Hl)*0.7);
+  vg.addColorStop(0,`rgba(${s.rgb.join(',')},${(0.05+0.05*flash)*shim})`);
+  vg.addColorStop(0.5,`rgba(${s.rgb.join(',')},${0.015*shim})`);
+  vg.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=vg; ctx.fillRect(0,0,Wl,Hl);
+
+  ctx.globalCompositeOperation='lighter';
+  const speed = s.style==='sacred'?70: s.style==='harmonic'?95: s.style==='smooth'?110: 140;
+  for(let i=ripples.length-1;i>=0;i--){
+    const rip=ripples[i]; rip.r+=speed*dt;
+    const dead=drawWave(emitX,emitY,rip,s,T);
+    if(dead||rip.r>Math.hypot(Wl,Hl)*1.05) ripples.splice(i,1);
+  }
+  if(flash>0.01){ ctx.fillStyle=`rgba(${s.rgb.join(',')},${0.10*flash})`; ctx.fillRect(0,0,Wl,Hl); }
+
+  const baseY=Hl - panelH - 18;
+  const node=drawHuman(emitX,baseY,s,T);
+  drawCore(node.coreX,node.coreY,s,T);
+  
+  const hudTop=Math.max(20, (node.headY - node.headR) - 20 - hudHeight(s));
+  drawHUD(Math.max(20, Math.min(hudTop, node.headY - node.headR - 10 - hudHeight(s))), s, T);
+
+  animFrame = requestAnimationFrame(frame);
+}
+function hudHeight(s){ const bw=Math.min(Wl*0.86,430); const lh=Math.max(19,Math.min(26,Hl*0.030)); return 26+28+lh*8; }
+
+/* ================= BOOT ================= */
+function boot(){
+  resize();
+  applyTheme(STATES[cur]); 
+  if(slider) slider.value=cur;
+  if(animFrame) cancelAnimationFrame(animFrame);
+  animFrame = requestAnimationFrame(frame);
+}
+
+// Start sequence
+boot();
+
+})(); // close IIFE
+</script>

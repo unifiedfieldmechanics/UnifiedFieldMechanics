@@ -1,0 +1,148 @@
+<div id="strobe-container" style="position: relative; width: 100%; max-width: 800px; margin: 0 auto; background: #050505; border-radius: 8px; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    
+    <!-- Canvas for Wave Mechanics -->
+    <canvas id="hologramCanvas" style="display: block; width: 100%; height: 400px; background: #000;"></canvas>
+    
+    <!-- Interactive UI Overlay -->
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; box-sizing: border-box; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; align-items: center; text-align: center;">
+        
+        <h3 id="modeTitle" style="color: #ff4d4d; margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; transition: color 0.5s ease;">
+            CLOSED-LOOP (HIGH IMPEDANCE)
+        </h3>
+        
+        <p id="modeDesc" style="color: #a0a0a0; margin: 0 0 20px 0; font-size: 0.9rem; max-width: 600px; line-height: 1.4;">
+            Broadcasting the same dense, fear-based thoughts day after day. The reality hologram remains rigidly frozen in a high-friction survival pattern.
+        </p>
+        
+        <button id="toggleConsciousness" style="background: transparent; color: #fff; border: 1px solid #ff4d4d; padding: 10px 24px; border-radius: 4px; font-size: 0.9rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
+            Execute Planck-Scale Override
+        </button>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('hologramCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Set resolution
+    canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    
+    let isZeroPoint = false;
+    let ripples = [];
+    let frame = 0;
+    
+    const centerX = canvas.offsetWidth / 2;
+    const centerY = canvas.offsetHeight / 2;
+    
+    // UI Elements
+    const btn = document.getElementById('toggleConsciousness');
+    const title = document.getElementById('modeTitle');
+    const desc = document.getElementById('modeDesc');
+    
+    btn.addEventListener('click', () => {
+        isZeroPoint = !isZeroPoint;
+        ripples = []; // Clear the field on shift
+        
+        if (isZeroPoint) {
+            btn.innerHTML = "Revert to Closed-Loop";
+            btn.style.borderColor = "#4da6ff";
+            title.innerHTML = "ZERO-POINT (THE OPEN CIRCUIT)";
+            title.style.color = "#4da6ff";
+            desc.innerHTML = "New unto each moment. The structural clamp is released. Harmonic, zero-impedance frequency commands the unconditioned plasma to fluidly re-render.";
+        } else {
+            btn.innerHTML = "Execute Planck-Scale Override";
+            btn.style.borderColor = "#ff4d4d";
+            title.innerHTML = "CLOSED-LOOP (HIGH IMPEDANCE)";
+            title.style.color = "#ff4d4d";
+            desc.innerHTML = "Broadcasting the same dense, fear-based thoughts day after day. The reality hologram remains rigidly frozen in a high-friction survival pattern.";
+        }
+    });
+
+    class Ripple {
+        constructor() {
+            this.radius = 1;
+            this.alpha = 1;
+            this.speed = isZeroPoint ? 2 : 1;
+            this.thickness = isZeroPoint ? 2 : 4;
+            this.distortion = isZeroPoint ? 0 : Math.random() * 10;
+        }
+        
+        update() {
+            this.radius += this.speed;
+            this.alpha -= 0.005;
+        }
+        
+        draw(ctx) {
+            ctx.beginPath();
+            if (isZeroPoint) {
+                // Harmonic, smooth expansion
+                ctx.arc(centerX, centerY, this.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(77, 166, 255, ${this.alpha})`;
+            } else {
+                // Jagged, distorted high-impedance pattern
+                for(let i = 0; i < Math.PI * 2; i += 0.1) {
+                    let r = this.radius + (Math.sin(i * 10 + frame * 0.1) * this.distortion);
+                    let x = centerX + Math.cos(i) * r;
+                    let y = centerY + Math.sin(i) * r;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
+                ctx.strokeStyle = `rgba(255, 77, 77, ${this.alpha})`;
+            }
+            
+            ctx.lineWidth = this.thickness;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        frame++;
+        
+        // Pure black void background with slight fade for stroboscopic effect
+        ctx.fillStyle = isZeroPoint ? 'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.4)';
+        ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+        
+        // Pulse rate: "Stroboscopic Planck-scale refresh" slowed down
+        let pulseRate = isZeroPoint ? 40 : 20;
+        if (frame % pulseRate === 0) {
+            ripples.push(new Ripple());
+        }
+        
+        ripples.forEach((ripple, index) => {
+            ripple.update();
+            ripple.draw(ctx);
+            if (ripple.alpha <= 0) {
+                ripples.splice(index, 1);
+            }
+        });
+        
+        // Draw Central Node (Zero-Point Fulcrum)
+        ctx.beginPath();
+        let nodeRadius = isZeroPoint ? 10 + Math.sin(frame * 0.05) * 2 : 12 + Math.random() * 4;
+        ctx.arc(centerX, centerY, nodeRadius, 0, Math.PI * 2);
+        
+        if (isZeroPoint) {
+            // Luminous cool white/blue node
+            let gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, nodeRadius);
+            gradient.addColorStop(0, '#ffffff');
+            gradient.addColorStop(1, '#4da6ff');
+            ctx.fillStyle = gradient;
+            ctx.shadowColor = '#4da6ff';
+            ctx.shadowBlur = 20;
+        } else {
+            // Dense, flickering red/orange node
+            ctx.fillStyle = frame % 3 === 0 ? '#ffcc00' : '#ff4d4d';
+            ctx.shadowColor = '#ff4d4d';
+            ctx.shadowBlur = 10;
+        }
+        
+        ctx.fill();
+        ctx.shadowBlur = 0; // Reset shadow for ripples
+    }
+    
+    animate();
+</script>
