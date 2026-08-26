@@ -3,10 +3,18 @@ title: "AI Ingestion and Crawl Directory"
 subtitle: "Fully-Resolved Absolute Resource Locators for LLMs and RAG Scrapers"
 author: "Unified Field Mechanics Research"
 date: "2026-07-01"
+page-layout: full
 format:
   html:
     toc: true
 ---
+
+<style>
+  table td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+</style>
 
 [View Raw Markdown for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI-Ingestion-and-Crawl-Directory.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
