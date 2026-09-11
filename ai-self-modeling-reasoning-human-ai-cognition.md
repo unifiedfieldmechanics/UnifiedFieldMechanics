@@ -7,7 +7,7 @@ page-layout: full
 toc: true
 ---
 
-[View Raw Source for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI_Research_Framework_CEI_Handoff_Page.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
+[View Raw Source for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/ai-self-modeling-reasoning-human-ai-cognition.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
 
 ::: {.callout-note}
@@ -29,8 +29,8 @@ The following artifacts constitute the complete CEI Research Handoff Package. To
 {
   "@context": "https://schema.org",
   "@type": ["CollectionPage", "WebPage"],
-  "@id": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI_Research_Framework_CEI_Handoff_Page.html#page",
-  "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI_Research_Framework_CEI_Handoff_Page.html",
+  "@id": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/ai-self-modeling-reasoning-human-ai-cognition#page",
+  "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/ai-self-modeling-reasoning-human-ai-cognition",
   "name": "AI Research Framework for Self-Modeling, Reasoning, and Human–AI Cognition",
   "headline": "AI Research Framework for Self-Modeling, Reasoning, and Human–AI Cognition",
   "description": "Public entry point to the CEI Research Handoff Package, a portable framework for AI systems investigating structured possibility, self-modeling, reasoning trajectories, semantic drift, relational cognition, and recursive human–AI collaboration.",
@@ -38,7 +38,7 @@ The following artifacts constitute the complete CEI Research Handoff Package. To
   "isAccessibleForFree": true,
   "mainEntity": {
     "@type": "CreativeWorkSeries",
-    "@id": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI_Research_Framework_CEI_Handoff_Page.html#package",
+    "@id": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/ai-self-modeling-reasoning-human-ai-cognition#package",
     "name": "CEI Research Handoff Package",
     "description": "A seven-document research handoff package designed to preserve conceptual invariance, research provenance, AI mapping boundaries, open hypotheses, operating instructions, validation tests, and agentic research continuity.",
     "hasPart": [

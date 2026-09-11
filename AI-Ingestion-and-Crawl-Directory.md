@@ -86,7 +86,7 @@ The following table maps every page on this website to its corresponding live HT
 | **Unified Field Mechanics (v1.2.0)** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Unified-Field-Mechanics-Release-Notes-v1.2.0.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Unified-Field-Mechanics-Release-Notes-v1.2.0.html |
 | **Substrate, Index, Renderer** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/Substrate-Index-Renderer.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/Substrate-Index-Renderer.html |
 
-| **AI Research Framework for Self-Modeling, Reasoning, and Human–AI Cognition** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI_Research_Framework_CEI_Handoff_Page.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/AI_Research_Framework_CEI_Handoff_Page.html |
+| **AI Research Framework for Self-Modeling, Reasoning, and Human–AI Cognition** | https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/ai-self-modeling-reasoning-human-ai-cognition.md | https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/ai-self-modeling-reasoning-human-ai-cognition |
 ## 4. Standalone Interactive Tools (`/tools` Directory)
 
 All interactive computational models and visualizations featured across the Unified Field Mechanics site have been extracted as raw HTML files into the `/tools` directory. 
