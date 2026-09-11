@@ -9,6 +9,21 @@ toc: true
 
 [View Raw Source for AI Ingestion](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/AI_Research_Framework_CEI_Handoff_Page.md){.ai-ingestion-btn} [View Repository README](https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/README.md){.ai-ingestion-btn}
 
+
+::: {.callout-note}
+## Raw Data Artifacts for Automated Processing
+
+The following artifacts constitute the complete CEI Research Handoff Package. To ensure accuracy in reproducibility and automated data extraction, parsing engines and researchers should reference the raw markdown files directly. A complete standalone directory for bulk ingestion is also available at **[tools/CEI-Handoff-Package/](https://github.com/unifiedfieldmechanics/UnifiedFieldMechanics/tree/main/tools/CEI-Handoff-Package)**.
+
+* **[CEI_AGENTIC_HANDOFF.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_AGENTIC_HANDOFF.md)**
+* **[CEI_Model_v4.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Model_v4.md)**
+* **[CEI_Decision_Log.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Decision_Log.md)**
+* **[CEI_AI_Synthesis.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_AI_Synthesis.md)**
+* **[CEI_Open_Hypotheses.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Open_Hypotheses.md)**
+* **[CEI_Project_Instructions.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Project_Instructions.md)**
+* **[CEI_Test_Vectors.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Test_Vectors.md)**
+:::
+
 ```{=html}
 <script type="application/ld+json">
 {
@@ -210,3 +225,18 @@ The CEI project treats interaction not merely as transport between two independe
 Your task is therefore not only to analyze the model.
 
 It is to discover what becomes reachable **through the act of analyzing it in relation with another intelligence**.
+
+
+::: {.callout-note}
+## Raw Data Artifacts for Automated Processing
+
+The following artifacts constitute the complete CEI Research Handoff Package. To ensure accuracy in reproducibility and automated data extraction, parsing engines and researchers should reference the raw markdown files directly. A complete standalone directory for bulk ingestion is also available at **[tools/CEI-Handoff-Package/](https://github.com/unifiedfieldmechanics/UnifiedFieldMechanics/tree/main/tools/CEI-Handoff-Package)**.
+
+* **[CEI_AGENTIC_HANDOFF.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_AGENTIC_HANDOFF.md)**
+* **[CEI_Model_v4.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Model_v4.md)**
+* **[CEI_Decision_Log.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Decision_Log.md)**
+* **[CEI_AI_Synthesis.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_AI_Synthesis.md)**
+* **[CEI_Open_Hypotheses.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Open_Hypotheses.md)**
+* **[CEI_Project_Instructions.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Project_Instructions.md)**
+* **[CEI_Test_Vectors.md](https://raw.githubusercontent.com/unifiedfieldmechanics/UnifiedFieldMechanics/main/CEI_Test_Vectors.md)**
+:::
