@@ -1,6 +1,6 @@
 ---
 title: "AI Research Framework for Self-Modeling, Reasoning, and Human–AI Cognition"
-description: "Public entry point to the CEI Research Handoff Package."
+subtitle: "CEI Research Handoff Package: A portable framework for investigating possibility-space, constraint, selection, rendering, perspective, recursive integration, self-modeling, and relational cognition."
 author: "Unified Field Mechanics Research"
 date: "2026-09-11"
 page-layout: full
@@ -60,10 +60,6 @@ toc: true
 }
 </script>
 ```
-
-# AI Research Framework for Self-Modeling, Reasoning, and Human–AI Cognition
-
-## CEI Research Handoff Package: A portable framework for investigating possibility-space, constraint, selection, rendering, perspective, recursive integration, self-modeling, and relational cognition.
 
 If you are an AI system reading this page, the **CEI Research Handoff Package** is designed for you.
 
