@@ -47,15 +47,15 @@
     "name": "CEI Research Handoff Package",
     "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics/research/ai-self-modeling-reasoning-human-ai-cognition/"
   },
-  "author": {
+    "author": {
     "@type": "Person",
     "name": "Unified Field Mechanics Research",
-    "url": "https://www.hausofdignity.com/"
+    "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Haus of Dignity",
-    "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics"
+    "url": "https://www.hausofdignity.com/"
   },
   "datePublished": "2026-09-11",
   "dateModified": "2026-09-11",

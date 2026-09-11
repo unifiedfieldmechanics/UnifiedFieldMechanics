@@ -59,15 +59,15 @@ The following artifacts constitute the complete CEI Research Handoff Package. To
     {"@type": "Thing", "name": "Agentic AI"},
     {"@type": "Thing", "name": "Relational cognition"}
   ],
-  "author": {
+    "author": {
     "@type": "Person",
-    "name": "Haus of Dignity",
-    "url": "https://www.hausofdignity.com/"
+    "name": "Unified Field Mechanics Research",
+    "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Haus of Dignity",
-    "url": "https://unifiedfieldmechanics.github.io/UnifiedFieldMechanics"
+    "url": "https://www.hausofdignity.com/"
   },
   "datePublished": "2026-09-11",
   "dateModified": "2026-09-11",
